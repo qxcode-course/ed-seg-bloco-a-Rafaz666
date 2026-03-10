@@ -10,13 +10,13 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-09 21:44:09'
+  cache_timestamp: '2026-03-10 18:21:13'
   quests: null
   tasks: null
 expanded:
+- es@side-quests
 - es@main-quest
 - es@análise
-- es@side-quests
 tasks: {}
 flags:
   painel: 1
@@ -26,5 +26,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@https://github.com/qxcodepoo/arcade/blob/master/base/manipulacao/README.md
+selected: es@princesa
 next_draft_id: 2

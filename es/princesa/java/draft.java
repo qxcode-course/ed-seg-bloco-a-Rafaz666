@@ -5,12 +5,27 @@ public class draft {
     ArrayList<int> fila = new ArrayList<>();
     int referencial;
     
-    public String toString(){
-        String str += "[ ";           //[ 1> 2 3 ]
+    @Override
+    public String toStringDraft(){
+        String str = null;
+        str += "[ ";
         
         for(int i=0; i<fila.size();i++){
             str += fila.get(i);
+            if(fila.get(i)==e){
+                str += ">";
+            }
+            
+            if(i!=fila.size()-1){
+                str += " ";
+            }
+            
+            else{
+                str += " ]";
+            }
         }
+
+        return str;
     }
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
@@ -23,6 +38,8 @@ public class draft {
         for(int i=0; i<n; i++){
             fila.add(i);
         }
+
+        System.out.println(toStringDraft());
 
 
         for(int i=0; i<n; i++){
@@ -48,7 +65,6 @@ public class draft {
             referencial = e;
 
         }
-
     }
 }
 
