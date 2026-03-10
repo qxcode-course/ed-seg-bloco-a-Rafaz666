@@ -2,17 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class draft {
-    ArrayList<int> fila = new ArrayList<>();
-    int referencial;
+    static ArrayList<Integer> fila = new ArrayList<>();
+    static int referencial;
     
-    @Override
-    public String toStringDraft(){
+    public static String toStringDraft(){
         String str = null;
         str += "[ ";
         
         for(int i=0; i<fila.size();i++){
             str += fila.get(i);
-            if(fila.get(i)==e){
+            if(fila.get(i)==referencial){
                 str += ">";
             }
             
@@ -63,7 +62,7 @@ public class draft {
                 }
             }
             referencial = e;
-
+            System.out.println(toStringDraft());
         }
     }
 }
