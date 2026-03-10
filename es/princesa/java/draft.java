@@ -28,10 +28,9 @@ public class draft {
     }
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        String ns = scan.nextLine();
-        String es = scan.nextLine();
-        int n = Integer.parseInt(ns);
-        int e = Integer.parseInt(es);
+        String ns[] = scan.nextLine().split(" ");
+        int n = Integer.parseInt(ns[0]);
+        int e = Integer.parseInt(ns[1]);
         referencial = e;
         
         for(int i=0; i<n; i++){

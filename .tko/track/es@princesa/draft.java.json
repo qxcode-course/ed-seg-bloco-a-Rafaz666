@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_19-01-06",
+            "content": "@@ -735,16 +735,20 @@\n can.next\n+Line\n ();%0A    \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-10_19-03-24",
+            "content": "import java.util.ArrayList;\nimport java.util.Scanner;\n\npublic class draft {\n    static ArrayList<Integer> fila = new ArrayList<>();\n    static int referencial;\n    \n    public static String toStringDraft(){\n        String str = null;\n        str += \"[ \";\n        \n        for(int i=0; i<fila.size();i++){\n            str += fila.get(i);\n            if(fila.get(i)==referencial){\n                str += \">\";\n            }\n            \n            if(i!=fila.size()-1){\n                str += \" \";\n            }\n            \n            else{\n                str += \" ]\";\n            }\n        }\n\n        return str;\n    }\n    public static void main(String args[]) {\n        Scanner scan = new Scanner(System.in);\n        String ns = scan.next();\n        String es = scan.nextLine();\n        int n = Integer.parseInt(ns);\n        int e = Integer.parseInt(es);\n        referencial = e;\n        \n        for(int i=0; i<n; i++){\n            fila.add(i);\n        }\n\n        System.out.println(toStringDraft());\n\n\n        for(int i=0; i<n; i++){\n            if(fila.size()==1)\n                break;\n            \n            if(fila.get(i)==e){\n                if((e+1) == n-1){\n                    fila.remove(e+1);\n                    e = fila.get(0);\n                }\n\n                else if((e) == n-1){\n                    fila.remove(0);\n                    e = fila.get(1);\n                }\n                \n                else{\n                    fila.remove(e+1);\n                    e = fila.get(e+2);\n                }\n            }\n            referencial = e;\n            System.out.println(toStringDraft());\n        }\n    }\n}\n\n",
+            "lines": "69"
+        }
+    ]
+}
