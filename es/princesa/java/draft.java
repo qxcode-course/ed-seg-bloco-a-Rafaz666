@@ -6,7 +6,7 @@ public class draft {
     static int referencial;
     
     public static String toStringDraft(){
-        String str = null;
+        String str = "";
         str += "[ ";
         
         for(int i=0; i<fila.size();i++){
@@ -34,34 +34,30 @@ public class draft {
         referencial = e;
         
         for(int i=0; i<n; i++){
-            fila.add(i);
+            fila.add(i+1);
         }
 
-        System.out.println(toStringDraft());
+        System.out.println(fila.toString());
 
-
-        for(int i=0; i<n; i++){
-            if(fila.size()==1)
-                break;
-            
-            if(fila.get(i)==e){
-                if((e+1) == n-1){
-                    fila.remove(e+1);
-                    e = fila.get(0);
-                }
-
-                else if((e) == n-1){
-                    fila.remove(0);
-                    e = fila.get(1);
-                }
-                
-                else{
-                    fila.remove(e+1);
-                    e = fila.get(e+2);
-                }
+        while(fila.size()!=1){
+        
+            if(fila.get(e+1) == n-1){
+                fila.remove(e+1);
+                e = fila.get(0);
             }
+
+            else if(fila.get(e) == n-1){
+                fila.remove(0);
+                e = fila.get(1);
+            }
+                
+            else{
+                fila.remove(e+1);
+                e = fila.get(e+2);
+            }
+            
             referencial = e;
-            System.out.println(toStringDraft());
+            System.out.println(fila.toString());
         }
     }
 }
