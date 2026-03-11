@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class draft {
-    static ArrayList<Integer> fila = new ArrayList<>();
+    static int[] fila;
     static int referencial;
     
     public static String toStringDraft(){
@@ -10,8 +10,8 @@ public class draft {
         str += "[ ";
         
         for(int i=0; i<fila.size();i++){
-            str += fila.get(i);
-            if(fila.get(i)==referencial){
+            str += fila[i];
+            if(fila[i]==referencial){
                 str += ">";
             }
             
@@ -34,7 +34,7 @@ public class draft {
         referencial = e;
         
         for(int i=0; i<n; i++){
-            fila.add(i+1);
+            fila[i] = i+1;
         }
 
         System.out.println(fila.toString());
@@ -48,12 +48,12 @@ public class draft {
 
             else if(fila.get(e) == n-1){
                 fila.remove(0);
-                e = fila.get(1);
+                e = fila.get(0);
             }
                 
             else{
                 fila.remove(e+1);
-                e = fila.get(e+2);
+                e = fila.get(e+1);
             }
             
             referencial = e;
