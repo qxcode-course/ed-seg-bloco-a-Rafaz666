@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_23-51-57",
+            "content": "@@ -193,12 +193,8 @@\n next\n-Line\n ().s\n@@ -204,16 +204,16 @@\n t(%22 %22);%0A\n+\n         \n@@ -354,10 +354,8 @@\n %5B2%5D)\n-/2\n ;%0A  \n@@ -474,44 +474,21 @@\n tln(\n-String.format(%22%25.2f%22, \n area)\n-)\n ;%0A    %7D%0A\n %7D%0A%0A%0A\n@@ -487,8 +487,7 @@\n   %7D%0A\n+\n %7D%0A%0A\n-%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-11_23-59-10",
+            "content": "@@ -180,17 +180,16 @@\n %5D str = \n-(\n scan.nex\n@@ -199,57 +199,8 @@\n ne()\n- + %22 %22 + scan.nextLine() + %22 %22 + scan.nextLine())\n .spl\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-12_00-07-56",
+            "content": "import java.util.Arrays;\nimport java.util.Scanner;\npublic class draft {\n    public static void main(String args[]) {\n        Scanner scan = new Scanner(System.in);\n        String[] str = (scan.nextLine() + \" \" + scan.nextLine() + \" \" + scan.nextLine()).split(\" \");\n        double lados[] = Arrays.stream(str).mapToDouble(s -> Double.parseDouble(s)).toArray();\n        double p = (lados[0] + lados[1] + lados[2])/2;\n        double area = Math.sqrt(p * (p-lados[0]) * (p-lados[1]) * (p-lados[2])); \n        \n        System.out.println(String.format(\"%.2f\", area));\n    }\n}\n\n\n",
+            "lines": "15"
+        }
+    ]
+}
