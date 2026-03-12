@@ -17,7 +17,8 @@ expanded:
 - es@side-quests
 - es@main-quest
 - es@revisão
-tasks: {}
+tasks:
+  es@pintando: '{rate:100}'
 flags:
   painel: 1
   quests: 0
@@ -26,5 +27,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@pintando
+selected: es@mumia
 next_draft_id: 2

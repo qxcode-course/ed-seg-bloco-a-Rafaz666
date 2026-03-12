@@ -3,3 +3,12 @@
 2026-03-12 00:07:56, EXEC, v:1, k:es@pintando, mode:FULL, rate:100, size:15
 2026-03-12 00:08:04, EXEC, v:1, k:es@pintando, mode:FULL, rate:100
 2026-03-12 00:08:22, EXEC, v:1, k:es@pintando, mode:FULL, rate:100
+2026-03-12 00:10:20, MOVE, v:1, k:es@pintando, mode:BACK
+2026-03-12 00:10:20, MOVE, v:1, k:es@pintando, mode:PICK
+2026-03-12 00:10:21, MOVE, v:1, k:es@pintando, mode:BACK
+2026-03-12 00:10:31, MOVE, v:1, k:es@mumia, mode:DOWN
+2026-03-12 00:10:35, MOVE, v:1, k:es@mumia, mode:PICK
+2026-03-12 00:10:39, MOVE, v:1, k:es@mumia, mode:BACK
+2026-03-12 00:10:45, MOVE, v:1, k:es@mumia, mode:PICK
+2026-03-12 00:22:02, EXEC, v:1, k:es@mumia, mode:FULL, rate:100, size:29
+2026-03-12 00:22:24, MOVE, v:1, k:es@mumia, mode:BACK

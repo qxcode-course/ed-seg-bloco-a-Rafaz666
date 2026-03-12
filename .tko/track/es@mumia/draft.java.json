@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_00-22-02",
+            "content": "import java.util.Scanner;\npublic class draft {\n    \n    public static void print(String str){\n        System.out.println(str);\n    }\n    public static void main(String args[]) {\n        Scanner scan = new Scanner (System.in);\n        String str[] = (scan.nextLine() + \" \" + scan.nextLine()).split(\" \");\n        int age = Integer.parseInt(str[1]);\n\n        if(age<12){\n            print(str[0] + \" eh crianca\");\n        }\n        else if(age<18){\n            print(str[0] + \" eh jovem\");\n        }\n        else if(age<65){\n            print(str[0] + \" eh adulto\");\n        }\n        else if(age<1000){\n            print(str[0] + \" eh idoso\");\n        }\n        else{\n            print(str[0] + \" eh mumia\");\n        }\n    }\n}\n\n",
+            "lines": "29"
+        }
+    ]
+}
