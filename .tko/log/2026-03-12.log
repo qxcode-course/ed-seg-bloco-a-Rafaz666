@@ -19,3 +19,5 @@
 2026-03-12 01:26:36, EXEC, v:1, k:es@princesa, mode:FULL, rate:0, size:75
 2026-03-12 01:26:46, EXEC, v:1, k:es@princesa, mode:FULL, rate:0
 2026-03-12 01:26:54, EXEC, v:1, k:es@princesa, mode:FREE
+2026-03-12 14:27:09, MOVE, v:1, k:es@fuga, mode:PICK
+2026-03-12 15:12:23, EXEC, v:1, k:es@fuga, mode:FULL, rate:20, size:47

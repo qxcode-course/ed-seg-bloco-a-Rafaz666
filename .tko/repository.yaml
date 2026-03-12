@@ -10,14 +10,14 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-12 01:19:04'
+  cache_timestamp: '2026-03-12 14:27:05'
   quests: null
   tasks: null
 expanded:
+- es@main-quest
+- es@análise
 - es@revisão
 - es@side-quests
-- es@análise
-- es@main-quest
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
@@ -29,5 +29,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@princesa
+selected: es@fuga
 next_draft_id: 2
