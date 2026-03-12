@@ -12,3 +12,10 @@
 2026-03-12 00:10:45, MOVE, v:1, k:es@mumia, mode:PICK
 2026-03-12 00:22:02, EXEC, v:1, k:es@mumia, mode:FULL, rate:100, size:29
 2026-03-12 00:22:24, MOVE, v:1, k:es@mumia, mode:BACK
+2026-03-12 00:24:53, MOVE, v:1, k:es@fuga, mode:DOWN
+2026-03-12 00:24:55, MOVE, v:1, k:es@fuga, mode:PICK
+2026-03-12 00:25:03, EXEC, v:1, k:es@fuga, mode:FULL, rate:0, size:6
+2026-03-12 01:19:17, MOVE, v:1, k:es@princesa, mode:PICK
+2026-03-12 01:26:36, EXEC, v:1, k:es@princesa, mode:FULL, rate:0, size:75
+2026-03-12 01:26:46, EXEC, v:1, k:es@princesa, mode:FULL, rate:0
+2026-03-12 01:26:54, EXEC, v:1, k:es@princesa, mode:FREE
