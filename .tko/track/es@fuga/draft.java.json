@@ -7,7 +7,17 @@
         },
         {
             "label": "2026-03-12_15-12-23",
-            "content": "import java.util.*;\n\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    static boolean terminou;\n    \n    public static void main(String args[]) {\n        int h = scan.nextInt();\n        int p = scan.nextInt();\n        int f = scan.nextInt();\n        int d = scan.nextInt();\n\n        if(d == -1){\n            for(f=f; terminou == false; p++){\n                if(f > 15)\n                    f=0;\n                \n                if(f == h){\n                    System.out.println(\"S\");\n                    terminou = true;\n                }\n                else if(f == p){\n                    System.out.println(\"N\");\n                    terminou = true;\n                }\n            }\n        }\n\n        if(d == 1){\n            for(f=f; terminou == false; p--){\n                if(f < 0)\n                    f=15;\n                \n                if(f == h){\n                    System.out.println(\"S\");\n                    terminou = true;\n                }\n                else if(f == p){\n                    System.out.println(\"N\");\n                    terminou = true;\n                }\n            }\n        }\n    }\n\n}\n\n",
+            "content": "@@ -354,17 +354,17 @@\n  false; \n-f\n+p\n ++)%7B%0A   \n@@ -775,17 +775,17 @@\n  false; \n-f\n+p\n --)%7B%0A   \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-12_15-51-15",
+            "content": "@@ -309,16 +309,17 @@\n if(d == \n+-\n 1)%7B%0A    \n@@ -723,33 +723,32 @@\n         if(d == \n--\n 1)%7B%0A            \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-12_15-54-23",
+            "content": "import java.util.*;\n\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    static boolean terminou;\n    \n    public static void main(String args[]) {\n        int h = scan.nextInt();\n        int p = scan.nextInt();\n        int f = scan.nextInt();\n        int d = scan.nextInt();\n\n        if(d == 1){\n            for(f=f; terminou == false; f++){\n                if(f > 15)\n                    f=0;\n                \n                if(f == h){\n                    System.out.println(\"S\");\n                    terminou = true;\n                }\n                else if(f == p){\n                    System.out.println(\"N\");\n                    terminou = true;\n                }\n            }\n        }\n\n        if(d == -1){\n            for(f=f; terminou == false; f--){\n                if(f < 0)\n                    f=15;\n                \n                if(f == h){\n                    System.out.println(\"S\");\n                    terminou = true;\n                }\n                else if(f == p){\n                    System.out.println(\"N\");\n                    terminou = true;\n                }\n            }\n        }\n    }\n\n}\n\n",
             "lines": "47"
         }
     ]

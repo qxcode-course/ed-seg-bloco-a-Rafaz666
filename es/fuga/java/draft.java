@@ -10,8 +10,8 @@ public class draft {
         int f = scan.nextInt();
         int d = scan.nextInt();
 
-        if(d == -1){
-            for(f=f; terminou == false; p++){
+        if(d == 1){
+            for(f=f; terminou == false; f++){
                 if(f > 15)
                     f=0;
                 
@@ -26,8 +26,8 @@ public class draft {
             }
         }
 
-        if(d == 1){
-            for(f=f; terminou == false; p--){
+        if(d == -1){
+            for(f=f; terminou == false; f--){
                 if(f < 0)
                     f=15;
                 

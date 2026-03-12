@@ -21,3 +21,11 @@
 2026-03-12 01:26:54, EXEC, v:1, k:es@princesa, mode:FREE
 2026-03-12 14:27:09, MOVE, v:1, k:es@fuga, mode:PICK
 2026-03-12 15:12:23, EXEC, v:1, k:es@fuga, mode:FULL, rate:20, size:47
+2026-03-12 15:51:11, MOVE, v:1, k:es@fuga, mode:PICK
+2026-03-12 15:51:15, EXEC, v:1, k:es@fuga, mode:FULL, rate:0, size:47
+2026-03-12 15:51:52, EXEC, v:1, k:es@fuga, mode:FULL, rate:0
+2026-03-12 15:51:55, MOVE, v:1, k:es@fuga, mode:BACK
+2026-03-12 15:51:55, MOVE, v:1, k:es@fuga, mode:PICK
+2026-03-12 15:52:01, EXEC, v:1, k:es@fuga, mode:FULL, rate:0
+2026-03-12 15:53:20, EXEC, v:1, k:es@fuga, mode:FULL, rate:0
+2026-03-12 15:54:23, EXEC, v:1, k:es@fuga, mode:FULL, rate:100, size:47
