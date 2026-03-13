@@ -1,0 +1,119 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_23-35-12",
+            "content": "@@ -719,16 +719,18 @@\n rintln(i\n++1\n );%0A     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-12_23-37-58",
+            "content": "@@ -723,10 +723,8 @@\n ln(i\n-+1\n );%0A \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-12_23-39-09",
+            "content": "@@ -222,23 +222,57 @@\n nt a\n-;%0A        int b\n+ = scan.nextInt();%0A        int b = scan.nextInt()\n ;%0A  \n@@ -331,72 +331,8 @@\n +)%7B%0A\n-            a = scan.nextInt();%0A            b = scan.nextInt();%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-12_23-42-32",
+            "content": "@@ -749,16 +749,18 @@\n rintln(i\n++1\n );%0A     \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-12_23-42-51",
+            "content": "@@ -753,10 +753,8 @@\n ln(i\n-+1\n );%0A \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-12_23-45-48",
+            "content": "@@ -447,53 +447,8 @@\n   %7D%0A\n-            else%0A                jog%5Bi%5D=101;%0A\n     \n@@ -445,32 +445,32 @@\n     %7D%0A        %7D%0A\n+\n         %0A       \n@@ -651,130 +651,9 @@\n   %7D%0A\n-        %0A        if(menor == 101)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D%0A        \n %0A\n+\n     \n@@ -777,16 +777,16 @@\n  break;%0A\n+\n         \n@@ -783,33 +783,32 @@\n ;%0A            %7D%0A\n-%0A\n         %7D%0A%0A%0A    \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-12_23-50-39",
+            "content": "@@ -775,16 +775,36 @@\n ador%22);%0A\n+            return;%0A\n         \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-12_23-51-17",
+            "content": "@@ -895,16 +895,18 @@\n rintln(i\n++1\n );%0A     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-12_23-51-58",
+            "content": "@@ -779,28 +779,8 @@\n %22);%0A\n-            return;%0A\n     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-12_23-52-22",
+            "content": "@@ -605,17 +605,16 @@\n (jog%5Bi%5D%3C\n-=\n jog%5Bj%5D)%7B\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-12_23-53-21",
+            "content": "@@ -605,16 +605,17 @@\n (jog%5Bi%5D%3C\n+=\n jog%5Bj%5D)%7B\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-12_23-53-37",
+            "content": "@@ -209,28 +209,8 @@\n z%5D;%0A\n-        int cont=0;%0A\n     \n@@ -220,16 +220,16 @@\n  int a;%0A\n+\n         \n@@ -459,17 +459,16 @@\n     else\n-%7B\n %0A       \n@@ -480,132 +480,18 @@\n     \n-cont++;%0A            %7D%0A        %7D%0A%0A        if(cont == vez)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return\n+jog%5Bi%5D=101\n ;%0A  \n@@ -660,32 +660,32 @@\n               %7D%0A\n-\n             %7D%0A  \n@@ -693,32 +693,145 @@\n      %7D%0A        %0A\n+        if(menor == 101)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D%0A        %0A\n         for(int \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-12_23-55-24",
+            "content": "@@ -1,29 +1,4 @@\n-%0Aimport java.util.Arrays;\n %0Aimp\n@@ -205,16 +205,36 @@\n t%5Bvez%5D;%0A\n+        int cont=0;%0A\n         \n@@ -281,34 +281,8 @@\n = 0;\n-%0A        int ganhador = 0;\n %0A%0A  \n@@ -479,16 +479,17 @@\n     else\n+%7B\n %0A       \n@@ -501,18 +501,14 @@\n     \n-jog%5Bi%5D=101\n+cont++\n ;%0A  \n@@ -508,35 +508,30 @@\n t++;%0A       \n- %7D%0A\n      \n-   \n+%7D\n %0A        men\n@@ -531,61 +531,10 @@\n     \n-menor = Arrays.stream(jog).min().getAsInt();%0A        \n+%7D%0A\n %0A   \n@@ -545,20 +545,19 @@\n  if(\n-menor\n+cont\n  == \n-101\n+vez\n )%7B%0A \n@@ -665,30 +665,65 @@\n  i=0\n-, qtd\n+; i%3Cvez; i++)%7B%0A            for(int j\n =0; \n-i\n+j\n %3Cvez; \n-i\n+j\n ++)%7B%0A\n+    \n     \n@@ -743,15 +743,15 @@\n g%5Bi%5D\n-==menor\n+%3Cjog%5Bj%5D\n )%7B%0A \n@@ -769,20 +769,26 @@\n     \n-ganhador = i\n+    menor = jog%5Bi%5D\n ;%0A  \n@@ -805,14 +805,9 @@\n     \n-qtd++;\n+%7D\n %0A   \n@@ -817,25 +817,24 @@\n       %7D%0A\n-%0A\n         \n     if(q\n@@ -829,23 +829,9 @@\n     \n-    if(qtd%3E=2)%7B\n+%7D\n %0A   \n@@ -831,32 +831,33 @@\n   %7D%0A        \n+%0A\n         \n System.out.p\n@@ -848,98 +848,63 @@\n     \n-System.out.println(%22sem ganhador%22);%0A                return;%0A            %7D%0A            else\n+for(int i=0; i%3Cvez; i++)%7B%0A            if(jog%5Bi%5D==menor)\n %7B%0A  \n@@ -948,38 +948,37 @@\n                 \n+b\n re\n-turn\n+ak\n ;%0A            %7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-13_21-53-34",
+            "content": "@@ -1045,10 +1045,8 @@\n ln(i\n-+1\n );%0A \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-13_21-53-58",
+            "content": "@@ -612,32 +612,145 @@\n Int();%0A        %0A\n+        if(menor == 101)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D%0A        %0A\n         for(int \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-13_21-54-54",
+            "content": "@@ -624,121 +624,8 @@\n    %0A\n-        if(menor == 101)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D%0A        %0A\n     \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-13_21-55-20",
+            "content": "@@ -282,16 +282,42 @@\n nor = 0;\n+%0A        int ganhador = 0;\n %0A%0A      \n@@ -412,21 +412,8 @@\n ();%0A\n-            %0A\n     \n@@ -486,32 +486,77 @@\n ;%0A            %7D%0A\n+            else%0A                jog%5Bi%5D=101;%0A\n         %7D%0A      \n@@ -611,16 +611,24 @@\n sInt();%0A\n+        \n %0A       \n@@ -632,34 +632,474 @@\n     \n-System.out.println(menor);\n+if(menor == 101)%7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D%0A        %0A        for(int i=0, qtd=0; i%3Cvez; i++)%7B%0A            if(jog%5Bi%5D==menor)%7B%0A                ganhador = i;%0A                qtd++;%0A            %7D%0A%0A            if(qtd%3E=2)%7B%0A                System.out.println(%22sem ganhador%22);%0A                return;%0A            %7D%0A            else%7B%0A                System.out.println(i+1);%0A                return;%0A            %7D%0A%0A        %7D\n %0A%0A%0A \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-13_22-04-16",
+            "content": "@@ -585,14 +585,13 @@\n tln(\n-jog%5B0%5D\n+menor\n );%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-13_22-04-44",
+            "content": "@@ -234,28 +234,8 @@\n z%5D;%0A\n-        int%5B%5D fjog;%0A\n     \n@@ -284,17 +284,16 @@\n r = 0;%0A%0A\n-%0A\n         \n@@ -306,17 +306,8 @@\n t i=\n-0, qtd = \n 0; i\n@@ -471,31 +471,8 @@\n b);%0A\n-                qtd++;%0A\n     \n@@ -539,26 +539,8 @@\n og).\n-filter(n -%3E n!=0).\n min(\n@@ -581,21 +581,22 @@\n println(\n-menor\n+jog%5B0%5D\n );%0A%0A%0A   \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-13_22-12-09",
+            "content": "@@ -230,16 +230,36 @@\n t%5Bvez%5D;%0A\n+        int%5B%5D fjog;%0A\n         \n@@ -307,34 +307,8 @@\n  0;%0A\n-        int ganhador = 0;%0A\n %0A%0A  \n@@ -323,16 +323,25 @@\n r(int i=\n+0, qtd = \n 0; i%3Cvez\n@@ -404,32 +404,45 @@\n scan.nextInt();%0A\n+            %0A\n             if(a\n@@ -497,16 +497,39 @@\n s(a-b);%0A\n+                qtd++;%0A\n         \n@@ -629,182 +629,8 @@\n );%0A%0A\n-        for(int i=0, qtd=0; i%3Cvez; i++)%7B%0A            if(menor==jog%5Bi%5D)%7B%0A                qtd++;%0A                ganhador = i+1;%0A            %7D%0A%0A            if(qtd%3E=2)%7B%0A        \n     \n@@ -656,111 +656,16 @@\n tln(\n-%22sem ganhad\n+men\n or\n-%22\n );%0A\n-                return;%0A            %7D%0A        %7D%0A%0A        System.out.println(ganhador);\n %0A%0A  \n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_22-16-04",
+            "content": "@@ -508,146 +508,8 @@\n    %7D\n-%0A%0A        if (Arrays.stream(jog).allMatch(n -%3E n==jog%5B0%5D)) %7B%0A            System.out.println(%22sem ganhador%22);%0A            return;%0A        %7D\n %0A   \n@@ -597,32 +597,39 @@\n      for(int i=0\n+, qtd=0\n ; i%3Cvez; i++)%7B%0A \n@@ -678,22 +678,160 @@\n     \n-ganhador = i+1\n+qtd++;%0A                ganhador = i+1;%0A            %7D%0A%0A            if(qtd%3E=2)%7B%0A                System.out.println(%22sem ganhador%22);%0A                return\n ;%0A  \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-13_22-22-00",
+            "content": "@@ -817,16 +817,18 @@\n ador = i\n++1\n ;%0A      \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-13_22-22-42",
+            "content": "\nimport java.util.Arrays;\nimport java.util.Scanner;\n\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    public static void main(String args[]) {\n        int vez = scan.nextInt();\n        int[] jog = new int[vez];\n        int a;\n        int b;\n        int menor = 0;\n        int ganhador = 0;\n\n\n        for(int i=0; i<vez; i++){\n            a = scan.nextInt();\n            b = scan.nextInt();\n            if(a>=10 && b>=10){\n                jog[i] = Math.abs(a-b);\n            }\n        }\n\n        if (Arrays.stream(jog).allMatch(n -> n==jog[0])) {\n            System.out.println(\"sem ganhador\");\n            return;\n        }\n        \n        menor = Arrays.stream(jog).filter(n -> n!=0).min().getAsInt();\n\n        for(int i=0; i<vez; i++){\n            if(menor==jog[i]){\n                ganhador = i;\n            }\n        }\n\n        System.out.println(ganhador);\n\n    }\n}\n\n\n",
+            "lines": "42"
+        }
+    ]
+}
