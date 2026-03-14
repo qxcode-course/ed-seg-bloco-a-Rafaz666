@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_22-49-18",
+            "content": "@@ -552,13 +552,8 @@\n     \n-else \n if(x\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-13_22-52-49",
+            "content": "@@ -441,68 +441,12 @@\n s%5Bi%5D\n-=\n+!\n =0)\n-%0A                continue;%0A            %0A            else\n %7B%0A  \n@@ -552,57 +552,15 @@\n     \n-for(int j=0; j%3Ctamanho; j++)%7B%0A               \n+else\n  if\n- \n (x-e\n@@ -571,20 +571,16 @@\n ies%5B\n-j\n+i\n %5D==0)%7B%0A\n-    \n     \n@@ -621,44 +621,14 @@\n     \n-    especies%5Bj%5D=0;%0A                %7D\n+i = 0;\n %0A   \n@@ -686,16 +686,17 @@\n asais);%0A\n+%0A\n     %7D%0A%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-13_23-53-04",
+            "content": "@@ -659,13 +659,9 @@\n f (x\n- - 1*\n+-\n espe\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-13_23-58-38",
+            "content": "@@ -662,10 +662,8 @@\n x - \n-(-\n 1*es\n@@ -671,17 +671,16 @@\n ecies%5Bj%5D\n-)\n ==0)%7B%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-13_23-59-03",
+            "content": "@@ -658,16 +658,20 @@\n if (x - \n+(-1*\n especies\n@@ -673,16 +673,17 @@\n ecies%5Bj%5D\n+)\n ==0)%7B%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-14_00-00-15",
+            "content": "@@ -654,16 +654,20 @@\n     if (\n+x - \n especies\n@@ -673,13 +673,8 @@\n s%5Bj%5D\n- - x \n ==0)\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-14_00-02-32",
+            "content": "@@ -670,37 +670,15 @@\n %5Bj%5D \n-== x*-1 %7C%7C especies%5Bj%5D == x*1\n+- x ==0\n )%7B%0A \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-14_00-03-58",
+            "content": "@@ -658,15 +658,8 @@\n if (\n-x%3C0 && \n espe\n@@ -675,125 +675,13 @@\n = x*\n-1)%7B%0A                    casais++;%0A                    especies%5Bj%5D=0;%0A                %7D%0A                else if(x%3E0 &&\n+-1 %7C%7C\n  esp\n@@ -694,17 +694,16 @@\n j%5D == x*\n--\n 1)%7B%0A    \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-14_00-05-38",
+            "content": "@@ -668,34 +668,35 @@\n  especies%5Bj%5D == \n--\n x\n+*1\n )%7B%0A             \n@@ -815,10 +815,12 @@\n  == \n--\n x\n+*-1\n )%7B%0A \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-14_00-07-25",
+            "content": "@@ -654,16 +654,23 @@\n     if (\n+x%3C0 && \n especies\n@@ -681,16 +681,16 @@\n == -x)%7B%0A\n-\n         \n@@ -766,17 +766,124 @@\n     \n+%7D%0A\n     \n-break\n+            else if(x%3E0 && especies%5Bj%5D == -x)%7B%0A                    casais++;%0A                    especies%5Bj%5D=0\n ;%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-14_00-09-07",
+            "content": "import java.util.*;\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    public static void main(String args[]) {\n        int casais = 0;\n        int tamanho = scan.nextInt();\n        scan.nextLine();\n        int especies[] = new int[tamanho]; \n        especies = Arrays.stream(scan.nextLine().split(\" \")).mapToInt(s -> Integer.parseInt(s)).toArray();\n\n        for(int i=0, x=0; i<tamanho; i++){\n            if(especies[i]==0)\n                continue;\n            \n            else{\n                x = especies[i];\n                especies[i] = 0;\n            }\n            \n            for(int j=0; j<tamanho; j++){\n                if (especies[j] == -x){\n                    casais++;\n                    especies[j]=0;\n                    break;\n                }\n            }\n\n        }\n\n        System.out.println(casais);\n    }\n}\n\n",
+            "lines": "33"
+        }
+    ]
+}

@@ -9,7 +9,7 @@ public class draft {
         int[] jog = new int[vez];
         int a;
         int b;
-        int menor = 0;
+        int menor;
         int ganhador = 0;
 
 
