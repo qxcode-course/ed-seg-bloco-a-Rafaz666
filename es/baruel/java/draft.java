@@ -1,35 +1,52 @@
 import java.util.*;
-public class draft {
-    static Scanner scan =  new Scanner(System.in);
-    static Integer[] figu = new Integer[qtd];
-    static Integer album = scan.nextInt();
-    static Integer qtd = scan.nextInt();
+import java.util.stream.IntStream;
+public class draft{
+    static Scanner scan = new Scanner(System.in);
+    static int album;
+    static int qtd;
+    static int[] firstInput;
 
-    public static void ordenar(){
-        Integer[] ord = new Integer[album];
-        Integer menor;
-
-        for(Integer i=0; i<album; i++){
-            menor = Arrays.stream(figu).min(Integer::compareTo).get();
-            ord[i] = menor;
-            
-            for(Integer j=0; j<qtd; j++){
-                if(menor.equals(figu[j])){
-                    figu[j] = null;
-                }
+    static void outPut(){
+        if(falta().length==0){
+            System.out.println("N");
+        }
+        else{
+            int faltam[] = falta();
+            for(int i=0; i<faltam.length; i++){
+                if(i<faltam.length-1)
+                    System.out.print(faltam[i] + " ");
+                    else
+                        System.out.println(faltam[i]);
             }
         }
 
-    }
-    public static void main(String args[]) {
-        
-        for(Integer i=0;i<qtd; i++){
-            figu[i] = scan.nextInt();
+        if(repet()==0){
+            System.out.println("N");
+        }
+        else{
+            System.out.println(repet());
         }
 
+    }
 
-
+    static int[] falta(){
+        int[] falta = IntStream.rangeClosed(0, album-1).filter(x -> Arrays.stream(firstInput).noneMatch(y -> y == x)).toArray();
+        return falta;
+    }
     
+    static int repet(){
+        int repet = (int) Arrays.stream(firstInput).distinct().map(x -> (int) Arrays.stream(firstInput).filter(y -> y==x ).count()-1).sum();
+        return repet;
+    }
+
+
+
+    public static void main(String[] args){
+        album = scan.nextInt();
+        qtd = scan.nextInt();
+        scan.nextLine();
+        firstInput = Arrays.stream(scan.nextLine().split(" ")).mapToInt(s -> Integer.parseInt(s)).limit(qtd).toArray();
+
+        outPut();
     }
 }
-

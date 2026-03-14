@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_14-56-47",
+            "content": "@@ -181,21 +181,16 @@\n r%5Bqtd%5D;%0A\n-    %0A\n     publ\n@@ -1563,80 +1563,9 @@\n  %7D%0A%0A\n-        Integer repetido = rep();%0A%0A        System.out.println(repetido);\n+%0A\n %0A   \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-03-14_18-47-17",
+            "content": "@@ -31,16 +31,17 @@\n ss draft\n+ \n %7B%0A    st\n@@ -59,16 +59,17 @@\n r scan =\n+ \n  new Sca\n@@ -96,19 +96,23 @@\n  static \n-i\n+I\n nt\n+eger\n  album;%0A\n@@ -122,19 +122,23 @@\n  static \n-i\n+I\n nt\n+eger\n  qtd;%0A  \n@@ -150,38 +150,301 @@\n tic \n-i\n+I\n nt\n+eger\n %5B%5D fi\n-rstInput;%0A%0A   \n+gu = new Integer%5Bqtd%5D;%0A    %0A    public static Integer rep()%7B%0A        Integer rep = 0;%0A%0A        for(Integer i=0; i%3Cfigu.length; i++)%7B%0A            if(figu%5Bi%5D==figu%5Bi%5D+1 && i%3Cfigu.length-1)%7B%0A                rep++;%0A            %7D%0A        %7D%0A%0A        return rep;%0A    %7D%0A%0A    public\n  static \n int%5B\n@@ -443,56 +443,532 @@\n tic \n-int%5B%5D ordenar()%7B%0A        int%5B%5D ordenar\n+Integer%5B%5D falta()%7B%0A        Integer%5B%5D tabela = new Integer%5Bqtd%5D;%0A        Integer tamf = 0;%0A%0A        for(Integer i=0, tam = 0; i%3Cfigu.length; i++)%7B%0A            if(i+1!=figu%5Bi%5D )%7B%0A                tam++;%0A                tabela%5Btam%5D = i+1;%0A                tamf = tam;%0A            %7D%0A        %7D%0A%0A        Integer%5B%5D falta = new Integer%5Btamf%5D;%0A        %0A        for(Integer i=0; i%3Ctamf; i++)%7B%0A            falta%5Bi%5D = tabela%5Bi%5D;%0A        %7D%0A%0A        return falta;%0A    %7D%0A%0A    public static void ordenar()%7B%0A        Integer%5B%5D ord\n  = new \n-i\n+I\n nt\n+eger\n %5Bqtd\n@@ -982,21 +982,21 @@\n     \n-i\n+I\n nt\n+eger\n  menor\n- = 0\n ;%0A%0A \n@@ -1006,19 +1006,23 @@\n     for(\n-i\n+I\n nt\n+eger\n  i=0; i%3C\n@@ -1072,48 +1072,38 @@\n m(fi\n-rstInput).filter(m-%3E m!=0).min().getAsIn\n+gu).min(Integer::compareTo).ge\n t();\n@@ -1118,20 +1118,16 @@\n      ord\n-enar\n %5Bi%5D = me\n@@ -1152,35 +1152,39 @@\n             for(\n-i\n+I\n nt\n+eger\n  j=0; j%3Cqtd; j++\n@@ -1209,30 +1209,29 @@\n  if(\n-firstInput%5Bj%5D == menor\n+menor.equals(figu%5Bj%5D)\n )%7B%0A \n@@ -1255,23 +1255,20 @@\n   fi\n-rstInput\n+gu\n %5Bj%5D = \n-0\n+null\n ;%0A  \n@@ -1337,18 +1337,36 @@\n    %7D\n+%0A%0A        figu = ord;\n %0A    %7D%0A\n-%0A%0A%0A\n     \n@@ -1399,16 +1399,17 @@\n ring\n-%5B%5D\n  args\n-)\n+%5B%5D) \n %7B%0A  \n@@ -1464,32 +1464,33 @@\n .nextInt();%0A\n+%0A\n         \n firstInput =\n@@ -1481,148 +1481,80 @@\n     \n-firstInput = Arrays.stream(scan.nextLine().split(%22 %22)).mapToInt(s -%3E Integer.parseInt(s)).limit(qtd).toArray();%0A        firstInput = ordenar\n+%0A        for(Integer i=0;i%3Cqtd; i++)%7B%0A            figu%5Bi%5D = scan.nextInt\n ();%0A\n@@ -1553,32 +1553,34 @@\n tInt();%0A        \n+%7D%0A\n %0A        for(int\n@@ -1576,96 +1576,81 @@\n     \n-for(int j=0; j%3Cqtd; j++)%7B%0A            System.out.println(firstInput%5Bj%5D);%0A        %7D%0A%0A\n+Integer repetido = rep();%0A%0A        System.out.println(repetido);%0A    \n %0A    %7D%0A%7D\n@@ -1649,8 +1649,10 @@\n %0A    %7D%0A%7D\n+%0A%0A\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-03-14_20-06-40",
+            "content": "@@ -598,33 +598,8 @@\n    %7D\n-%0A%0A        return ordenar;\n %0A   \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-14_20-08-00",
+            "content": "@@ -739,33 +739,8 @@\n ();%0A\n-        scan.nextLine();%0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_20-09-32",
+            "content": "@@ -169,22 +169,26 @@\n atic int\n- repet\n+%5B%5D ordenar\n ()%7B%0A    \n@@ -198,137 +198,409 @@\n  int\n- repet = (int) Arrays.stream(firstInput).distinct().map(x -%3E (int) Arrays.stream(firstInput).filter(y -%3E y==x ).count()-1).sum();\n+%5B%5D ordenar = new int%5Bqtd%5D;%0A        int menor = 0;%0A%0A        for(int i=0; i%3Cqtd; i++)%7B%0A            menor = Arrays.stream(firstInput).filter(m-%3E m!=0).min().getAsInt();%0A            ordenar%5Bi%5D = menor;%0A            %0A            for(int j=0; j%3Cqtd; j++)%7B%0A                if(firstInput%5Bj%5D == menor)%7B%0A                    firstInput%5Bj%5D = 0;%0A                    break;%0A                %7D%0A            %7D%0A        %7D%0A\n %0A   \n@@ -611,21 +611,23 @@\n  return \n-repet\n+ordenar\n ;%0A    %7D%0A\n@@ -880,32 +880,98 @@\n rray();%0A        \n+firstInput = ordenar();%0A        %0A        for(int j=0; j%3Cqtd; j++)%7B\n %0A            Sys\n@@ -990,17 +990,35 @@\n tln(\n-repet());\n+firstInput%5Bj%5D);%0A        %7D%0A%0A\n %0A   \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-14_20-25-26",
+            "content": "@@ -17,43 +17,8 @@\n .*;%0A\n-import java.util.stream.IntStream;%0A\n publ\n@@ -159,749 +159,8 @@\n t;%0A%0A\n-    static void outPut()%7B%0A        %0A        if(repet()==0)%7B%0A            System.out.println(%22N%22);%0A        %7D%0A        else%7B%0A            System.out.println(repet());%0A        %7D%0A%0A        if(falta().length==0)%7B%0A            System.out.println(%22N%22);%0A        %7D%0A        else%7B%0A            int faltam%5B%5D = falta();%0A            for(int i=0; i%3Cfaltam.length; i++)%7B%0A                if(i%3Cfaltam.length-1)%0A                    System.out.print(faltam%5Bi%5D + %22 %22);%0A                    else%0A                        System.out.println(faltam%5Bi%5D);%0A            %7D%0A        %7D%0A%0A    %7D%0A%0A    static int%5B%5D falta()%7B%0A        int%5B%5D falta = IntStream.rangeClosed(0, album-1).filter(x -%3E Arrays.stream(firstInput).noneMatch(y -%3E y == x)).toArray();%0A        return falta;%0A    %7D%0A    %0A\n     \n@@ -602,16 +602,24 @@\n rray();%0A\n+        \n %0A       \n@@ -623,16 +623,39 @@\n     \n-outPu\n+    System.out.println(repe\n t()\n+)\n ;%0A  \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-14_20-48-17",
+            "content": "import java.util.*;\nimport java.util.stream.IntStream;\npublic class draft{\n    static Scanner scan = new Scanner(System.in);\n    static int album;\n    static int qtd;\n    static int[] firstInput;\n\n    static void outPut(){\n        \n        if(repet()==0){\n            System.out.println(\"N\");\n        }\n        else{\n            System.out.println(repet());\n        }\n\n        if(falta().length==0){\n            System.out.println(\"N\");\n        }\n        else{\n            int faltam[] = falta();\n            for(int i=0; i<faltam.length; i++){\n                if(i<faltam.length-1)\n                    System.out.print(faltam[i] + \" \");\n                    else\n                        System.out.println(faltam[i]);\n            }\n        }\n\n    }\n\n    static int[] falta(){\n        int[] falta = IntStream.rangeClosed(0, album-1).filter(x -> Arrays.stream(firstInput).noneMatch(y -> y == x)).toArray();\n        return falta;\n    }\n    \n    static int repet(){\n        int repet = (int) Arrays.stream(firstInput).distinct().map(x -> (int) Arrays.stream(firstInput).filter(y -> y==x ).count()-1).sum();\n        return repet;\n    }\n\n\n\n    public static void main(String[] args){\n        album = scan.nextInt();\n        qtd = scan.nextInt();\n        scan.nextLine();\n        firstInput = Arrays.stream(scan.nextLine().split(\" \")).mapToInt(s -> Integer.parseInt(s)).limit(qtd).toArray();\n\n        outPut();\n    }\n}",
+            "lines": "53"
+        }
+    ]
+}
