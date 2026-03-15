@@ -10,18 +10,19 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-14 18:47:10'
+  cache_timestamp: '2026-03-15 01:23:20'
   quests: null
   tasks: null
 expanded:
-- es@revisão
 - es@main-quest
+- es@revisão
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
   es@fuga: '{rate:100}'
   es@pedra: '{rate:91}'
   es@casais: '{rate:100}'
+  es@baruel: '{rate:100}'
 flags:
   painel: 1
   quests: 0

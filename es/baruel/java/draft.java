@@ -7,7 +7,21 @@ public class draft{
     static int[] firstInput;
 
     static void outPut(){
-        if(falta().length==0){
+
+        if(repet().length==0){
+            System.out.println("N");
+        }
+        else{
+            int[] repetem = repet();
+            for(int i=0; i<repetem.length; i++){
+                if(i<repetem.length-1)
+                    System.out.print(repetem[i] + " ");
+                    else
+                        System.out.println(repetem[i]);
+            }
+        }
+
+         if(falta().length==0){
             System.out.println("N");
         }
         else{
@@ -19,23 +33,16 @@ public class draft{
                         System.out.println(faltam[i]);
             }
         }
-
-        if(repet()==0){
-            System.out.println("N");
-        }
-        else{
-            System.out.println(repet());
-        }
-
     }
 
     static int[] falta(){
-        int[] falta = IntStream.rangeClosed(0, album-1).filter(x -> Arrays.stream(firstInput).noneMatch(y -> y == x)).toArray();
+        int[] figualbum = IntStream.rangeClosed(1, album).toArray();
+        int[] falta = Arrays.stream(figualbum).filter( x -> Arrays.stream(firstInput).noneMatch(y -> y==x)).toArray();
         return falta;
     }
     
-    static int repet(){
-        int repet = (int) Arrays.stream(firstInput).distinct().map(x -> (int) Arrays.stream(firstInput).filter(y -> y==x ).count()-1).sum();
+    static int[] repet(){
+        int[] repet = Arrays.stream(firstInput).distinct().flatMap(x -> IntStream.generate(() -> x).limit(Arrays.stream(firstInput).filter(y -> y==x).count()-1)).toArray();
         return repet;
     }
 
