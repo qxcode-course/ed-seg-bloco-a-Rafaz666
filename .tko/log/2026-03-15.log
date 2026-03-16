@@ -22,3 +22,5 @@
 2026-03-15 02:04:26, MOVE, v:1, k:es@baruel, mode:BACK
 2026-03-15 02:10:03, MOVE, v:1, k:es@baruel, mode:PICK
 2026-03-15 02:14:04, EXEC, v:1, k:es@baruel, mode:FULL, rate:100
+2026-03-15 12:14:28, MOVE, v:1, k:es@gomos, mode:DOWN
+2026-03-15 12:14:55, MOVE, v:1, k:es@gomos, mode:PICK
