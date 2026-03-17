@@ -16,6 +16,12 @@ public class draft {
         for(int i=0; i<vez; i++){
             a = scan.nextInt();
             b = scan.nextInt();
+
+            if(a==b){
+                System.out.println(i);
+                return;
+            }
+            
             if(a>=10 && b>=10){
                 jog[i] = Math.abs(a-b);
             }

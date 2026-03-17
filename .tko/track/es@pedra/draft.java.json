@@ -112,8 +112,28 @@
         },
         {
             "label": "2026-03-13_22-22-42",
-            "content": "\nimport java.util.Arrays;\nimport java.util.Scanner;\n\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    public static void main(String args[]) {\n        int vez = scan.nextInt();\n        int[] jog = new int[vez];\n        int a;\n        int b;\n        int menor = 0;\n        int ganhador = 0;\n\n\n        for(int i=0; i<vez; i++){\n            a = scan.nextInt();\n            b = scan.nextInt();\n            if(a>=10 && b>=10){\n                jog[i] = Math.abs(a-b);\n            }\n        }\n\n        if (Arrays.stream(jog).allMatch(n -> n==jog[0])) {\n            System.out.println(\"sem ganhador\");\n            return;\n        }\n        \n        menor = Arrays.stream(jog).filter(n -> n!=0).min().getAsInt();\n\n        for(int i=0; i<vez; i++){\n            if(menor==jog[i]){\n                ganhador = i;\n            }\n        }\n\n        System.out.println(ganhador);\n\n    }\n}\n\n\n",
+            "content": "@@ -277,16 +277,20 @@\n nt menor\n+ = 0\n ;%0A      \n",
             "lines": "42"
+        },
+        {
+            "label": "2026-03-17_18-19-02",
+            "content": "@@ -683,16 +683,34 @@\n am(jog).\n+filter(n -%3E n!=0).\n min().ge\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_18-21-33",
+            "content": "@@ -687,26 +687,8 @@\n og).\n-filter(n -%3E n!=0).\n min(\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_18-22-06",
+            "content": "@@ -408,121 +408,8 @@\n t();\n-%0A%0A            if(a==b)%7B%0A                System.out.println(i);%0A                return;%0A            %7D%0A            \n %0A   \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_18-27-27",
+            "content": "\nimport java.util.Arrays;\nimport java.util.Scanner;\n\npublic class draft {\n    static Scanner scan = new Scanner(System.in);\n    public static void main(String args[]) {\n        int vez = scan.nextInt();\n        int[] jog = new int[vez];\n        int a;\n        int b;\n        int menor;\n        int ganhador = 0;\n\n\n        for(int i=0; i<vez; i++){\n            a = scan.nextInt();\n            b = scan.nextInt();\n\n            if(a==b){\n                System.out.println(i);\n                return;\n            }\n            \n            if(a>=10 && b>=10){\n                jog[i] = Math.abs(a-b);\n            }\n        }\n\n        if (Arrays.stream(jog).allMatch(n -> n==jog[0])) {\n            System.out.println(\"sem ganhador\");\n            return;\n        }\n        \n        menor = Arrays.stream(jog).filter(n -> n!=0).min().getAsInt();\n\n        for(int i=0; i<vez; i++){\n            if(menor==jog[i]){\n                ganhador = i;\n            }\n        }\n\n        System.out.println(ganhador);\n\n    }\n}\n\n\n",
+            "lines": "48"
         }
     ]
 }
