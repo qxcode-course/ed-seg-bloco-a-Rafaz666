@@ -15,12 +15,12 @@ sources:
   tasks: null
 expanded:
 - es@main-quest
-- es@revisão
+- es@análise
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
   es@fuga: '{rate:100}'
-  es@pedra: '{rate:91}'
+  es@pedra: '{rate:100}'
   es@casais: '{rate:100}'
   es@baruel: '{rate:100}'
 flags:
@@ -31,4 +31,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@pedra
+selected: es@princesa

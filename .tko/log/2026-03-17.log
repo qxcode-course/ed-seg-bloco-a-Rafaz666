@@ -4,3 +4,11 @@
 2026-03-17 18:21:58, MOVE, v:1, k:es@pedra, mode:PICK
 2026-03-17 18:22:06, EXEC, v:1, k:es@pedra, mode:FULL, rate:91, size:42
 2026-03-17 18:27:27, EXEC, v:1, k:es@pedra, mode:FULL, rate:100, size:48
+2026-03-17 18:29:08, MOVE, v:1, k:es@pedra, mode:BACK
+2026-03-17 18:29:43, MOVE, v:1, k:es@princesa, mode:PICK
+2026-03-17 18:46:49, EXEC, v:1, k:es@princesa, mode:FULL, rate:0, size:62
+2026-03-17 18:48:07, MOVE, v:1, k:es@princesa, mode:PICK
+2026-03-17 19:22:29, EXEC, v:1, k:es@princesa, mode:FULL, rate:0, size:89
+2026-03-17 19:25:32, EXEC, v:1, k:es@princesa, mode:FULL, size:90, fail:COMP
+2026-03-17 19:25:46, EXEC, v:1, k:es@princesa, mode:FULL, rate:0, size:90
+2026-03-17 19:27:00, EXEC, v:1, k:es@princesa, mode:FULL, rate:33, size:89
