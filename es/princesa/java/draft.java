@@ -16,9 +16,10 @@ public class draft {
         qtd = scan.nextInt();
         e = scan.nextInt();
         fila  = IntStream.rangeClosed(1,qtd).boxed().toArray(Integer[]::new);
-       
-        
-        
+
+        for(Integer i : fila)
+            System.out.printlnfila(fila[i]);
+
     }
 
 
