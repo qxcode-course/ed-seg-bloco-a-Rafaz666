@@ -18,12 +18,16 @@ public class draft {
         fila  = IntStream.rangeClosed(1,qtd).boxed().toArray(Integer[]::new);
 
         for(Integer i : fila)
-            System.out.printlnfila(fila[i]);
+            System.out.println(i);
 
+        for(int i=0; i<fila.length; i++){
+            if(fila[i]%2==0)
+                fila[i] = null;
+        }
+        
+        org();
+
+        for(Integer i : fila)
+            System.out.println(i);
     }
-
-
-
-
 }
-
