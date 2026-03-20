@@ -43,19 +43,19 @@ public class draft {
                         fila[i+1] = null;
                         e = fila[i+2];
                         org();
-                        break;
+                        return;
                     }
                     case 1 -> {
                         fila[0] = null;
                         e = fila[1];
                         org();
-                        break;
+                        return;
                     }
                     case 2 -> {
                         fila[i+1] = null;
                         e = fila[0];
                         org();
-                        break;
+                        return;
                     }
                     default -> System.out.println("deu pau");
                 }
