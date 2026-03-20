@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-20_12-21-52",
+            "content": "@@ -605,16 +605,17 @@\n      %7D%0A%0A\n+%0A\n         \n@@ -626,16 +626,71 @@\n ng str =\n+ %22saida: %5Cn%22;%0A        str += qtd + %22%5Cn%22;%0A        str +=\n  Arrays.\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-20_12-23-27",
+            "content": "@@ -722,14 +722,8 @@\n im()\n- + %22 %22\n ;%0A  \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-20_12-24-02",
+            "content": "import java.util.*;\nimport java.util.stream.Collectors;\nimport java.util.stream.IntStream;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    public static void main(String args[]) {\n        int qtd = scan.nextInt();\n        int[] fila = IntStream.range(0, qtd).map(i -> scan.nextInt()).toArray();\n        int qtdquit = scan.nextInt();\n        int filaquit[] = IntStream.range(0, qtdquit).map(i -> scan.nextInt()).toArray();\n\n        for(int i=0; i<qtdquit; i++){\n            int valor = filaquit[i];\n            fila = Arrays.stream(fila).filter(x -> x != valor).toArray();\n        }\n\n        String str = Arrays.stream(fila).mapToObj(x -> String.valueOf(x)).collect(Collectors.joining(\" \")).trim() + \" \";\n        System.out.println(str);\n\n    }\n}\n",
+            "lines": "22"
+        }
+    ]
+}

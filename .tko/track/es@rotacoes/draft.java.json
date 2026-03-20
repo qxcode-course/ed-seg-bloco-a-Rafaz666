@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-20_15-43-07",
+            "content": "@@ -367,16 +367,22 @@\n int j = \n+input%5B\n input.le\n@@ -385,16 +385,19 @@\n t.length\n+-1%5D\n ;%0A      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-20_15-45-06",
+            "content": "@@ -379,18 +379,16 @@\n t.length\n--1\n ;%0A      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-20_15-45-31",
+            "content": "import java.util.*;\nimport java.util.stream.IntStream;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    \n    public static void main(String args[]) {\n        int inputqtd = scan.nextInt();\n        int qtd = scan.nextInt();\n        int[] input = IntStream.rangeClosed(1, inputqtd).toArray();\n\n        for(int i=0; i<qtd; i++){\n            int j = input.length-1;\n            int valor = input[input.length-1];\n            \n            while(j>0){\n               input[j] = input[j-1];\n               j--;\n            }\n\n            input[0] = valor;\n        }\n\n        \n        String str = \"[ \";\n        for(int i : input){\n            str += i + \" \";\n        }\n        str += \"]\";\n\n        System.out.println(str);\n    }\n}\n",
+            "lines": "33"
+        }
+    ]
+}

@@ -6,6 +6,16 @@ public class draft {
     static Scanner scan =  new Scanner(System.in);
     static ArrayList<String> consul = new ArrayList<>();
     static ArrayList<String> input = new ArrayList<>();
+
+    public static int countCountain(String str){
+        int cont = 0;
+        for(int i=0; i<input.size(); i++){
+            if(str.equals(input.get(i)))
+                cont++;
+        }
+
+        return cont;
+    }
     
     public static void main(String args[]) {
         int qtdInput = scan.nextInt();
@@ -15,16 +25,13 @@ public class draft {
         scan.nextLine();
         consul = IntStream.range(0, qtdConsul).mapToObj(i -> scan.next()).collect(Collectors.toCollection(ArrayList::new));
         String str = "";
-        
-        for(int i = 0; i<input.size(); i++){
-            
-            if(consul.contains(input.get(i))){
-                cont++;
-                str += cont + " ";
-            }
+        for(String s : consul){
+            str += countCountain(s) + " ";
         }
+        str = str.trim();
 
         System.out.println(str);
+    
 
         
 

@@ -67,11 +67,12 @@ public class draft {
     public static void draftString(){
         String str = "[ ";
         
-        for(int i=0; i<fila.length; i++){
-            if(fila[i].equals(e))
-                str += fila[i] + "> ";
-            else
-                str += fila[i] + " ";
+        for (Integer fila1 : fila) {
+            if (fila1.equals(e)) {
+                str += fila1 + "> ";
+            } else {
+                str += fila1 + " ";
+            }
         }
 
         str += "]";

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-20_13-53-52",
+            "content": "@@ -392,21 +392,22 @@\n         \n-input\n+consul\n  = IntSt\n@@ -751,21 +751,9 @@\n nt i\n- = 0, cont = \n+=\n 0; i\n@@ -773,16 +773,42 @@\n ; i++)%7B%0A\n+            int cont = 0;%0A\n         \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-20_13-57-33",
+            "content": "@@ -273,226 +273,8 @@\n %3E();\n-%0A%0A    public static int countCountain(String str)%7B%0A        int cont = 0;%0A        for(int i=0; i%3Cinput.size(); i++)%7B%0A            if(str.equals(input.get(i)))%0A                cont++;%0A        %7D%0A%0A        return cont;%0A    %7D\n %0A   \n@@ -732,32 +732,139 @@\n     \n-for(String s : consul)%7B%0A\n+%0A        for(int i = 0, cont = 0; i%3Cinput.size(); i++)%7B%0A            if(consul.contains(input.get(i)))%7B%0A                cont++;%0A    \n     \n@@ -884,29 +884,31 @@\n = co\n-u\n nt\n-Countain(s) + %22 %22;\n+ + %22 %22;%0A            %7D\n %0A   \n@@ -947,21 +947,16 @@\n ln(str);\n-%0A    \n %0A%0A      \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-20_15-16-01",
+            "content": "@@ -1026,34 +1026,8 @@\n    %7D\n-%0A        str = str.trim();\n %0A%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-20_15-21-12",
+            "content": "import java.util.*;\nimport java.util.stream.Collectors;\nimport java.util.stream.IntStream;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    static ArrayList<String> consul = new ArrayList<>();\n    static ArrayList<String> input = new ArrayList<>();\n\n    public static int countCountain(String str){\n        int cont = 0;\n        for(int i=0; i<input.size(); i++){\n            if(str.equals(input.get(i)))\n                cont++;\n        }\n\n        return cont;\n    }\n    \n    public static void main(String args[]) {\n        int qtdInput = scan.nextInt();\n        scan.nextLine();\n        input = IntStream.range(0, qtdInput).mapToObj(i -> scan.next()).collect(Collectors.toCollection(ArrayList::new));\n        int qtdConsul = scan.nextInt();\n        scan.nextLine();\n        consul = IntStream.range(0, qtdConsul).mapToObj(i -> scan.next()).collect(Collectors.toCollection(ArrayList::new));\n        String str = \"\";\n        for(String s : consul){\n            str += countCountain(s) + \" \";\n        }\n        str = str.trim();\n\n        System.out.println(str);\n    \n\n        \n\n    }\n}\n",
+            "lines": "39"
+        }
+    ]
+}

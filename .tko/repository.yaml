@@ -22,6 +22,9 @@ tasks:
   es@pedra: '{rate:100}'
   es@casais: '{rate:100}'
   es@baruel: '{rate:100}'
+  es@princesa: '{rate:100}'
+  es@apagando: '{rate:100}'
+  es@buscas: '{rate:100}'
 flags:
   painel: 1
   quests: 0
@@ -30,4 +33,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@princesa
+selected: es@rotacoes
