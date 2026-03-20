@@ -10,14 +10,12 @@ public class draft {
         int qtdquit = scan.nextInt();
         int filaquit[] = IntStream.range(0, qtdquit).map(i -> scan.nextInt()).toArray();
 
+        for(int i=0; i<qtdquit; i++){
+            int valor = filaquit[i];
+            fila = Arrays.stream(fila).filter(x -> x != valor).toArray();
+        }
 
-
-
-        String str = "saida: \n";
-        str += qtd + "\n";
-        str += Arrays.stream(fila).mapToObj(x -> String.valueOf(x)).collect(Collectors.joining(" ")).toString().trim() + "\n";
-        str += qtdquit + "\n";
-        str += Arrays.stream(filaquit).mapToObj(x -> String.valueOf(x)).collect(Collectors.joining(" ")).toString().trim();
+        String str = Arrays.stream(fila).mapToObj(x -> String.valueOf(x)).collect(Collectors.joining(" ")).trim() + " ";
         System.out.println(str);
 
     }
