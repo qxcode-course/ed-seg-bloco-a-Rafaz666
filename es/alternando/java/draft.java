@@ -32,7 +32,7 @@ public class draft {
 
 
     public static int edgeL(int i){
-        if(0>i-1 && 0>i-2){
+        if(0<i-1 && 0<i-2){
             return 0;
         }
         else if(0>i-1){
