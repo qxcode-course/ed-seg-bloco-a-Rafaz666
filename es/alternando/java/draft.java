@@ -38,7 +38,7 @@ public class draft {
         else if(0>i-1){
             return 1;
         }
-        else if( 0<i-1 && 0>i-2){
+        else if( 0<=i-1 && 0>i-2){
             return 2;
         }
         return -1;
@@ -138,6 +138,7 @@ public class draft {
 
         System.out.println(str);
     }
+    
     public static void main(String[] args){
         qtd = scan.nextInt();
         e = scan.nextInt();
@@ -148,14 +149,14 @@ public class draft {
         if(f.equals(-1)){
             for( int i=0; i<fila.length; i++){
                 if(fila[i]%2!=0){
-                    fila[i] = -1*i;
+                    fila[i] = -1*fila[i];
                 }
             }
         }
         else{
             for( int i=0; i<fila.length; i++){
                 if(fila[i]%2==0){
-                    fila[i] = -1*i;
+                    fila[i] = -1*fila[i];
                 }
             }
         }
