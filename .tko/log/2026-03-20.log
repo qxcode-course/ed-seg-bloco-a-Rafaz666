@@ -42,3 +42,16 @@
 2026-03-20 15:45:00, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:0
 2026-03-20 15:45:06, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:0, size:33
 2026-03-20 15:45:31, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:100, size:33
+2026-03-20 15:46:42, MOVE, v:1, k:es@rotacoes, mode:BACK
+2026-03-20 15:47:50, MOVE, v:1, k:es@alternando, mode:DOWN
+2026-03-20 15:47:53, MOVE, v:1, k:es@alternando, mode:PICK
+2026-03-20 15:48:08, MOVE, v:1, k:es@alternando, mode:BACK
+2026-03-20 15:48:10, MOVE, v:1, k:es@alternando, mode:PICK
+2026-03-20 20:27:51, MOVE, v:1, k:es@alternando, mode:PICK
+2026-03-20 20:55:21, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:167
+2026-03-20 20:57:22, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:167
+2026-03-20 20:59:32, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:174
+2026-03-20 21:01:48, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:174
+2026-03-20 21:04:39, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:174
+2026-03-20 21:05:21, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:174
+2026-03-20 21:06:07, EXEC, v:1, k:es@alternando, mode:FULL, rate:0, size:174
