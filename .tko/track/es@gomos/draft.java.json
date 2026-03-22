@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-22_11-06-12",
+            "content": "@@ -1412,32 +1412,33 @@\n i=0; i%3Cqtd; i++)\n+%7B\n %0A            str\n@@ -1487,41 +1487,9 @@\n     \n-%0A        System.out.println(str);\n+%7D\n %0A   \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-22_11-07-18",
+            "content": "@@ -1092,32 +1092,56 @@\n can.nextInt();%0A \n+       scan.nextLine();%0A\n         s = scan\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-22_11-09-04",
+            "content": "@@ -259,21 +259,17 @@\n case %22R%22\n- -%3E %7B\n+:\n %0A       \n@@ -394,33 +394,42 @@\n  1;%0A            \n-%7D\n+    break;\n %0A            cas\n@@ -433,20 +433,17 @@\n case %22L%22\n--%3E %7B\n+:\n %0A       \n@@ -568,33 +568,42 @@\n  1;%0A            \n-%7D\n+    break;\n %0A            cas\n@@ -607,20 +607,17 @@\n case %22D%22\n--%3E %7B\n+:\n %0A       \n@@ -742,33 +742,42 @@\n  1;%0A            \n-%7D\n+    break;\n %0A            cas\n@@ -785,13 +785,9 @@\n  %22U%22\n- -%3E %7B\n+:\n %0A   \n@@ -920,25 +920,34 @@\n             \n-%7D\n+    break;\n %0A           \n@@ -958,11 +958,25 @@\n ault\n- -%3E\n+:%0A               \n  Sys\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-22_11-14-02",
+            "content": "@@ -868,33 +868,33 @@\n             eixo\n-Y\n+X\n %5Bi%5D = eixoY%5Bi-1%5D\n@@ -883,25 +883,25 @@\n oX%5Bi%5D = eixo\n-Y\n+X\n %5Bi-1%5D + 1;%0A \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-22_11-16-49",
+            "content": "import java.util.*;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    static int[] eixoX;\n    static int[] eixoY;\n    static  int qtd;\n    static String s;\n\n    public static void move(String str){\n        switch (s) {\n            case \"R\" -> {\n                eixoX[0] = eixoX[0] + 1;\n                for(int i=1; i<qtd; i++)\n                    eixoX[i] = eixoX[i-1] - 1;\n            }\n            case \"L\"-> {\n                eixoX[0] = eixoX[0] - 1;\n                for(int i=1; i<qtd; i++)\n                    eixoX[i] = eixoX[i-1] + 1;\n            }\n            case \"D\"-> {\n                eixoY[0] = eixoY[0] + 1;\n                for(int i=1; i<qtd; i++)\n                    eixoY[i] = eixoY[i-1] - 1;\n            }\n            case \"U\" -> {\n                eixoY[0] = eixoY[0] - 1;\n                for(int i=1; i<qtd; i++)\n                    eixoY[i] = eixoY[i-1] + 1;\n            }\n            default -> System.out.println(\"erro\");       \n        }\n\n    }\n    public static void main(String args[]) {\n        qtd = scan.nextInt();\n         s = scan.nextLine();\n        eixoX = new int[qtd];\n        eixoY = new int[qtd];\n        \n        for(int i=0; i<qtd; i++){\n            eixoX[i] = scan.nextInt();\n            eixoY[i] = scan.nextInt();\n        }\n\n        move(s);\n\n        String str = \"\";\n        for(int i=0; i<qtd; i++)\n            str += eixoX[i] + \" \" + eixoY[i] + \"\\n\";\n        \n        System.out.println(str);\n    }\n}\n\n",
+            "lines": "56"
+        }
+    ]
+}

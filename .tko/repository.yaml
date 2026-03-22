@@ -13,8 +13,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@análise
 - es@main-quest
+- es@revisão
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
@@ -34,4 +34,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@alternando
+selected: es@gomos
