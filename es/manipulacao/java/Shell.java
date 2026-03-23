@@ -1,24 +1,29 @@
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Shell {
     static List<Integer> get_men(List<Integer> vet) {
-        return new ArrayList<>();
+        vet = vet.stream().filter(x -> x>=0).collect(Collectors.toList());
+        vet = sort(vet);
+        return vet;
     }
 
     static List<Integer> get_calm_women(List<Integer> vet) {
-        return new ArrayList<>();
+        vet = vet.stream().filter(x -> x < 10).collect(Collectors.toList());
+        return vet;
     }
 
     static List<Integer> sort(List<Integer> vet) {
-        return new ArrayList<>();
+        vet.sort((a, b) -> Integer.compare(a, b));
+        return vet;
     }
 
     static List<Integer> sort_stress(List<Integer> vet) {
-        return new ArrayList<>();
+        vet.sort((a, b) -> Integer.compare(a, b));
+        return vet;
     }
 
     static List<Integer> reverse(List<Integer> vet) {
@@ -90,4 +95,5 @@ public class Shell {
     }
 
     static Scanner scanner = new Scanner(System.in);
+    static List<Integer> list;
 }

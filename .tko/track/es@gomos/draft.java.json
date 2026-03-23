@@ -1,6 +1,7 @@
 {
     "patches": [
         {
+<<<<<<< Updated upstream
             "label": "2026-03-22_11-06-12",
             "content": "@@ -1412,32 +1412,33 @@\n i=0; i%3Cqtd; i++)\n+%7B\n %0A            str\n@@ -1487,41 +1487,9 @@\n     \n-%0A        System.out.println(str);\n+%7D\n %0A   \n",
             "lines": "57"
@@ -24,6 +25,26 @@
             "label": "2026-03-22_11-16-49",
             "content": "import java.util.*;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    static int[] eixoX;\n    static int[] eixoY;\n    static  int qtd;\n    static String s;\n\n    public static void move(String str){\n        switch (s) {\n            case \"R\" -> {\n                eixoX[0] = eixoX[0] + 1;\n                for(int i=1; i<qtd; i++)\n                    eixoX[i] = eixoX[i-1] - 1;\n            }\n            case \"L\"-> {\n                eixoX[0] = eixoX[0] - 1;\n                for(int i=1; i<qtd; i++)\n                    eixoX[i] = eixoX[i-1] + 1;\n            }\n            case \"D\"-> {\n                eixoY[0] = eixoY[0] + 1;\n                for(int i=1; i<qtd; i++)\n                    eixoY[i] = eixoY[i-1] - 1;\n            }\n            case \"U\" -> {\n                eixoY[0] = eixoY[0] - 1;\n                for(int i=1; i<qtd; i++)\n                    eixoY[i] = eixoY[i-1] + 1;\n            }\n            default -> System.out.println(\"erro\");       \n        }\n\n    }\n    public static void main(String args[]) {\n        qtd = scan.nextInt();\n         s = scan.nextLine();\n        eixoX = new int[qtd];\n        eixoY = new int[qtd];\n        \n        for(int i=0; i<qtd; i++){\n            eixoX[i] = scan.nextInt();\n            eixoY[i] = scan.nextInt();\n        }\n\n        move(s);\n\n        String str = \"\";\n        for(int i=0; i<qtd; i++)\n            str += eixoX[i] + \" \" + eixoY[i] + \"\\n\";\n        \n        System.out.println(str);\n    }\n}\n\n",
             "lines": "56"
+=======
+            "label": "2026-03-17_19-43-35",
+            "content": "@@ -289,25 +289,25 @@\n X%5Bi%5D = eixoX\n-;\n+ \n %0A        %7D%0A \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-17_19-43-45",
+            "content": "@@ -297,13 +297,8 @@\n ixoX\n-%5Bi+1%5D\n ;%0A  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-17_19-44-01",
+            "content": "@@ -240,23 +240,21 @@\n t i=\n-qtd-1; i%3E0; i--\n+0; i%3Cqtd; i++\n )%7B%0A \n@@ -299,9 +299,9 @@\n oX%5Bi\n--\n++\n 1%5D;%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-23_18-08-26",
+            "content": "import java.util.*;\n\npublic class draft {\n    static Scanner scan =  new Scanner(System.in);\n    static int[] eixoX;\n    static int[] eixoY;\n    static  int qtd;\n    static String s;\n\n    public static void move(String str){\n        for(int i=qtd-1; i>0; i--){\n            \n            eixoX[i] = eixoX[i-1];\n        }\n    }\n    public static void main(String args[]) {\n        qtd = scan.nextInt();\n        scan.nextLine();\n        s = scan.nextLine();\n        eixoX = new int[qtd];\n        eixoY = new int[qtd];\n        \n        for(int i=0; i<qtd; i++){\n            eixoX[i] = scan.nextInt();\n            eixoY[i] = scan.nextInt();\n        }\n\n        move(s);\n    }\n}\n\n",
+            "lines": "31"
+>>>>>>> Stashed changes
         }
     ]
 }

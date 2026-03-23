@@ -10,12 +10,13 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-17 18:18:26'
+  cache_timestamp: '2026-03-23 17:56:53'
   quests: null
   tasks: null
 expanded:
-- es@main-quest
 - es@análise
+- es@main-quest
+- es@recursão
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
@@ -23,6 +24,10 @@ tasks:
   es@pedra: '{rate:100}'
   es@casais: '{rate:100}'
   es@baruel: '{rate:100}'
+  es@princesa: '{rate:100}'
+  es@apagando: '{rate:100}'
+  es@buscas: '{rate:100}'
+  es@rotacoes: '{rate:100}'
 flags:
   painel: 1
   quests: 0
@@ -31,4 +36,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@princesa
+selected: es@especiais
