@@ -22,7 +22,7 @@ public class Shell {
     }
 
     static List<Integer> sort_stress(List<Integer> vet) {
-        vet.sort((a, b) -> Integer.compare(a, b));
+        vet.sort((a, b) -> Integer.compare(Math.abs(a), Math.abs(b)));
         return vet;
     }
 
