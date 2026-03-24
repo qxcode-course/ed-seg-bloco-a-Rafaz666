@@ -2,8 +2,68 @@
     "patches": [
         {
             "label": "2026-03-20_12-33-55",
-            "content": "import java.util.Arrays;\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Shell {\n    static List<Integer> get_men(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static List<Integer> get_calm_women(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static List<Integer> sort(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static List<Integer> sort_stress(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static List<Integer> reverse(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static boolean exists(List<Integer> vet, int value) {\n        return false;\n    }\n\n    static List<Integer> unique(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    static List<Integer> repeated(List<Integer> vet) {\n        return new ArrayList<>();\n    }\n\n    public static void main(String[] _args) {\n        while (true) {\n            var line = scanner.nextLine();\n            var args = line.split(\" \");\n            var cmd = args[0];\n            System.out.println(\"$\" + line);\n\n            if (cmd.equals(\"end\")) {\n                break;\n            } else if (cmd.equals(\"get_men\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + get_men(array));\n            } else if (cmd.equals(\"get_calm_women\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + get_calm_women(array));\n            } else if (cmd.equals(\"sort\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + sort(array));\n            } else if (cmd.equals(\"sort_stress\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + sort_stress(array));\n            } else if (cmd.equals(\"reverse\")) {\n                var array = strToVet(args[1]);\n                var other = reverse(array);\n                System.out.println(\"\" + array);\n                System.out.println(\"\" + other);\n            } else if (cmd.equals(\"exists\")) {\n                var array = strToVet(args[1]);\n                var value = Integer.parseInt(args[2]);\n                System.out.println(\"\" + exists(array, value));\n            } else if (cmd.equals(\"unique\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + unique(array));\n            } else if (cmd.equals(\"repeated\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + repeated(array));\n            } else {\n                System.out.println(\"Invalid command\");\n            }\n        }\n    }\n\n    public static List<Integer> strToVet(String s) {\n        if (s.equals(\"[]\"))\n            return new ArrayList<>();\n        List<String> parts = Arrays.asList(s.substring(1, s.length() - 1).split(\",\"));\n        List<Integer> result = new ArrayList<>();\n        for (String part : parts)\n            result.add(Integer.parseInt(part.trim()));\n        return result;\n    }\n\n    static Scanner scanner = new Scanner(System.in);\n}\n",
+            "content": "@@ -15,20 +15,17 @@\n il.Array\n-List\n+s\n ;%0Aimport\n@@ -32,32 +32,65 @@\n  java.util.Array\n+List;%0Aimport java.util.Collection\n s;%0Aimport java.u\n@@ -128,44 +128,8 @@\n ner;\n-%0Aimport java.util.stream.Collectors;\n %0A%0Apu\n@@ -213,283 +213,134 @@\n     \n-vet = vet.stream().filter(x -%3E x%3E=0).collect(Collectors.toList());%0A        vet = sort(vet);%0A        return vet;%0A    %7D%0A%0A    static List%3CInteger%3E get_calm_women(List%3CInteger%3E vet) %7B%0A        vet = vet.stream().filter(x -%3E x %3C 10).collect(Collectors.toList());%0A        return vet\n+return new ArrayList%3C%3E();%0A    %7D%0A%0A    static List%3CInteger%3E get_calm_women(List%3CInteger%3E vet) %7B%0A        return new ArrayList%3C%3E()\n ;%0A  \n@@ -407,69 +407,32 @@\n     \n-vet.sort((a, b) -%3E Integer.compare(a, b));%0A        return vet\n+return new ArrayList%3C%3E()\n ;%0A  \n@@ -506,89 +506,32 @@\n     \n-vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A        return vet\n+return new ArrayList%3C%3E()\n ;%0A  \n@@ -3109,37 +3109,6 @@\n n);%0A\n-    static List%3CInteger%3E list;%0A\n %7D%0A\n",
             "lines": "93"
+        },
+        {
+            "label": "2026-03-24_18-19-38",
+            "content": "@@ -50,38 +50,8 @@\n ys;%0A\n-import java.util.Collections;%0A\n impo\n@@ -206,32 +206,38 @@\n %3E vet) %7B%0A       \n+ vet =\n  vet.stream().fi\n@@ -394,32 +394,38 @@\n %3E vet) %7B%0A       \n+ vet =\n  vet.stream().fi\n@@ -438,16 +438,17 @@\n  -%3E x %3C \n+1\n 0).colle\n@@ -476,33 +476,8 @@\n ));%0A\n-        vet = sort(vet);%0A\n     \n@@ -850,64 +850,32 @@\n     \n-vet.sort(Collections.reverseOrder());%0A        return vet\n+return new ArrayList%3C%3E()\n ;%0A  \n@@ -1031,376 +1031,129 @@\n     \n-vet.stream().distinct().collect(Collectors.toList());%0A        return vet;%0A    %7D%0A%0A    static List%3CInteger%3E repeated(List%3CInteger%3E vet) %7B%0A        List%3CInteger%3E newvet = new ArrayList%3C%3E();%0A        for(Integer i=0; i %3C vet.size(); i++)%7B%0A            if(vet.get(i).equals(vet.get(i+1)))%0A                newvet.add(vet.get(i));%0A        %7D%0A        return sort(newvet);%0A        \n+return new ArrayList%3C%3E();%0A    %7D%0A%0A    static List%3CInteger%3E repeated(List%3CInteger%3E vet) %7B%0A        return new ArrayList%3C%3E();\n %0A   \n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-03-24_18-37-52",
+            "content": "@@ -310,30 +310,29 @@\n ));%0A        \n-return\n+vet =\n  sort(vet);%0A\n@@ -327,24 +327,44 @@\n  sort(vet);%0A\n+        return vet;%0A\n     %7D%0A%0A    s\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-03-24_18-39-03",
+            "content": "@@ -248,14 +248,8 @@\n     \n- vet =\n  vet\n@@ -470,38 +470,37 @@\n ist());%0A        \n-return\n+vet =\n  sort(vet);%0A    \n@@ -487,32 +487,52 @@\n et = sort(vet);%0A\n+        return vet;%0A\n     %7D%0A%0A    stati\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-03-24_18-41-02",
+            "content": "@@ -237,38 +237,37 @@\n  vet) %7B%0A        \n-return\n+vet =\n  vet.stream().fi\n@@ -304,32 +304,58 @@\n tors.toList());%0A\n+        return sort(vet);%0A\n     %7D%0A%0A    stati\n@@ -414,23 +414,16 @@\n         \n-return \n vet.stre\n@@ -472,24 +472,50 @@\n .toList());%0A\n+        return sort(vet);%0A\n     %7D%0A%0A    s\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-03-24_18-43-16",
+            "content": "@@ -812,16 +812,25 @@\n         \n+vet.sort(\n Collecti\n@@ -840,20 +840,23 @@\n .reverse\n-(vet\n+Order()\n );%0A     \n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-03-24_18-48-21",
+            "content": "@@ -808,42 +808,8 @@\n ) %7B%0A\n-        List%3CInteger%3E copy = vet;%0A\n     \n@@ -832,20 +832,19 @@\n reverse(\n-copy\n+vet\n );%0A     \n@@ -857,12 +857,11 @@\n urn \n-copy\n+vet\n ;%0A  \n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-03-24_18-50-08",
+            "content": "@@ -796,32 +796,66 @@\n Integer%3E vet) %7B%0A\n+        List%3CInteger%3E copy = vet;%0A\n         Collecti\n@@ -866,19 +866,20 @@\n reverse(\n-vet\n+copy\n );%0A     \n@@ -880,35 +880,36 @@\n %0A        return \n-vet\n+copy\n ;%0A    %7D%0A%0A    sta\n@@ -2452,76 +2452,76 @@\n     \n-System.out.println(%22%22 + array);%0A                var other = reverse(\n+var other = reverse(array);%0A                System.out.println(%22%22 + \n arra\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-03-24_18-54-52",
+            "content": "@@ -424,26 +424,8 @@\n x -%3E\n- Math.abs(x)%3C10 &&\n  x %3C\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-03-24_18-56-49",
+            "content": "@@ -1034,14 +1034,8 @@\n     \n- vet =\n  vet\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-03-24_18-57-24",
+            "content": "@@ -1274,43 +1274,8 @@\n +)%7B%0A\n-            if(i%3Cvet.size()-1)%0A    \n     \n@@ -1318,20 +1318,16 @@\n (i+1)))%0A\n-    \n         \n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-03-24_19-01-03",
+            "content": "@@ -1227,27 +1227,8 @@\n ();%0A\n-        sort(vet);%0A\n     \n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-03-24_19-04-27",
+            "content": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Scanner;\nimport java.util.stream.Collectors;\n\npublic class Shell {\n    static List<Integer> get_men(List<Integer> vet) {\n        return vet.stream().filter(x -> x>=0).collect(Collectors.toList());\n    }\n\n    static List<Integer> get_calm_women(List<Integer> vet) {\n        return vet.stream().filter(x -> Math.abs(x)<10 && x < 0).collect(Collectors.toList());\n    }\n\n    static List<Integer> sort(List<Integer> vet) {\n        vet.sort((a, b) -> Integer.compare(a, b));\n        return vet;\n    }\n\n    static List<Integer> sort_stress(List<Integer> vet) {\n        vet.sort((a, b) -> Integer.compare(Math.abs(a), Math.abs(b)));\n        return vet;\n    }\n\n    static List<Integer> reverse(List<Integer> vet) {\n        Collections.reverse(vet);\n        return vet;\n    }\n\n    static boolean exists(List<Integer> vet, int value) {\n        return false;\n    }\n\n    static List<Integer> unique(List<Integer> vet) {\n        vet = vet.stream().distinct().collect(Collectors.toList());\n        return vet;\n    }\n\n    static List<Integer> repeated(List<Integer> vet) {\n        List<Integer> newvet = new ArrayList<>();\n        sort(vet);\n        for(Integer i=0; i < vet.size(); i++){\n            if(i<vet.size()-1)\n                if(vet.get(i).equals(vet.get(i+1)))\n                    newvet.add(vet.get(i));\n        }\n        return sort(newvet);\n        \n    }\n\n    public static void main(String[] _args) {\n        while (true) {\n            var line = scanner.nextLine();\n            var args = line.split(\" \");\n            var cmd = args[0];\n            System.out.println(\"$\" + line);\n\n            if (cmd.equals(\"end\")) {\n                break;\n            } else if (cmd.equals(\"get_men\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + get_men(array));\n            } else if (cmd.equals(\"get_calm_women\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + get_calm_women(array));\n            } else if (cmd.equals(\"sort\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + sort(array));\n            } else if (cmd.equals(\"sort_stress\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + sort_stress(array));\n            } else if (cmd.equals(\"reverse\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + array);\n                var other = reverse(array);\n                System.out.println(\"\" + other);\n            } else if (cmd.equals(\"exists\")) {\n                var array = strToVet(args[1]);\n                var value = Integer.parseInt(args[2]);\n                System.out.println(\"\" + exists(array, value));\n            } else if (cmd.equals(\"unique\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + unique(array));\n            } else if (cmd.equals(\"repeated\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + repeated(array));\n            } else {\n                System.out.println(\"Invalid command\");\n            }\n        }\n    }\n\n    public static List<Integer> strToVet(String s) {\n        if (s.equals(\"[]\"))\n            return new ArrayList<>();\n        List<String> parts = Arrays.asList(s.substring(1, s.length() - 1).split(\",\"));\n        List<Integer> result = new ArrayList<>();\n        for (String part : parts)\n            result.add(Integer.parseInt(part.trim()));\n        return result;\n    }\n\n    static Scanner scanner = new Scanner(System.in);\n    static List<Integer> list;\n}\n",
+            "lines": "107"
         }
     ]
 }

@@ -1,19 +1,17 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Shell {
     static List<Integer> get_men(List<Integer> vet) {
-        vet = vet.stream().filter(x -> x>=0).collect(Collectors.toList());
-        vet = sort(vet);
-        return vet;
+        return vet.stream().filter(x -> x>=0).collect(Collectors.toList());
     }
 
     static List<Integer> get_calm_women(List<Integer> vet) {
-        vet = vet.stream().filter(x -> x < 10).collect(Collectors.toList());
-        return vet;
+        return vet.stream().filter(x -> Math.abs(x)<10 && x < 0).collect(Collectors.toList());
     }
 
     static List<Integer> sort(List<Integer> vet) {
@@ -27,7 +25,8 @@ public class Shell {
     }
 
     static List<Integer> reverse(List<Integer> vet) {
-        return new ArrayList<>();
+        Collections.reverse(vet);
+        return vet;
     }
 
     static boolean exists(List<Integer> vet, int value) {
@@ -35,11 +34,20 @@ public class Shell {
     }
 
     static List<Integer> unique(List<Integer> vet) {
-        return new ArrayList<>();
+        vet = vet.stream().distinct().collect(Collectors.toList());
+        return vet;
     }
 
     static List<Integer> repeated(List<Integer> vet) {
-        return new ArrayList<>();
+        List<Integer> newvet = new ArrayList<>();
+        sort(vet);
+        for(Integer i=0; i < vet.size(); i++){
+            if(i<vet.size()-1)
+                if(vet.get(i).equals(vet.get(i+1)))
+                    newvet.add(vet.get(i));
+        }
+        return sort(newvet);
+        
     }
 
     public static void main(String[] _args) {
@@ -65,8 +73,8 @@ public class Shell {
                 System.out.println("" + sort_stress(array));
             } else if (cmd.equals("reverse")) {
                 var array = strToVet(args[1]);
-                var other = reverse(array);
                 System.out.println("" + array);
+                var other = reverse(array);
                 System.out.println("" + other);
             } else if (cmd.equals("exists")) {
                 var array = strToVet(args[1]);
