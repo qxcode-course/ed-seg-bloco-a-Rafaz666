@@ -112,7 +112,36 @@ class Student {
     }
 
     public static int couple(List<Integer> vet) {
-        return 0;
+
+        if(vet.isEmpty())
+            return 0;
+        
+        int count = 0;
+        List<Integer> compare = new ArrayList<>(vet);
+        List<Integer> list = new ArrayList<>(vet);
+        compare = vet.stream().distinct().collect(Collectors.toList());
+
+        for(int i=0; i<compare.size();i++){
+            boolean removed = false;
+            for(int j=0; j<list.size();j++){
+                if(removed == false)
+                    if(compare.get(i).equals(list.get(j))){
+                        list.remove(j);
+                        removed = true;
+                    }
+                else
+                    if(compare.get(i)-list.get(j)==0){
+                        count++;
+                        break;
+                    }
+                    else if(list.get(j)-compare.get(i)==0){
+                        count++;
+                        break;
+                    }
+
+            }
+        }
+        return count;
     }
 
     public static boolean hasSubseq(List<Integer> vet, List<Integer> seq, int pos) {
