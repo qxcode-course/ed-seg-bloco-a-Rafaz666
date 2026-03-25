@@ -62,7 +62,24 @@ class Student {
     }
 
     public static List<Integer> mnext(List<Integer> vet) {
-        return new ArrayList<Integer>();
+         if(vet.isEmpty())
+            return new ArrayList<>();
+        
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i=0; i<vet.size()-1; i++){
+            if(i<vet.size()-1 && vet.get(i) > 0 && vet.get(i+1) < 0){
+                list.add(1);
+            }
+            else if(i>0 && vet.get(i) > 0 && vet.get(i-1) < 0){
+                list.add(1);
+            }
+            else{
+                list.add(0);
+            }
+        }
+
+        return list;
     }
 
     private static boolean hasWoman(List<Integer> vet, int size, int index) {
