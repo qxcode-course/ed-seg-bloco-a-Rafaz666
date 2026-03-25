@@ -67,7 +67,7 @@ class Student {
         
         List<Integer> list = new ArrayList<>();
         
-        for(int i=0; i<vet.size()-1; i++){
+        for(int i=0; i<vet.size(); i++){
             if(i<vet.size()-1 && vet.get(i) > 0 && vet.get(i+1) < 0){
                 list.add(1);
             }
@@ -78,7 +78,6 @@ class Student {
                 list.add(0);
             }
         }
-
         return list;
     }
 
@@ -87,7 +86,29 @@ class Student {
     }
 
     public static List<Integer> alone(List<Integer> vet) {
-        return new ArrayList<Integer>();
+        if(vet.isEmpty())
+            return new ArrayList<>();
+        
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i=0; i<vet.size(); i++){
+            if(vet.get(i)>0){
+                if(vet.size()==1)
+                    list.add(1);
+                else if(i==0 && vet.get(i+1)>0)
+                    list.add(1);
+                else if(i==vet.size()-1 && vet.get(i-1)>0)
+                    list.add(1);
+                else if(i>0 && vet.get(i-1)>0 && vet.get(i+1)>0)
+                    list.add(1);
+                else
+                    list.add(0);
+            }
+            else{
+                list.add(0);
+            }
+        }
+        return list;
     }
 
     public static int couple(List<Integer> vet) {
