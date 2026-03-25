@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 class Pair {
     Integer first;
@@ -21,11 +21,44 @@ class Pair {
 
 class Student {
     public static List<Pair> occurr(List<Integer> vet) {
-        return new ArrayList<Pair>();
+         if(vet.isEmpty())
+            return new ArrayList<>();
+        
+        List<Pair> list = new ArrayList<>();
+        List<Integer> compare;
+        vet.sort((a, b) -> Integer.compare(Math.abs(a), Math.abs(b)));
+        compare = vet.stream().map(Math::abs).distinct().collect(Collectors.toList());
+        
+        for(Integer i : compare){
+            Integer j = Collections.frequency(vet.stream().map(Math::abs).toList(), i);
+            list.add(new Pair(i, j));
+        }
+        return list;
     }
 
     public static List<Pair> teams(List<Integer> vet) {
-        return new ArrayList<Pair>();
+        if(vet.isEmpty())
+            return new ArrayList<>();
+        
+        List<Pair> list = new ArrayList<>();
+        List<Integer> compare;
+
+        compare = vet.stream().map(Math::abs).collect(Collectors.toList());
+        
+        for(int i=0, count=1; i<compare.size(); i++){
+            if(i<compare.size()-1 && compare.get(i).equals(compare.get(i+1))){
+                count++;
+            }
+            else if (i==compare.size()-1){
+                list.add(new Pair(compare.get(i), count));
+                count = 1;
+            }
+            else{
+                list.add(new Pair(compare.get(i), count));
+                count = 1;
+            }
+        }
+        return list;    
     }
 
     public static List<Integer> mnext(List<Integer> vet) {

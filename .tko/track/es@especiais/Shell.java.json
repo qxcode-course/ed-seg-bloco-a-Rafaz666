@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_20-06-42",
+            "content": "@@ -819,25 +819,16 @@\n ew Pair(\n-Math.abs(\n vet.get(\n@@ -829,17 +829,16 @@\n t.get(i)\n-)\n , count)\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-03-24_20-07-50",
+            "content": "@@ -651,17 +651,16 @@\n    if(i%3C\n-=\n vet.size\n@@ -903,46 +903,8 @@\n   %7D%0A\n-            else%0A                list%0A\n     \n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-03-24_20-19-36",
+            "content": "@@ -892,32 +892,70 @@\n               %7D%0A\n+            else%0A                list%0A\n         %7D%0A      \n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-03-24_20-19-54",
+            "content": "@@ -651,16 +651,17 @@\n    if(i%3C\n+=\n vet.size\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-03-24_20-20-05",
+            "content": "@@ -903,165 +903,8 @@\n   %7D%0A\n-            else if(Math.abs(vet.get(i))!=(Math.abs(vet.get(i-1))) && i==vet.size()-1)%7B%0A                list.add(new Pair(vet.get(i), count));%0A            %7D%0A\n     \n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-03-24_20-28-53",
+            "content": "@@ -1162,617 +1162,36 @@\n     \n-List%3CPair%3E list = new ArrayList%3C%3E();%0A        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A        for(int i=0, count=1; i%3Cvet.size(); i++)%7B%0A            if(i%3Cvet.size()-1)%0A                if(Math.abs(vet.get(i))==Math.abs(vet.get(i+1)))%0A                    count++;%0A                else%7B%0A                    list.add(new Pair(Math.abs(vet.get(i)), count));%0A                    count = 1;%0A                %7D%0A            else if(Math.abs(vet.get(i))!=(Math.abs(vet.get(i-1))) && i==vet.size()-1)%7B%0A                list.add(new Pair(vet.get(i), count));%0A            %7D%0A        %7D%0A        return list\n+return new ArrayList%3CPair%3E()\n ;%0A  \n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-03-24_20-30-32",
+            "content": "@@ -1654,15 +1654,8 @@\n ) &&\n- i%3E0 &&\n  i==\n",
+            "lines": "154"
+        },
+        {
+            "label": "2026-03-24_20-30-55",
+            "content": "@@ -1158,16 +1158,633 @@\n         \n+List%3CPair%3E list = new ArrayList%3C%3E();%0A        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A        for(int i=0, count=1; i%3Cvet.size(); i++)%7B%0A            if(i%3Cvet.size()-1)%0A                if(Math.abs(vet.get(i))==Math.abs(vet.get(i+1)))%0A                    count++;%0A                else%7B%0A                    list.add(new Pair(Math.abs(vet.get(i)), count));%0A                    count = 1;%0A                %7D%0A            else if(Math.abs(vet.get(i))!=(Math.abs(vet.get(i-1))) && i%3E0 && i==vet.size()-1)%7B%0A                list.add(new Pair(vet.get(i), count));%0A            %7D%0A        %7D%0A        return list;\n %0A    %7D%0A%0A\n",
+            "lines": "154"
+        },
+        {
+            "label": "2026-03-24_20-31-16",
+            "content": "@@ -94,16 +94,64 @@\n rayList;\n+%0Aimport java.util.Map;%0Aimport java.util.HashMap;\n %0A%0Aclass \n@@ -588,81 +588,8 @@\n ));%0A\n-        %0A        if(vet.isEmpty())%0A                return list;%0A        %0A\n     \n@@ -1146,32 +1146,32 @@\n ger%3E vet) %7B%0A\n+\n         \n List%3CPair%3E l\n@@ -1162,685 +1162,8 @@\n     \n-List%3CPair%3E list = new ArrayList%3C%3E();%0A        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A        %0A        if(vet.isEmpty())%0A                return list;%0A        %0A        for(int i=0, count=1; i%3Cvet.size(); i++)%7B%0A            if(i%3Cvet.size()-1)%0A                if(Math.abs(vet.get(i))==Math.abs(vet.get(i+1)))%0A                    count++;%0A                else%7B%0A                    list.add(new Pair(Math.abs(vet.get(i)), count));%0A                    count = 1;%0A                %7D%0A            else if(Math.abs(vet.get(i))!=(Math.abs(vet.get(i-1))) && i==vet.size()-1)%7B%0A                list.add(new Pair(vet.get(i), count));%0A        %7D    %0A        return list;    \n %0A   \n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-03-24_20-42-04",
+            "content": "@@ -1042,33 +1042,24 @@\n dd(new Pair(\n-Math.abs(\n vet.get(i)),\n@@ -1048,33 +1048,32 @@\n  Pair(vet.get(i)\n-)\n , count));%0A     \n@@ -1757,32 +1757,33 @@\n i==vet.size()-1)\n+%7B\n %0A               \n@@ -1797,33 +1797,24 @@\n dd(new Pair(\n-Math.abs(\n vet.get(i)),\n@@ -1803,33 +1803,32 @@\n  Pair(vet.get(i)\n-)\n , count));%0A     \n@@ -1826,21 +1826,8 @@\n ));%0A\n-            %0A\n     \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-24_20-44-25",
+            "content": "@@ -98,44 +98,8 @@\n ist;\n-%0Aimport java.util.stream.Collectors;\n %0A%0Acl\n@@ -1177,32 +1177,157 @@\n Integer%3E vet) %7B%0A\n+        List%3CPair%3E list = new ArrayList%3C%3E();%0A        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A        %0A\n         if(vet.i\n@@ -1352,32 +1352,23 @@\n     \n+    \n return \n-new ArrayList%3C%3E()\n+list\n ;%0A  \n@@ -1386,145 +1386,264 @@\n     \n-List%3CPair%3E list = new ArrayList%3C%3E();%0A        List%3CInteger%3E compare;%0A        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b\n+for(int i=0, count=1; i%3Cvet.size(); i++)%7B%0A            if(i%3Cvet.size()-1)%0A                if(Math.abs(vet.get(i))==Math.abs(vet.get(i+1)))%0A                    count++;%0A                else%7B%0A                    list.add(new Pair(Math.abs(vet.get(i)), count\n ))\n-)\n ;%0A  \n@@ -1652,72 +1652,205 @@\n     \n-compare = vet.stream().distinct().collect(Collectors.toList());%0A\n+            count = 1;%0A                %7D%0A            else if(Math.abs(vet.get(i))!=(Math.abs(vet.get(i-1))) && i==vet.size()-1)%0A                list.add(new Pair(Math.abs(vet.get(i)), count));%0A    \n     \n@@ -1854,37 +1854,33 @@\n        %0A        \n-%0A    \n+%7D\n     %0A        ret\n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-03-24_20-55-56",
+            "content": "@@ -99,38 +99,8 @@\n st;%0A\n-import java.util.Collections;%0A\n impo\n@@ -460,82 +460,8 @@\n ) %7B%0A\n-         if(vet.isEmpty())%0A            return new ArrayList%3C%3E();%0A        %0A\n     \n@@ -505,39 +505,8 @@\n ();%0A\n-        List%3CInteger%3E compare;%0A\n     \n@@ -584,85 +584,246 @@\n     \n-compare = vet.stream().map\n+%0A        if(vet.isEmpty())%0A                return list;%0A        %0A        for(int i=0, count=1; i%3Cvet.size(); i++)%7B%0A            if(i%3Cvet.size()-1)%0A                if\n (Math\n-::abs).distinct().collect(Collectors.toList())\n+.abs(vet.get(i))==Math.abs(vet.get(i+1)))%0A                    count++\n ;%0A  \n@@ -832,130 +832,227 @@\n     \n-%0A        for(Integer i : compare)%7B%0A            Integer j = Collections.frequency(vet.stream().map\n+        else%7B%0A                    list.add(new Pair(Math.abs(vet.get(i)), count));%0A                    count = 1;%0A                %7D%0A            else if(Math.abs(vet.get(i))!=\n (Math\n-::abs).toList(), i);\n+.abs(vet.get(i-1))) && i==vet.size()-1)%7B\n %0A   \n@@ -1052,32 +1052,36 @@\n 1)%7B%0A            \n+    \n list.add(new Pai\n@@ -1074,36 +1074,59 @@\n st.add(new Pair(\n-i, j\n+Math.abs(vet.get(i)), count\n ));%0A        %7D%0A  \n@@ -1113,33 +1113,68 @@\n ount));%0A        \n-%7D\n+    %7D%0A        %7D%0A        return list;\n %0A    %7D%0A%0A    publ\n@@ -1472,31 +1472,16 @@\n tream().\n-map(Math::abs).\n distinct\n@@ -1534,169 +1534,17 @@\n     \n-for(Integer i : compare)%7B%0A            Integer j = Collections.frequency(vet.stream().map(Math::abs).toList(), i);%0A            list.add(new Pair(i, j));%0A        %7D\n+%0A        \n %0A   \n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-03-24_22-11-21",
+            "content": "@@ -977,29 +977,8 @@\n   %7D%0A\n-        return list;%0A\n     \n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-03-24_22-11-57",
+            "content": "@@ -1198,32 +1198,103 @@\n teger%3E compare;%0A\n+        vet.sort((a, b) -%3E Integer.compare(Math.abs(a), Math.abs(b)));%0A\n         compare \n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-03-24_22-13-42",
+            "content": "@@ -1206,17 +1206,16 @@\n ompare;%0A\n-%0A\n         \n@@ -1252,16 +1252,27 @@\n h::abs).\n+distinct().\n collect(\n@@ -1318,427 +1318,155 @@\n for(\n-int i=0, count=1; i%3Ccompare.size(); i++)%7B%0A            if(compare.get(i).equals(compare.get(+1)) && i%3Ccompare.size()-1)%7B%0A                count++;%0A            %7D%0A            else if (i==compare.size()-1)%7B%0A                list.add(new Pair(compare.get(i), count));%0A                count = 1;%0A            %7D%0A            else%7B%0A                list.add(new Pair(compare.get(i), count));%0A                count = 1;%0A            %7D\n+Integer i : compare)%7B%0A            Integer j = Collections.frequency(vet.stream().map(Math::abs).toList(), i);%0A            list.add(new Pair(i, j));\n %0A   \n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-03-24_22-29-53",
+            "content": "@@ -1365,31 +1365,8 @@\n  if(\n- i%3Ccompare.size()-1 && \n comp\n@@ -1399,16 +1399,38 @@\n get(+1))\n+ && i%3Ccompare.size()-1\n )%7B%0A     \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-24_22-32-58",
+            "content": "@@ -1361,16 +1361,17 @@\n      if(\n+ \n i%3Ccompar\n@@ -1675,19 +1675,50 @@\n get(i), \n-1))\n+count));%0A                count = 1\n ;%0A      \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-24_22-38-21",
+            "content": "@@ -1683,35 +1683,8 @@\n ));%0A\n-                count = 1;%0A\n     \n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-03-24_22-38-52",
+            "content": "@@ -1666,37 +1666,33 @@\n compare.get(i), \n-count\n+1\n ));%0A            \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-24_22-41-50",
+            "content": "@@ -1417,17 +1417,16 @@\n are.get(\n-i\n +1)))%7B%0A \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-24_22-42-56",
+            "content": "import java.util.Scanner;\nimport java.util.List;\nimport java.util.Arrays;\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.stream.Collectors;\n\nclass Pair {\n    Integer first;\n    Integer second;\n\n    Pair(Integer first, Integer second) {\n        this.first = first;\n        this.second = second;\n    }\n\n    public String toString() {\n        return \"(\" + first + \", \" + second + \")\";\n    }\n};\n\nclass Student {\n    public static List<Pair> occurr(List<Integer> vet) {\n         if(vet.isEmpty())\n            return new ArrayList<>();\n        \n        List<Pair> list = new ArrayList<>();\n        List<Integer> compare;\n        vet.sort((a, b) -> Integer.compare(Math.abs(a), Math.abs(b)));\n        compare = vet.stream().map(Math::abs).distinct().collect(Collectors.toList());\n        \n        for(Integer i : compare){\n            Integer j = Collections.frequency(vet.stream().map(Math::abs).toList(), i);\n            list.add(new Pair(i, j));\n        }\n        return list;\n    }\n\n    public static List<Pair> teams(List<Integer> vet) {\n        if(vet.isEmpty())\n            return new ArrayList<>();\n        \n        List<Pair> list = new ArrayList<>();\n        List<Integer> compare;\n\n        compare = vet.stream().map(Math::abs).collect(Collectors.toList());\n        \n        for(int i=0, count=1; i<compare.size(); i++){\n            if(i<compare.size()-1 && compare.get(i).equals(compare.get(i+1))){\n                count++;\n            }\n            else if (i==compare.size()-1){\n                list.add(new Pair(compare.get(i), count));\n                count = 1;\n            }\n            else{\n                list.add(new Pair(compare.get(i), count));\n                count = 1;\n            }\n        }\n        return list;    \n    }\n\n    public static List<Integer> mnext(List<Integer> vet) {\n        return new ArrayList<Integer>();\n    }\n\n    private static boolean hasWoman(List<Integer> vet, int size, int index) {\n        return true;\n    }\n\n    public static List<Integer> alone(List<Integer> vet) {\n        return new ArrayList<Integer>();\n    }\n\n    public static int couple(List<Integer> vet) {\n        return 0;\n    }\n\n    public static boolean hasSubseq(List<Integer> vet, List<Integer> seq, int pos) {\n        return true;\n    }\n\n    public static int subseq(List<Integer> vet, List<Integer> seq) {\n        return -1;\n    }\n\n    public static List<Integer> erase(List<Integer> vet, List<Integer> pos_list) {\n        return new ArrayList<Integer>();\n    }\n\n    public static List<Integer> clear(List<Integer> vet, int value) {\n        return new ArrayList<Integer>();\n    }\n}\n\npublic class Shell {\n    public static void main(String[] _args) {\n        while (true) {\n            var line = scanner.nextLine();\n            var args = line.split(\" \");\n            System.out.println('$' + line);\n\n            if (args[0].equals(\"end\")) {\n                break;\n            }\n            else if (args[0].equals(\"occurr\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + Student.occurr(array));\n            }\n            else if (args[0].equals(\"teams\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + Student.teams(array));\n            }\n            else if (args[0].equals(\"mnext\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + Student.mnext(array));\n            }\n            else if (args[0].equals(\"alone\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + Student.alone(array));\n            }\n            else if (args[0].equals(\"erase\")) {\n                var array = strToVet(args[1]);\n                var positions = strToVet(args[2]);\n                System.out.println(\"\" + Student.erase(array, positions));\n            }\n            else if (args[0].equals(\"clear\")) {\n                var array = strToVet(args[1]);\n                var value = Integer.parseInt(args[2]);\n                System.out.println(\"\" + Student.clear(array, value));\n            }\n            else if (args[0].equals(\"subseq\")) {\n                var array = strToVet(args[1]);\n                var seq = strToVet(args[2]);\n                System.out.println(\"\" + Student.subseq(array, seq));\n            }\n            else if (args[0].equals(\"couple\")) {\n                var array = strToVet(args[1]);\n                System.out.println(\"\" + Student.couple(array));\n            }\n            else {\n                System.out.println(\"Invalid command\");\n            }\n        }\n    }\n\n    public static List<Integer> strToVet(String s) {\n        if (s.equals(\"[]\"))\n            return new ArrayList<>();\n        List<String> parts = Arrays.asList(s.substring(1, s.length() - 1).split(\",\"));\n        List<Integer> result = new ArrayList<>();\n        for (String part : parts)\n            result.add(Integer.parseInt(part.trim()));\n        return result;\n    }\n\n    static Scanner scanner = new Scanner(System.in);\n}\n",
+            "lines": "159"
+        }
+    ]
+}
