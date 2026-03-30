@@ -24,7 +24,8 @@ tasks:
   es@baruel: '{rate:100}'
   es@princesa: '{rate:100}'
   es@apagando: '{rate:100}'
-  es@especiais: '{rate:12}'
+  es@manipulacao: '{rate:100}'
+  es@especiais: '{rate:100}'
   es@buscas: '{rate:100}'
   es@rotacoes: '{rate:100}'
 flags:
@@ -35,4 +36,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@especiais
+selected: es@alternando

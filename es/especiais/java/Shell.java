@@ -1,8 +1,8 @@
-import java.util.Scanner;
-import java.util.List;
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 class Pair {
@@ -81,10 +81,6 @@ class Student {
         return list;
     }
 
-    private static boolean hasWoman(List<Integer> vet, int size, int index) {
-        return true;
-    }
-
     public static List<Integer> alone(List<Integer> vet) {
         if(vet.isEmpty())
             return new ArrayList<>();
@@ -117,47 +113,63 @@ class Student {
             return 0;
         
         int count = 0;
-        List<Integer> compare = new ArrayList<>(vet);
-        List<Integer> list = new ArrayList<>(vet);
-        compare = vet.stream().distinct().collect(Collectors.toList());
+        List<Integer> negative;
+        List<Integer> positive;
+        positive = vet.stream().filter(x -> x>0).collect(Collectors.toList());
+        negative = vet.stream().filter(x -> x<0).collect(Collectors.toList());
 
-        for(int i=0; i<compare.size();i++){
-            boolean removed = false;
-            for(int j=0; j<list.size();j++){
-                if(removed == false)
-                    if(compare.get(i).equals(list.get(j))){
-                        list.remove(j);
-                        removed = true;
-                    }
-                else
-                    if(compare.get(i)-list.get(j)==0){
-                        count++;
-                        break;
-                    }
-                    else if(list.get(j)-compare.get(i)==0){
-                        count++;
-                        break;
-                    }
-
+        for(int i=0; i<positive.size(); i++){
+            int val = positive.get(i);
+            if(negative.contains(-positive.get(i))){
+                negative.remove(negative.indexOf(-val));
+                positive.remove(i);
+                count++;
+                i--;
             }
+
         }
         return count;
     }
 
-    public static boolean hasSubseq(List<Integer> vet, List<Integer> seq, int pos) {
-        return true;
+    public static int validSub(List<Integer> vet, List<Integer> seq, int generic){
+        for(int i=0; i<seq.size();i++){
+            if(i+generic>=vet.size()){
+                return -1;
+            }
+            if(!seq.get(i).equals(vet.get(i+generic))){
+                return -1;
+            }
+        }
+        return generic;
     }
 
     public static int subseq(List<Integer> vet, List<Integer> seq) {
+        for(int i=0; i<vet.size(); i++){
+            if(vet.get(i).equals(seq.get(0))){
+                if(validSub(vet, seq, i) == i){
+                    return i;
+                }
+            }
+        }
         return -1;
     }
 
     public static List<Integer> erase(List<Integer> vet, List<Integer> pos_list) {
-        return new ArrayList<Integer>();
+        for(int i=0; i<pos_list.size(); i++){
+            if(pos_list.get(i)<vet.size()){
+                vet.set(pos_list.get(i), null);
+            }
+        }
+        return vet = vet.stream().filter(x->x!=null).collect(Collectors.toList());
     }
 
     public static List<Integer> clear(List<Integer> vet, int value) {
-        return new ArrayList<Integer>();
+        for(int i=0; i<vet.size(); i++){
+            if(vet.get(i).equals(value)){
+                vet.set(i, null);
+            }
+        }
+        return vet = vet.stream().filter(x->x!=null).collect(Collectors.toList());
     }
 }
 
