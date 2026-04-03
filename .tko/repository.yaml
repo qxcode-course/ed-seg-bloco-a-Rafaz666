@@ -13,8 +13,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@analise-map_set-map_set-basic
-- '@es@analise-map_set-map_set-basic_sem_quest'
+- es@recursao-recursion-rec-basic
+- '@es@recursao-recursion-rec-basic_sem_quest'
 tasks:
   es@pintando: '{rate:100}'
   es@mumia: '{rate:100}'
@@ -28,6 +28,7 @@ tasks:
   es@especiais: '{rate:100}'
   es@buscas: '{rate:100}'
   es@rotacoes: '{rate:100}'
+  es@alternando: '{rate:7}'
 flags:
   painel: 1
   quests: 0
@@ -36,4 +37,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: java
-selected: es@alternando
+selected: es@treinando

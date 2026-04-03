@@ -1,0 +1,6 @@
+2026-04-03 10:39:04, MOVE, v:1, k:es@alternando, mode:PICK
+2026-04-03 10:39:07, EXEC, v:1, k:es@alternando, mode:FULL, rate:7, size:175
+2026-04-03 10:40:16, MOVE, v:1, k:es@alternando, mode:BACK
+2026-04-03 10:40:43, MOVE, v:1, k:es@treinando, mode:DOWN
+2026-04-03 10:40:46, MOVE, v:1, k:es@treinando, mode:PICK
+2026-04-03 10:40:59, MOVE, v:1, k:es@treinando, mode:BACK
