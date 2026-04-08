@@ -30,6 +30,7 @@ tasks:
   es@rotacoes: '{rate:100}'
   es@alternando: '{rate:7}'
 flags:
+<<<<<<< Updated upstream
   painel: 1
   quests: 0
   tracks: 0
@@ -38,3 +39,12 @@ flags:
   show_time: 0
 lang: java
 selected: es@treinando
+=======
+  inbox: all
+  panel: help
+  show_panel: 'true'
+  task_graph_mode: executions
+  show_time: 'true'
+lang: go
+selected: es@resto
+>>>>>>> Stashed changes

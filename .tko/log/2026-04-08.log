@@ -1,0 +1,32 @@
+2026-04-08 00:39:57, MOVE, v:1, k:es@treinando, mode:PICK
+2026-04-08 00:40:00, EXEC, v:1, k:es@treinando, mode:FULL, rate:0, size:97
+2026-04-08 00:41:16, EXEC, v:1, k:es@treinando, mode:FULL, rate:0, size:97
+2026-04-08 00:42:28, EXEC, v:1, k:es@treinando, mode:FULL, rate:0, size:96
+2026-04-08 00:43:22, EXEC, v:1, k:es@treinando, mode:FULL, rate:16, size:98
+2026-04-08 00:51:33, EXEC, v:1, k:es@treinando, mode:FULL, rate:16, size:106
+2026-04-08 00:52:14, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:106
+2026-04-08 01:03:35, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:116
+2026-04-08 01:03:52, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:116
+2026-04-08 01:04:14, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:113
+2026-04-08 01:05:41, EXEC, v:1, k:es@treinando, mode:FULL, rate:33
+2026-04-08 21:37:10, MOVE, v:1, k:es@treinando, mode:PICK
+2026-04-08 21:37:32, EXEC, v:1, k:es@treinando, mode:FULL, rate:33
+2026-04-08 21:59:19, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:116
+2026-04-08 21:59:41, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:116
+2026-04-08 22:00:39, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:113
+2026-04-08 22:09:29, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:114
+2026-04-08 22:09:47, EXEC, v:1, k:es@treinando, mode:FULL, rate:33, size:114
+2026-04-08 22:18:08, EXEC, v:1, k:es@treinando, mode:FULL, rate:50, size:112
+2026-04-08 22:30:50, EXEC, v:1, k:es@treinando, mode:FULL, rate:50, size:119
+2026-04-08 22:31:18, EXEC, v:1, k:es@treinando, mode:FULL, rate:50, size:119
+2026-04-08 22:31:37, EXEC, v:1, k:es@treinando, mode:FULL, rate:50, size:119
+2026-04-08 22:33:34, EXEC, v:1, k:es@treinando, mode:FULL, rate:50, size:119
+2026-04-08 22:33:56, EXEC, v:1, k:es@treinando, mode:FULL, rate:66, size:119
+2026-04-08 22:36:01, EXEC, v:1, k:es@treinando, mode:FULL, rate:66, size:125
+2026-04-08 22:36:15, EXEC, v:1, k:es@treinando, mode:FULL, rate:83, size:125
+2026-04-08 22:39:07, EXEC, v:1, k:es@treinando, mode:FULL, size:131, fail:COMP
+2026-04-08 22:48:30, EXEC, v:1, k:es@treinando, mode:FULL, rate:83, size:133
+2026-04-08 23:08:57, EXEC, v:1, k:es@treinando, mode:FULL, rate:83, size:145
+2026-04-08 23:10:50, EXEC, v:1, k:es@treinando, mode:FULL, rate:83, size:144
+2026-04-08 23:18:00, EXEC, v:1, k:es@treinando, mode:FULL, rate:100, size:140
+2026-04-08 23:18:24, MOVE, v:1, k:es@treinando, mode:BACK

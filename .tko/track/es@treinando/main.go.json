@@ -1,0 +1,189 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_19-41-51",
+            "content": "@@ -301,17 +301,28 @@\n  := \n-range vet\n+0; i %3C len(vet); i++\n  %7B%0A%09\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-07_19-44-20",
+            "content": "@@ -140,31 +140,8 @@\n ne)%0A\n-%0A%09if len(array) %3E 1 %7B%0A%09\n %09sli\n@@ -164,16 +164,38 @@\n rray%5B1%5D%7D\n+%0A%0A%09if len(array) %3E 1 %7B\n %0A%09%09out =\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-07_19-47-25",
+            "content": "@@ -329,51 +329,15 @@\n t%5Bi%5D\n-%0A%09%09if i %3C len(vet)-1 %7B%0A%09%09%09str\n  +\n-=\n  %22\n-,\n  %22%0A\n-%09%09%7D%0A%0A\n %09%7D%0A%0A\n@@ -346,16 +346,17 @@\n eturn %22%5B\n+ \n %22 + str \n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-07_19-52-40",
+            "content": "@@ -267,16 +267,23 @@\n %5Dstring)\n+ string\n  %7B%0A%09str \n@@ -371,28 +371,36 @@\n %09%09%7D%0A\n+%0A\n %09%7D%0A\n-%09fmt.Println(str)\n+%0A%09return %22%5B%22 + str + %22%5D%22\n %0A%7D%0A%0A\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-07_19-54-15",
+            "content": "@@ -367,10 +367,8 @@\n %0A%09%7D%0A\n-%09%0A\n %09fmt\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-07_19-54-44",
+            "content": "@@ -363,16 +363,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09\n %0A%09fmt.Pr\n@@ -382,23 +382,11 @@\n tln(\n-%22%5B%22 + str + %22%5D%22\n+str\n )%0A%7D%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-07_19-55-44",
+            "content": "@@ -377,19 +377,31 @@\n Println(\n-str\n+%22%5B%22 + str + %22%5D%22\n )%0A%7D%0A%0Afun\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-07_20-02-18",
+            "content": "@@ -307,30 +307,8 @@\n t %7B%0A\n-%09%09fmt.Println(vet%5Bi%5D)%0A\n %09%09st\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-07_20-02-51",
+            "content": "@@ -256,27 +256,30 @@\n tostr(vet %5B%5D\n+str\n in\n-t\n+g\n ) %7B%0A%09str := \n@@ -1236,19 +1236,19 @@\n %09%09tostr(\n-vet\n+str\n )%0A%09%09case\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-07_20-03-59",
+            "content": "@@ -260,22 +260,19 @@\n r(vet %5B%5D\n-str\n in\n-g\n+t\n ) %7B%0A%09str\n@@ -300,16 +300,38 @@\n e vet %7B%0A\n+%09%09fmt.Println(vet%5Bi%5D)%0A\n %09%09str +=\n@@ -1233,19 +1233,19 @@\n %09%09tostr(\n-str\n+vet\n )%0A%09%09case\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-08_00-40-00",
+            "content": "@@ -953,27 +953,8 @@\n int%0A\n-%09str := %5B%5Dstring%7B%7D%0A\n %09sca\n@@ -1032,16 +1032,36 @@\n eak%0A%09%09%7D%0A\n+%09%09str := %5B%5Dstring%7B%7D%0A\n %09%09line :\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-08_00-41-16",
+            "content": "@@ -164,13 +164,57 @@\n %7B%0A%09%09\n-out =\n+slice := %5B%5Dstring%7Barray%5B1%5D%7D%0A%09%09out = append(slice,\n  arr\n@@ -219,16 +219,20 @@\n rray%5B1:%5D\n+...)\n %0A%09%7D%0A%0A%09re\n@@ -381,23 +381,11 @@\n tln(\n-%22%5B%22 + str + %22%5D%22\n+str\n )%0A%7D%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-08_00-42-28",
+            "content": "@@ -1121,31 +1121,8 @@\n %5D %7B%0A\n-%09%09case %22end%22:%0A%09%09%09break%0A\n %09%09ca\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-08_00-43-22",
+            "content": "@@ -356,16 +356,19 @@\n %0Afunc to\n+str\n rev(vet \n@@ -373,158 +373,41 @@\n t %5B%5D\n-str\n in\n-g) %7B%0A%09str := %22%22%0A%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09str += vet%5Bi%5D%0A%09%09if i %3C len(vet)-1 %7B%0A%09%09%09str += %22, %22%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(%22%5B%22 + str + %22%5D%22)\n+t) string %7B%0A%09_ = vet%0A%09return %22%22\n %0A%7D%0A%0A\n@@ -1228,17 +1228,33 @@\n %0A%09%09%09\n-torev(str\n+fmt.Println(tostrrev(vet)\n )%0A%09%09\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-08_00-51-33",
+            "content": "@@ -453,11 +453,20 @@\n f i \n-%3E 0\n+%3C len(vet)-1\n  %7B%0A%09\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-04-08_00-52-14",
+            "content": "@@ -576,160 +576,15 @@\n t %5B%5D\n-string) %5B%5Dstring %7B%0A%09s := %22%22%0A%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09s += vet%5Bi%5D%0A%09%09if i %3E 0 %7B%0A%09%09%09s += %22, %22%0A%09%09%7D%0A%09%7D%0A%0A%09str := strings.Fields(s)%0A%09return str\n+int) %7B%0A\n %0A%7D%0A%0A\n@@ -1365,22 +1365,16 @@\n %0A%09%09%09\n-str = \n reverse(\n str)\n@@ -1369,19 +1369,19 @@\n reverse(\n-str\n+vet\n )%0A%09%09case\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-04-08_01-03-35",
+            "content": "@@ -679,10 +679,10 @@\n += %22\n- \n ,\n+ \n %22%0A%09%09\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-04-08_01-03-52",
+            "content": "@@ -653,16 +653,46 @@\n  vet%5Bi%5D%0A\n+%09%09if i %3E 0 %7B%0A%09%09%09s += %22 ,%22%0A%09%09%7D%0A\n %09%7D%0A%0A%09str\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-04-08_01-04-14",
+            "content": "@@ -657,38 +657,8 @@\n %5Bi%5D%0A\n-%09%09if i %3E 0 %7B%0A%09%09%09s += %22, %22%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-08_21-59-19",
+            "content": "@@ -679,10 +679,10 @@\n += %22\n- \n ,\n+ \n %22%0A%09%09\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-04-08_21-59-41",
+            "content": "@@ -653,16 +653,46 @@\n  vet%5Bi%5D%0A\n+%09%09if i %3E 0 %7B%0A%09%09%09s += %22 ,%22%0A%09%09%7D%0A\n %09%7D%0A%0A%09str\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-04-08_22-00-39",
+            "content": "@@ -597,33 +597,15 @@\n %7B%0A%09s\n-tr\n  := \n-%5B%5Dstring%7B%7D%0A%0A%09j := 0\n+%22%22%0A\n %0A%09fo\n@@ -646,13 +646,8 @@\n %0A%09%09s\n-tr%5Bj%5D\n  += \n@@ -658,16 +658,36 @@\n i%5D%0A%09\n-%09j++%0A%09%7D%0A\n+%7D%0A%0A%09str := strings.Fields(s)\n %0A%09re\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-08_22-09-29",
+            "content": "@@ -666,16 +666,17 @@\n %09str%5Bj%5D \n++\n = vet%5Bi%5D\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-04-08_22-09-47",
+            "content": "@@ -611,16 +611,24 @@\n ring%7B%7D%0A%0A\n+%09j := 0%0A\n %09for i :\n@@ -666,30 +666,26 @@\n %09str\n- = append(str, vet%5Bi%5D)\n+%5Bj%5D = vet%5Bi%5D%0A%09%09j++\n %0A%09%7D%0A\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-04-08_22-18-08",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0Afunc \n@@ -751,158 +751,37 @@\n t %5B%5D\n-string, i int, resul int) int %7B%0A%09i++%0A%09if i %3E= len(vet)-1 %7B%0A%09%09return resul%0A%09%7D%0A%0A%09num, \n+int) int %7B%0A%09\n _ \n-:\n = \n-strconv.Atoi(vet%5Bi%5D)%0A%09resul += num%0A%09return sum(vet, i, resul)\n+vet%0A%09return 0\n %0A%7D%0A%0A\n@@ -1530,18 +1530,11 @@\n sum(\n-str, 0, -1\n+vet\n ))%0A%09\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-04-08_22-30-50",
+            "content": "@@ -812,16 +812,19 @@\n len(vet)\n+-1 \n %7B%0A%09%09retu\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-04-08_22-31-18",
+            "content": "@@ -801,17 +801,17 @@\n +%0A%09if i \n-=\n+%3E\n = len(ve\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-04-08_22-31-37",
+            "content": "@@ -801,17 +801,17 @@\n +%0A%09if i \n-%3E\n+=\n = len(ve\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-04-08_22-33-34",
+            "content": "@@ -1664,13 +1664,13 @@\n tr, \n--1, 0\n+0, -1\n ))%0A%09\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-04-08_22-33-56",
+            "content": "@@ -804,33 +804,32 @@\n if i %3E= len(vet)\n- \n %7B%0A%09%09return resul\n@@ -969,157 +969,37 @@\n t %5B%5D\n-string, i int, resul int) int %7B%0A%09i++%0A%09if i %3E= len(vet) %7B%0A%09%09return resul%0A%09%7D%0A%0A%09num, \n+int) int %7B%0A%09\n _ \n-:\n = \n-strconv.Atoi(vet%5Bi%5D)%0A%09resul *= num%0A%09return mult(vet, i, resul)\n+vet%0A%09return 0\n %0A%7D%0A%0A\n@@ -1703,26 +1703,19 @@\n ln(mult(\n-str, -1, 0\n+vet\n ))%0A%09%09cas\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-04-08_22-36-01",
+            "content": "@@ -1833,17 +1833,17 @@\n tr, -1, \n-1\n+0\n ))%0A%09%09cas\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-04-08_22-36-15",
+            "content": "@@ -1323,157 +1323,37 @@\n t %5B%5D\n-string, i int, resul int) int %7B%0A%09i++%0A%09if i %3E= len(vet) %7B%0A%09%09return resul%0A%09%7D%0A%0A%09num, \n+int) int %7B%0A%09\n _ \n-:\n = \n-strconv.Atoi(vet%5Bi%5D)%0A%09resul *= num%0A%09return mult(vet, i, resul)\n+vet%0A%09return 0\n %0A%7D%0A%0A\n@@ -1870,26 +1870,19 @@\n tln(min(\n-str, -1, 0\n+vet\n ))%0A%09%09def\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-04-08_22-39-07",
+            "content": "@@ -1432,43 +1432,21 @@\n %5D)%0A%09\n-if num %3C resul %7B%0A%09%09\n resul \n+*\n = num%0A\n-%09%7D%0A%0A\n %09ret\n@@ -1450,18 +1450,19 @@\n return m\n-in\n+ult\n (vet, i,\n@@ -1482,24 +1482,39 @@\n nc main() %7B%0A\n+%09var vet %5B%5Dint%0A\n %09str := %5B%5Dst\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-04-08_22-48-30",
+            "content": "@@ -1388,26 +1388,14 @@\n turn\n- index(vet,\n  resul\n-)\n %0A%09%7D%0A\n@@ -1459,24 +1459,24 @@\n l = num%0A%09%7D%0A%0A\n+\n %09return min(\n@@ -1497,161 +1497,8 @@\n %0A%7D%0A%0A\n-func index(str %5B%5Dstring, inteiro int) int%7B%0A%09for i:=range(str)%7B%0A%09%09num, _ := strconv.Atoi(str%5Bi%5D)%0A%09%09%0A%09%09if(num==inteiro)%7B%0A%09%09%09return i%0A%09%09%7D%0A%09%7D%0A%0A%09return -1%0A%7D%0A%0A\n func\n",
+            "lines": "133"
+        },
+        {
+            "label": "2026-04-08_23-08-57",
+            "content": "@@ -1560,26 +1560,18 @@\n  i:=\n-0; i%3Clen(str); i++\n+range(str)\n %7B%0A%09%09\n@@ -1601,16 +1601,19 @@\n str%5Bi%5D)%0A\n+%09%09%0A\n %09%09if(num\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-04-08_23-10-50",
+            "content": "@@ -1115,24 +1115,209 @@\n , resul)%0A%7D%0A%0A\n+// min: retorna o %C3%ADndice e valor do menor valor%0A// crie uma fun%C3%A7%C3%A3o recursiva interna do modelo%0A// var rec func(v %5B%5Dint) (int, int)%0A// para fazer uma recurs%C3%A3o que retorna valor e %C3%ADndice%0A\n func min(vet\n@@ -1550,17 +1550,16 @@\n  int\n- \n %7B%0A%09for i\n  := \n@@ -1558,19 +1558,15 @@\n or i\n- \n :=\n- \n 0; i\n- %3C \n+%3C\n len(\n@@ -1574,17 +1574,16 @@\n tr); i++\n- \n %7B%0A%09%09num,\n@@ -1617,24 +1617,22 @@\n %09%09if\n- \n+(\n num\n- \n ==\n- \n inteiro\n- \n+)\n %7B%0A%09%09\n@@ -2179,11 +2179,9 @@\n -1, \n-126\n+0\n ))%0A%09\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-04-08_23-18-00",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc read(line string) []string {\n\tout := []string{}\n\tarray := strings.Fields(line)\n\n\tif len(array) > 1 {\n\t\tout = array[1:]\n\t}\n\n\treturn out\n}\n\nfunc tostr(vet []string) {\n\tstr := \"\"\n\tfor i := range vet {\n\t\tstr += vet[i]\n\t\tif i < len(vet)-1 {\n\t\t\tstr += \", \"\n\t\t}\n\t}\n\n\tfmt.Println(\"[\" + str + \"]\")\n}\n\nfunc torev(vet []string) {\n\tstr := \"\"\n\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\tstr += vet[i]\n\t\tif i > 0 {\n\t\t\tstr += \", \"\n\t\t}\n\t}\n\n\tfmt.Println(\"[\" + str + \"]\")\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []string) []string {\n\tstr := []string{}\n\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\tstr = append(str, vet[i])\n\t}\n\n\treturn str\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []string, i int, resul int) int {\n\ti++\n\tif i >= len(vet) {\n\t\treturn resul\n\t}\n\n\tnum, _ := strconv.Atoi(vet[i])\n\tresul += num\n\treturn sum(vet, i, resul)\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []string, i int, resul int) int {\n\ti++\n\tif i >= len(vet) {\n\t\treturn resul\n\t}\n\n\tnum, _ := strconv.Atoi(vet[i])\n\tresul *= num\n\treturn mult(vet, i, resul)\n}\n\nfunc min(vet []string, i int, resul int) int {\n\ti++\n\tif i >= len(vet) {\n\t\treturn index(vet, resul)\n\t}\n\n\tnum, _ := strconv.Atoi(vet[i])\n\tif num < resul {\n\t\tresul = num\n\t}\n\n\treturn min(vet, i, resul)\n}\n\nfunc index(str []string, inteiro int) int {\n\tfor i := 0; i < len(str); i++ {\n\t\tnum, _ := strconv.Atoi(str[i])\n\t\tif num == inteiro {\n\t\t\treturn i\n\t\t}\n\t}\n\n\treturn -1\n}\n\nfunc main() {\n\tstr := []string{}\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\tbreak\n\t\tcase \"read\":\n\t\t\tstr = read(line)\n\t\tcase \"tostr\":\n\t\t\ttostr(str)\n\t\tcase \"torev\":\n\t\t\ttorev(str)\n\t\tcase \"reverse\":\n\t\t\tstr = reverse(str)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(str, -1, 0))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(str, -1, 1))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(str, -1, 126))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "140"
+        }
+    ]
+}
