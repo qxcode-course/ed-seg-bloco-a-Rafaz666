@@ -7,8 +7,18 @@
         },
         {
             "label": "2026-04-11_14-41-22",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc convert(vet []int) []string{\n\tstr := []string{}\n\tfor i:=0; i<len(vet); i++{\n\t\tstr[i], _ = strconv.Atoi(vet[i])\n\t}\n\n\treturn str\n}\n\nfunc processa(vet []int, i int, str []string) []string {\n\ti++\n\tif len(vet) == 1 {\n\t\treturn str\n\t}\n\n\tnewvet := soma(vet, -1, str)\n\tstr[i] = convert(newvet)\n\treturn processa(newvet, i, str)\n}\n\nfunc soma(vet []int, i int, value []int) []int {\n\ti++\n\tif i == len(vet)-1 {\n\t\treturn value\n\t}\n\n\tif i < len(vet)-1 {\n\t\tvalue[i] = vet[i] + vet[i+1]\n\t}\n\n\treturn soma(vet, i, value)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet, -1, \"\")\n}\n",
+            "content": "@@ -80,23 +80,24 @@\n  %5B%5Dint) \n+%5B%5D\n string\n- \n %7B%0A%09str :\n@@ -102,28 +102,32 @@\n  := \n-%22%22\n+%5B%5Dstring%7B%7D\n %0A%09for i\n- \n :=\n- \n 0; i\n- %3C \n+%3C\n len(\n@@ -139,18 +139,22 @@\n  i++\n- \n %7B%0A%09%09str\n+%5Bi%5D, _\n  \n-+\n = st\n@@ -163,20 +163,20 @@\n onv.\n-Itoa\n+Atoi\n (vet%5Bi%5D)\n  + %22\n@@ -175,14 +175,8 @@\n %5Bi%5D)\n- + %22 %22\n %0A%09%7D%0A\n@@ -188,24 +188,11 @@\n urn \n-%22%5B %22 + str + %22%5D%22\n+str\n %0A%7D%0A%0A\n@@ -294,24 +294,8 @@\n %09%7D%0A%0A\n-%09emp := %5B%5Dint%7B%7D%0A\n %09new\n@@ -319,11 +319,11 @@\n -1, \n-emp\n+str\n )%0A%09s\n@@ -350,10 +350,8 @@\n et)%0A\n-%09%0A\n %09ret\n@@ -858,22 +858,14 @@\n et, -1, \n-%5B%5Dstring%7B%7D\n+%22%22\n )%0A%7D%0A\n",
             "lines": "57"
+        },
+        {
+            "label": "2026-04-11_18-00-00",
+            "content": "@@ -372,16 +372,17 @@\n newvet)%0A\n+%09\n %0A%09return\n@@ -488,25 +488,8 @@\n )-1 \n-%7C%7C len(vet) == 0 \n %7B%0A%09%09\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-11_18-00-46",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc convert(vet []int) string {\n\tstr := \"\"\n\tfor i := 0; i < len(vet); i++ {\n\t\tstr += strconv.Itoa(vet[i]) + \" \"\n\t}\n\n\treturn \"[ \" + str + \"]\"\n}\n\nfunc processa(vet []int, i int, str []string) []string {\n\ti++\n\tif len(vet) == 1 {\n\t\treturn str\n\t}\n\n\temp := []int{}\n\tnewvet := soma(vet, -1, emp)\n\tstr[i] = convert(newvet)\n\n\treturn processa(newvet, i, str)\n}\n\nfunc soma(vet []int, i int, value []int) []int {\n\ti++\n\tif i == len(vet)-1 || len(vet) == 0 {\n\t\treturn value\n\t}\n\n\tif i < len(vet)-1 {\n\t\tvalue[i] = vet[i] + vet[i+1]\n\t}\n\n\treturn soma(vet, i, value)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet, -1, []string{})\n}\n",
+            "lines": "59"
         }
     ]
 }
