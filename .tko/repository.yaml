@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@basic
 - es@rec
+- es@basic
 flags:
   inbox: all
   panel: help
@@ -24,4 +24,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@triangulo
+selected: es@mumia

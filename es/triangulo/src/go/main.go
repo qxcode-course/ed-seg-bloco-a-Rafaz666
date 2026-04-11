@@ -19,25 +19,25 @@ func convert(vet []int) string {
 
 func processa(vet []int, i int, str []string) []string {
 	i++
-	if len(vet) == 1 || len(vet) == 0 {
+	if len(vet) == 0 || len(vet) == 1 {
 		return str
 	}
 
 	emp := []int{}
 	newvet := soma(vet, -1, emp)
-	str[i] = convert(newvet)
+	str = append(str, convert(newvet))
 
 	return processa(newvet, i, str)
 }
 
 func soma(vet []int, i int, value []int) []int {
 	i++
-	if i == len(vet)-1 || len(vet) == 0 {
+	if len(vet) == 0 || i == len(vet)-1 {
 		return value
 	}
 
 	if i < len(vet)-1 {
-		value[i] = vet[i] + vet[i+1]
+		value = append(value, vet[i]+vet[i+1])
 	}
 
 	return soma(vet, i, value)
@@ -50,11 +50,12 @@ func main() {
 	value := convstr(str)
 	print := processa(value, -1, []string{})
 	printrev(print)
+	fmt.Println("[ " + str + " ]")
 }
 
 func convstr(str string) []int {
 	arrstr := strings.Fields(str)
-	value := []int{}
+	value := make([]int, len(arrstr))
 	for i := range arrstr {
 		value[i], _ = strconv.Atoi(arrstr[i])
 	}
@@ -62,7 +63,7 @@ func convstr(str string) []int {
 }
 
 func printrev(str []string) {
-	for i := len(str); i >= 0; i-- {
+	for i := len(str) - 1; i >= 0; i-- {
 		fmt.Println(str[i])
 	}
 }

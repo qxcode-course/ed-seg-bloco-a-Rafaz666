@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-11_17-18-39",
+            "content": "@@ -10,523 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A)%0A%0Afunc processa(num int, str %5B%5Dstring) %5B%5Dstring %7B%0A%09if num/2 == 0 && num%252 == 1 %7B%0A%09%09return str%0A%09%7D%0A%0A%09div := num / 2%0A%09rest := num %25 2%0A%09num = num / 2%0A%0A%09molde := strconv.Itoa(div) + %22 %22 + strconv.Itoa(rest)%0A%09str = append(str, molde)%0A%0A%09return processa(num, str)%0A%7D%0Afunc main() %7B%0A%09scan := bufio.NewScanner(os.Stdin)%0A%09scan.Scan()%0A%09str := scan.Text()%0A%09num, _ := strconv.Atoi(str)%0A%09print := processa(num, %5B%5Dstring%7B%7D)%0A%09for i := len(print) - 1; i %3E= 0; i-- %7B%0A%09%09fmt.Println(print%5Bi%5D)%0A%09%7D\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-11_17-57-46",
+            "content": "@@ -135,35 +135,8 @@\n 1 %7B%0A\n-%09%09str = append(str, %220 1%22)%0A\n %09%09re\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-11_17-59-50",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n)\n\nfunc processa(num int, str []string) []string {\n\tif num/2 == 0 && num%2 == 1 {\n\t\tstr = append(str, \"0 1\")\n\t\treturn str\n\t}\n\n\tdiv := num / 2\n\trest := num % 2\n\tnum = num / 2\n\n\tmolde := strconv.Itoa(div) + \" \" + strconv.Itoa(rest)\n\tstr = append(str, molde)\n\n\treturn processa(num, str)\n}\nfunc main() {\n\tscan := bufio.NewScanner(os.Stdin)\n\tscan.Scan()\n\tstr := scan.Text()\n\tnum, _ := strconv.Atoi(str)\n\tprint := processa(num, []string{})\n\tfor i := len(print) - 1; i >= 0; i-- {\n\t\tfmt.Println(print[i])\n\t}\n}\n",
+            "lines": "34"
+        }
+    ]
+}
