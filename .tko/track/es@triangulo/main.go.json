@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-11_13-01-07",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int, i int, str []string) []string {\n\ti++\n\tif len(vet) == 1 {\n\t\treturn str\n\t}\n\n\tstr += append(str, strconv.Atoi(vet[i]))\n\treturn processa(vet, i, str)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc soma(vet []int, i int, str string) string {\n\ti++\n\tif i == len(vet)-1 {\n\t\treturn \"[ \" + str + \"]\"\n\t}\n\n\tif i < len(vet)-1 {\n\t\tnum := vet[i] + vet[i+1]\n\t\tstr += strconv.Itoa(num) + \" \"\n\t}\n\n\treturn soma(vet, i, str)\n}\n",
+            "lines": "48"
+        }
+    ]
+}

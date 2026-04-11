@@ -2,49 +2,26 @@ version: '0.2'
 sources:
 - name: sandbox
   target: sandbox
+  index: README.md
   type: local
   writeable: true
   quests: null
   tasks: null
 - name: es
   target: https://github.com/qxcodeed/arcade.git
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
 expanded:
-- es@recursao-recursion-rec-basic
-- '@es@recursao-recursion-rec-basic_sem_quest'
-tasks:
-  es@pintando: '{rate:100}'
-  es@mumia: '{rate:100}'
-  es@fuga: '{rate:100}'
-  es@pedra: '{rate:100}'
-  es@casais: '{rate:100}'
-  es@baruel: '{rate:100}'
-  es@princesa: '{rate:100}'
-  es@apagando: '{rate:100}'
-  es@manipulacao: '{rate:100}'
-  es@especiais: '{rate:100}'
-  es@buscas: '{rate:100}'
-  es@rotacoes: '{rate:100}'
-  es@alternando: '{rate:7}'
+- es@basic
+- es@rec
 flags:
-<<<<<<< Updated upstream
-  painel: 1
-  quests: 0
-  tracks: 0
-  tasks: 0
-  task_graph_mode: 0
-  show_time: 0
-lang: java
-selected: es@treinando
-=======
   inbox: all
   panel: help
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@resto
->>>>>>> Stashed changes
+selected: es@triangulo
