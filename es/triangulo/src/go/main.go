@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -18,7 +19,7 @@ func convert(vet []int) string {
 
 func processa(vet []int, i int, str []string) []string {
 	i++
-	if len(vet) == 1 {
+	if len(vet) == 1 || len(vet) == 0 {
 		return str
 	}
 
@@ -43,17 +44,25 @@ func soma(vet []int, i int, value []int) []int {
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	if !scanner.Scan() {
-		return
+	scan := bufio.NewScanner(os.Stdin)
+	scan.Scan()
+	str := scan.Text()
+	value := convstr(str)
+	print := processa(value, -1, []string{})
+	printrev(print)
+}
+
+func convstr(str string) []int {
+	arrstr := strings.Fields(str)
+	value := []int{}
+	for i := range arrstr {
+		value[i], _ = strconv.Atoi(arrstr[i])
 	}
-	line := scanner.Text()
-	parts := strings.Fields(line)
-	vet := []int{}
-	for _, part := range parts {
-		if value, err := strconv.Atoi(part); err == nil {
-			vet = append(vet, value)
-		}
+	return value
+}
+
+func printrev(str []string) {
+	for i := len(str); i >= 0; i-- {
+		fmt.Println(str[i])
 	}
-	processa(vet, -1, []string{})
 }

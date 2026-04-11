@@ -13,3 +13,8 @@
 2026-04-11 17:59:58, MOVE, v:1, k:es@triangulo, mode:PICK
 2026-04-11 18:00:00, EXEC, v:1, k:es@triangulo, mode:FULL, rate:0, size:59
 2026-04-11 18:00:46, EXEC, v:1, k:es@triangulo, mode:FULL, rate:0, size:59
+2026-04-11 15:58:46, MOVE, v:1, k:es@triangulo, mode:PICK
+2026-04-11 15:58:46, EXEC, v:1, k:es@triangulo, mode:FULL, rate:0
+2026-04-11 16:40:29, MOVE, v:1, k:es@triangulo, mode:PICK
+2026-04-11 16:40:31, EXEC, v:1, k:es@triangulo, mode:FULL, rate:0, size:68
+2026-04-11 16:41:07, EXEC, v:1, k:es@triangulo, mode:FULL, rate:0, size:68
