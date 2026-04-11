@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@basic
 - es@rec
+- es@basic
 flags:
   inbox: all
   panel: help

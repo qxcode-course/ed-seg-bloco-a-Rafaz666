@@ -7,14 +7,24 @@ import (
 	"strings"
 )
 
+func convert(vet []int) []string{
+	str := []string{}
+	for i:=0; i<len(vet); i++{
+		str[i], _ = strconv.Atoi(vet[i])
+	}
+
+	return str
+}
+
 func processa(vet []int, i int, str []string) []string {
 	i++
 	if len(vet) == 1 {
 		return str
 	}
-	num
-	str += append(str)
-	return processa(vet, i, str)
+
+	newvet := soma(vet, -1, str)
+	str[i] = convert(newvet)
+	return processa(newvet, i, str)
 }
 
 func soma(vet []int, i int, value []int) []int {
@@ -43,5 +53,5 @@ func main() {
 			vet = append(vet, value)
 		}
 	}
-	processa(vet)
+	processa(vet, -1, "")
 }
