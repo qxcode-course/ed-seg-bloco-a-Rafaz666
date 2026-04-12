@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-11_18-27-23",
+            "content": "@@ -36,152 +36,24 @@\n nc m\n-inmdc(arr %5B%5Dint) int %7B%0A%09v := arr%5B0%5D%0A%09for i := range arr %7B%0A%09%09if v %3C arr%5Bi%5D %7B%0A%09%09%09v = arr%5Bi%5D%0A%09%09%7D%0A%09%7D%0A%09return v%0A%7D%0Afunc mdc(a, b, x int, arr %5B%5Dint) %5B%5D\n+dc(a, b, x int) \n int \n@@ -74,86 +74,50 @@\n = 1 \n-%7C%7C\n+&&\n  b == \n-1 %7B%0A%09%09return arr%0A%09%7D%0A%0A%09if a%25x\n+b %7C%7C a\n  == \n-0\n+a\n  && b\n-%25x\n  == \n-0\n+1\n  %7B%0A%09%09\n-arr = append(arr,\n+return\n  x\n-)\n %0A%09%7D%0A\n@@ -198,21 +198,16 @@\n (a, b, x\n-, arr\n )%0A%7D%0A%0Afun\n@@ -253,31 +253,14 @@\n &b)%0A\n-%09arr := %5B%5Dint%7B%7D%0A\n %09value\n-s\n  := \n@@ -274,13 +274,8 @@\n b, 1\n-, arr\n )%0A%09f\n@@ -289,22 +289,13 @@\n tln(\n-minmdc(\n value\n-s)\n )%0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-11_18-38-33",
+            "content": "@@ -432,17 +432,16 @@\n = %5B%5Dint%7B\n-1\n %7D%0A%09value\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-11_18-42-37",
+            "content": "@@ -101,9 +101,9 @@\n f v \n-%3E\n+%3C\n  arr\n@@ -141,17 +141,16 @@\n urn v%0A%7D%0A\n-%0A\n func mdc\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-11_18-44-05",
+            "content": "@@ -101,9 +101,9 @@\n f v \n-%3C\n+%3E\n  arr\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-11_18-44-16",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc minmdc(arr []int) int {\n\tv := arr[0]\n\tfor i := range arr {\n\t\tif v < arr[i] {\n\t\t\tv = arr[i]\n\t\t}\n\t}\n\treturn v\n}\n\nfunc mdc(a, b, x int, arr []int) []int {\n\tx++\n\tif a == 1 || b == 1 {\n\t\treturn arr\n\t}\n\n\tif a%x == 0 && b%x == 0 {\n\t\tarr = append(arr, x)\n\t}\n\n\tif a%x == 0 {\n\t\ta = a / x\n\t}\n\n\tif b%x == 0 {\n\t\tb = b / x\n\t}\n\n\treturn mdc(a, b, x, arr)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tarr := []int{1}\n\tvalues := mdc(a, b, 1, arr)\n\tfmt.Println(minmdc(values))\n}\n",
+            "lines": "44"
+        }
+    ]
+}

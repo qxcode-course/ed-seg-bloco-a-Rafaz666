@@ -1,0 +1,7 @@
+2026-04-12 09:06:30, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 09:23:07, MOVE, v:1, k:es@queimada, mode:BACK
+2026-04-12 09:23:11, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 09:23:12, EXEC, v:1, k:es@queimada, mode:FULL, size:42, fail:COMP
+2026-04-12 09:23:13, MOVE, v:1, k:es@queimada, mode:BACK
+2026-04-12 09:23:16, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 09:33:38, EXEC, v:1, k:es@queimada, mode:FULL, rate:0, size:58
