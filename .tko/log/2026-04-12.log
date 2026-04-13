@@ -5,3 +5,29 @@
 2026-04-12 09:23:13, MOVE, v:1, k:es@queimada, mode:BACK
 2026-04-12 09:23:16, MOVE, v:1, k:es@queimada, mode:PICK
 2026-04-12 09:33:38, EXEC, v:1, k:es@queimada, mode:FULL, rate:0, size:58
+2026-04-12 12:13:19, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 12:13:23, EXEC, v:1, k:es@queimada, mode:FULL, rate:0, size:58
+2026-04-12 13:43:13, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-04-12 14:03:57, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-04-12 14:03:58, EXEC, v:1, k:es@labirinto, mode:FULL, rate:0, size:66
+2026-04-12 14:11:12, MOVE, v:1, k:es@labirinto, mode:BACK
+2026-04-12 14:12:50, MOVE, v:1, k:es@wordsearch, mode:DOWN
+2026-04-12 14:12:58, MOVE, v:1, k:es@subset_sum, mode:DOWN
+2026-04-12 14:13:00, MOVE, v:1, k:es@distancia, mode:DOWN
+2026-04-12 14:31:04, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 14:31:59, EXEC, v:1, k:es@queimada, mode:FULL, rate:0
+2026-04-12 14:35:07, EXEC, v:1, k:es@queimada, mode:FULL, rate:100, size:58
+2026-04-12 14:35:15, MOVE, v:1, k:es@queimada, mode:BACK
+2026-04-12 14:35:20, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 14:35:33, MOVE, v:1, k:es@queimada, mode:BACK
+2026-04-12 14:35:38, MOVE, v:1, k:es@queimada, mode:PICK
+2026-04-12 14:37:00, SELF, v:1, k:es@queimada, self:1, rate:100, study:120, concept:1, debug:1
+2026-04-12 14:37:03, EXEC, v:1, k:es@queimada, mode:FULL, rate:100
+2026-04-12 14:37:10, MOVE, v:1, k:es@queimada, mode:BACK
+2026-04-12 14:37:46, MOVE, v:1, k:es@fractais_png, mode:DOWN
+2026-04-12 14:37:47, MOVE, v:1, k:es@fractais_png, mode:PICK
+2026-04-12 14:37:51, MOVE, v:1, k:es@fractais_png, mode:BACK
+2026-04-12 14:38:02, MOVE, v:1, k:es@mdc, mode:PICK
+2026-04-12 14:38:03, EXEC, v:1, k:es@mdc, mode:FULL, rate:60
+2026-04-12 14:38:49, MOVE, v:1, k:es@mdc, mode:PICK
+2026-04-12 14:38:52, MOVE, v:1, k:es@mdc, mode:BACK

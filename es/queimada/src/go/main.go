@@ -15,7 +15,11 @@ func valid(grid [][]rune, l, c int) bool {
 
 func burnTrees(grid [][]rune, l, c int) {
 
-	if l == len(grid)-1 && c == len(grid[l])-1 {
+	if !valid(grid, l, c) {
+		return
+	}
+
+	if grid[l][c] != '#' {
 		return
 	}
 
@@ -28,10 +32,6 @@ func burnTrees(grid [][]rune, l, c int) {
 	burnTrees(grid, l, c+1)
 	burnTrees(grid, l, c-1)
 
-	// se estiver fora da matriz, retorne
-	// se o elemento atual não for uma arvore, retorne
-	// queime a arvore colocando o caractere 'o' na posição atual
-	// chame a recursão para todos os 4 vizinhos
 }
 
 func main() {
