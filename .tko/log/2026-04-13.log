@@ -1,0 +1,7 @@
+2026-04-13 18:59:37, MOVE, v:1, k:es@eh_primo, mode:PICK
+2026-04-13 18:59:43, MOVE, v:1, k:es@eh_primo, mode:BACK
+2026-04-13 18:59:45, MOVE, v:1, k:es@vetequals, mode:PICK
+2026-04-13 18:59:53, MOVE, v:1, k:es@vetequals, mode:BACK
+2026-04-13 19:19:30, MOVE, v:1, k:es@vetequals, mode:PICK
+2026-04-13 19:31:19, EXEC, v:1, k:es@vetequals, mode:FULL, rate:0, size:71
+2026-04-13 19:36:16, EXEC, v:1, k:es@vetequals, mode:FULL, rate:0, size:63

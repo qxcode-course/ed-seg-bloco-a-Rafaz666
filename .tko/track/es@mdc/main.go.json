@@ -22,8 +22,88 @@
         },
         {
             "label": "2026-04-11_18-44-16",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc minmdc(arr []int) int {\n\tv := arr[0]\n\tfor i := range arr {\n\t\tif v < arr[i] {\n\t\t\tv = arr[i]\n\t\t}\n\t}\n\treturn v\n}\n\nfunc mdc(a, b, x int, arr []int) []int {\n\tx++\n\tif a == 1 || b == 1 {\n\t\treturn arr\n\t}\n\n\tif a%x == 0 && b%x == 0 {\n\t\tarr = append(arr, x)\n\t}\n\n\tif a%x == 0 {\n\t\ta = a / x\n\t}\n\n\tif b%x == 0 {\n\t\tb = b / x\n\t}\n\n\treturn mdc(a, b, x, arr)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tarr := []int{1}\n\tvalues := mdc(a, b, 1, arr)\n\tfmt.Println(minmdc(values))\n}\n",
+            "content": "@@ -32,20 +32,21 @@\n %0A%0Afunc m\n-aior\n+inmdc\n (arr %5B%5Di\n@@ -101,9 +101,9 @@\n f v \n-%3E\n+%3C\n  arr\n@@ -483,12 +483,13 @@\n ln(m\n-aior\n+inmdc\n (val\n",
             "lines": "44"
+        },
+        {
+            "label": "2026-04-15_11-47-20",
+            "content": "@@ -460,9 +460,9 @@\n  b, \n-2\n+1\n , ar\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-15_12-00-57",
+            "content": "@@ -456,17 +456,17 @@\n c(a, b, \n-1\n+2\n , arr)%0A%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-15_12-01-12",
+            "content": "@@ -186,16 +186,55 @@\n t %7B%0A%09x++\n+%0A%09if a == 1 %7C%7C b == 1 %7B%0A%09%09return arr%0A%09%7D\n %0A%0A%09if a%25\n@@ -285,48 +285,8 @@\n %09%7D%0A%0A\n-%09if a == 1 %7C%7C b == 1 %7B%0A%09%09return arr%0A%09%7D%0A%0A\n %09if \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-15_12-02-10",
+            "content": "@@ -496,61 +496,7 @@\n es))\n-%0A%0A%09for i := range values %7B%0A%09%09fmt.Println(values%5Bi%5D)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-15_12-07-26",
+            "content": "@@ -181,16 +181,21 @@\n  %5B%5Dint %7B\n+%0A%09x++\n %0A%0A%09if a%25\n@@ -253,18 +253,18 @@\n  a == 1 \n-&&\n+%7C%7C\n  b == 1 \n@@ -367,10 +367,8 @@\n b, x\n-+1\n , ar\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-15_12-08-52",
+            "content": "@@ -252,10 +252,10 @@\n = 1 \n-%7C%7C\n+&&\n  b =\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-15_12-09-10",
+            "content": "@@ -248,18 +248,18 @@\n  a == 1 \n-&&\n+%7C%7C\n  b == 1 \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-15_12-09-48",
+            "content": "@@ -42,20 +42,13 @@\n or(a\n-, b, val, i \n+rr %5B%5D\n int)\n@@ -60,69 +60,79 @@\n %7B%0A%09v\n-al = val * i%0A%0A%09if a/val == 1 %7C%7C b/val == 1 %7B%0A%09%09return val%0A\n+ := arr%5B0%5D%0A%09for i := range arr %7B%0A%09%09if v %3E arr%5Bi%5D %7B%0A%09%09%09v = arr%5Bi%5D%0A%09\n %09%7D%0A\n+%09%7D\n %0A%09re\n@@ -140,27 +140,9 @@\n urn \n-maior(a, b, val, i)\n+v\n %0A%7D%0A%0A\n@@ -161,18 +161,31 @@\n b, x int\n-) \n+, arr %5B%5Dint) %5B%5D\n int %7B%0A%0A%09\n@@ -212,22 +212,136 @@\n = 0 %7B%0A%09%09\n-return\n+arr = append(arr, x)%0A%09%7D%0A%0A%09if a == 1 && b == 1 %7B%0A%09%09return arr%0A%09%7D%0A%0A%09if a%25x == 0 %7B%0A%09%09a = a / x%0A%09%7D%0A%0A%09if b%25x == 0 %7B%0A%09%09b = b /\n  x%0A%09%7D%0A%0A%09\n@@ -360,16 +360,21 @@\n , b, x+1\n+, arr\n )%0A%7D%0A%0Afun\n@@ -417,19 +417,39 @@\n a, &b)%0A%09\n-val\n+arr := %5B%5Dint%7B1%7D%0A%09values\n  := mdc(\n@@ -455,16 +455,21 @@\n (a, b, 1\n+, arr\n )%0A%09fmt.P\n@@ -485,22 +485,69 @@\n ior(\n-a, b, val, 1))%0A\n+values))%0A%0A%09for i := range values %7B%0A%09%09fmt.Println(values%5Bi%5D)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-15_12-37-48",
+            "content": "@@ -151,18 +151,16 @@\n , val, i\n-+1\n )%0A%7D%0A%0Afun\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-15_12-38-39",
+            "content": "@@ -36,180 +36,187 @@\n nc m\n-dc\n+aior\n (a, b, \n-x int, arr %5B%5D\n+val, i \n int) \n-%5B%5D\n int %7B%0A\n-%0A%09if a%25x == 0 && b%25x\n+%09val = val * i%0A%0A%09if a/val == 1 %7C%7C b/val\n  == \n-0\n+1\n  %7B%0A%09%09\n-arr = append(arr, x)%0A%09%7D%0A%0A%09if a%25x == 0 %7B%0A%09%09a = a / x%0A%09%7D%0A%0A%09if b%25x == 0 %7B%0A%09%09b = b / x%0A%09%7D\n+return val%0A%09%7D%0A%0A%09return maior(a, b, val, i+1)%0A%7D%0A%0Afunc mdc(a, b, x int) int %7B\n %0A%0A%09if a\n+%25x\n  == \n-1 %7C%7C b\n+0 && b%25x\n  == \n-1\n+0\n  %7B%0A%09\n@@ -223,19 +223,17 @@\n %09return \n-arr\n+x\n %0A%09%7D%0A%0A%09re\n@@ -247,22 +247,19 @@\n c(a, b, \n-1, arr\n+x+1\n )%0A%7D%0A%0Afun\n@@ -305,25 +305,8 @@\n &b)%0A\n-%09arr := %5B%5Dint%7B1%7D%0A\n %09val\n@@ -324,13 +324,8 @@\n b, 1\n-, arr\n )%0A%09f\n@@ -335,16 +335,32 @@\n Println(\n-val\n+maior(a, b, val, 1)\n )%0A%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-15_12-48-05",
+            "content": "@@ -246,10 +246,8 @@\n  b, \n-x+\n 1, a\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-15_12-48-28",
+            "content": "@@ -340,9 +340,9 @@\n  b, \n-2\n+1\n , ar\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-15_12-49-02",
+            "content": "@@ -122,16 +122,78 @@\n  x)%0A%09%7D%0A%0A\n+%09if a%25x == 0 %7B%0A%09%09a = a / x%0A%09%7D%0A%0A%09if b%25x == 0 %7B%0A%09%09b = b / x%0A%09%7D%0A%0A\n %09if a ==\n@@ -241,15 +241,11 @@\n dc(a\n-%25x\n , b\n-%25x\n , x+\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-15_12-51-14",
+            "content": "@@ -126,70 +126,8 @@\n %09%7D%0A%0A\n-%09if a%25x == 0 %7B%0A%09%09a = a / x%0A%09%7D%0A%0A%09if b%25x == 0 %7B%0A%09%09b = b / x%0A%09%7D%0A%0A\n %09if \n@@ -175,19 +175,23 @@\n rn mdc(a\n+%25x\n , b\n+%25x\n , x+1, a\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-15_12-51-31",
+            "content": "@@ -43,31 +43,173 @@\n a, b\n+, x\n  int\n-) int %7B%0A%0A%09if b == 0\n+, arr %5B%5Dint) %5B%5Dint %7B%0A%0A%09if a%25x == 0 && b%25x == 0 %7B%0A%09%09arr = append(arr, x)%0A%09%7D%0A%0A%09if a%25x == 0 %7B%0A%09%09a = a / x%0A%09%7D%0A%0A%09if b%25x == 0 %7B%0A%09%09b = b / x%0A%09%7D%0A%0A%09if a == 1 %7C%7C b == 1\n  %7B%0A%09\n@@ -217,16 +217,18 @@\n return a\n+rr\n %0A%09%7D%0A%0A%09re\n@@ -240,14 +240,22 @@\n mdc(\n-b, a%25b\n+a, b, x+1, arr\n )%0A%7D%0A\n@@ -301,16 +301,33 @@\n &a, &b)%0A\n+%09arr := %5B%5Dint%7B1%7D%0A\n %09val := \n@@ -334,16 +334,24 @@\n mdc(a, b\n+, 2, arr\n )%0A%09fmt.P\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-15_12-57-39",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\n\tif b == 0 {\n\t\treturn a\n\t}\n\n\treturn mdc(b, a%b)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tval := mdc(a, b)\n\tfmt.Println(val)\n\n}\n",
+            "lines": "22"
         }
     ]
 }
