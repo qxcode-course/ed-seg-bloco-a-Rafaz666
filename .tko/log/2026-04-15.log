@@ -37,3 +37,6 @@
 2026-04-15 12:58:59, SELF, v:1, k:es@mdc, self:1, rate:100, study:120, concept:1
 2026-04-15 12:59:00, EXEC, v:1, k:es@mdc, mode:FULL, rate:100
 2026-04-15 12:59:02, MOVE, v:1, k:es@mdc, mode:BACK
+2026-04-15 16:08:18, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-04-15 16:08:21, EXEC, v:1, k:es@labirinto, mode:FULL, rate:0, size:87
+2026-04-15 16:14:29, EXEC, v:1, k:es@labirinto, mode:FULL, rate:0, size:87

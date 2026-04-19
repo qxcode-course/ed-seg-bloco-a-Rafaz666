@@ -1,0 +1,179 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-19_14-18-41",
+            "content": "@@ -5,12 +5,12 @@\n age \n-src%0A\n+main\n %0Aimp\n@@ -23,478 +23,53 @@\n mt%22%0A\n-%0A\n func \n-createGrid(l, c int) %5B%5D%5B%5Dint %7B%0A%09grid := make(%5B%5D%5B%5Dint, l)%0A%09for i := 0; i %3C c; i++ %7B%0A%09%09grid%5Bi%5D = make(%5B%5Dint, c)%0A%09%7D%0A%09return grid%0A%7D%0A%0Afunc rotten(value int, grid %5B%5D%5B%5Dint) int %7B%0A%0A%09return value%0A%7D%0A%0Afunc draft() %7B%0A%09var l, c int%0A%09fmt.Scan(&l, &c)%0A%09fmt.Scanln()%0A%09grid := createGrid(l, c)%0A%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Scan(&grid%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%09fmt.Scanln()%0A%09%7D%0A%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Println(grid%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%7D\n+main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-19_14-20-02",
+            "content": "@@ -154,16 +154,77 @@\n grid%0A%7D%0A%0A\n+func rotten(value int, grid %5B%5D%5B%5Dint) int %7B%0A%0A%09return value%0A%7D%0A%0A\n func dra\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_14-22-38",
+            "content": "@@ -5,12 +5,11 @@\n age \n-main\n+src\n %0A%0Aim\n@@ -158,69 +158,8 @@\n %0A%7D%0A%0A\n-func rotten(value int, grid %5B%5D%5B%5Dint) int %7B%0A%0A%09return value%0A%7D%0A%0A\n func\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-19_17-25-46",
+            "content": "@@ -1,21 +1,20 @@\n package \n-draft\n+main\n %0A%0Aimport\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-26-26",
+            "content": "@@ -5,12 +5,13 @@\n age \n-main\n+draft\n %0A%0Aim\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-27-03",
+            "content": "@@ -221,20 +221,21 @@\n %7D%0A%0Afunc \n-main\n+draft\n () %7B%0A%09va\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-27-35",
+            "content": "@@ -92,33 +92,33 @@\n for i := 0; i %3C \n-l\n+c\n ; i++ %7B%0A%09%09grid%5Bi\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-33-53",
+            "content": "@@ -164,430 +164,60 @@\n unc \n-alltwo(grid %5B%5D%5B%5Dint) bool %7B%0A%09for i := 0; i %3C len(grid); i++ %7B%0A%09%09for j := 0; j %3C len(grid%5Bi%5D); i++ %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == 1 %7B%0A%09%09%09%09return false%0A%09%09%09%7D%0A%0A%09%09%7D%0A%09%7D%0A%09return true%0A%7D%0A%0Afunc rotten(grid %5B%5D%5B%5Dint, value, l, c int) int %7B%0A%0A%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc%5D == 2 %7B%0A%09%09rotten(grid, value, l+1, c)%0A%09%09rotten(grid, value, l-1, c)%0A%09%09rotten(grid, value, l, c+1)%0A%09%09rotten(grid, value, l, c-1)%0A%09%7D%0A%0A%09return -1\n+rotten(value int, grid %5B%5D%5B%5Dint) int %7B%0A%0A%09return value\n %0A%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-53-07",
+            "content": "@@ -452,18 +452,8 @@\n 2 %7B%0A\n-%09%09value++%0A\n %09%09ro\n@@ -780,40 +780,91 @@\n %0A%0A%09f\n-mt.Println(rotten(grid, 0, l, c))\n+or i := 0; i %3C l; i++ %7B%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Println(grid%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-19_17-54-16",
+            "content": "@@ -254,17 +254,17 @@\n id%5Bi%5D); \n-j\n+i\n ++ %7B%0A%09%09%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-19_17-54-59",
+            "content": "@@ -433,45 +433,8 @@\n %0A%09if\n- l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  gri\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-19_17-56-49",
+            "content": "@@ -850,17 +850,17 @@\n rid, 0, \n-0, 0\n+l, c\n ))%0A%7D%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-19_18-00-36",
+            "content": "@@ -623,51 +623,8 @@\n %09%7D%0A%0A\n-%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-19_18-03-32",
+            "content": "@@ -384,51 +384,8 @@\n  %7B%0A%0A\n-%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09if \n@@ -619,16 +619,59 @@\n -1)%0A%09%7D%0A%0A\n+%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-06-00",
+            "content": "@@ -387,45 +387,8 @@\n %0A%09if\n- l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  gri\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-06-40",
+            "content": "@@ -379,24 +379,187 @@\n ) int %7B%0A%0A%09if\n+ l %3C len(grid) && c %3C len(grid%5B0%5D) && grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A%09if l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  grid%5Bl%5D%5Bc%5D \n@@ -703,97 +703,8 @@\n %09%7D%0A%0A\n-%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-09-02",
+            "content": "@@ -387,45 +387,8 @@\n %0A%09if\n- l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  gri\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-10-06",
+            "content": "@@ -580,45 +580,8 @@\n %0A%09if\n- l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  gri\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-11-39",
+            "content": "@@ -383,57 +383,49 @@\n t %7B%0A\n+%0A\n %09if \n-alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A%09if\n+l %3C len(grid) && c %3C len(grid%5B0%5D) &&\n  gri\n@@ -573,16 +573,142 @@\n -1)%0A%09%7D%0A%0A\n+%09if l %3C len(grid) && c %3C len(grid%5B0%5D) && grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-19_18-12-18",
+            "content": "@@ -383,302 +383,176 @@\n t %7B%0A\n-%0A\n %09if \n-grid%5Bl%5D%5Bc%5D == 2 %7B%0A%09%09value++%0A%09%09if l+1 %3C len(grid) && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l+1, c)%0A%09%09%7D%0A%09%09if l-1 %3E= 0 && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l-1, c)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c+1 %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l, c+1)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c-1 %3E= 0 %7B%0A%09\n+alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc%5D == 2 %7B%0A%09%09value++%0A%09%09rotten(grid, value, l+1, c)%0A%09%09rotten(grid, value, l-1, c)%0A%09%09rotten(grid, value, l, c+1)%0A\n %09%09ro\n@@ -574,108 +574,14 @@\n e, l\n-+1\n , c\n-)%0A%09%09%7D%0A%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A%09if alltwo(grid) == true %7B%0A%09%09return value\n+-1)\n %0A%09%7D%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-19_18-21-07",
+            "content": "@@ -700,13 +700,13 @@\n e, l\n++1\n , c\n--1\n )%0A%09%09\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-19_18-21-30",
+            "content": "@@ -384,54 +384,8 @@\n  %7B%0A%0A\n-%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A\n %09if \n@@ -755,16 +755,62 @@\n = 2%0A%09%7D%0A%0A\n+%09if alltwo(grid) == true %7B%0A%09%09return value%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-19_18-21-55",
+            "content": "@@ -779,333 +779,8 @@\n %5D ==\n- 0 %7B%0A%09%09if l+1 %3C len(grid) && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l+1, c)%0A%09%09%7D%0A%09%09if l-1 %3E= 0 && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l-1, c)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c+1 %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l, c+1)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c-1 %3E= 0 %7B%0A%09%09%09rotten(grid, value, l, c-1)%0A%09%09%7D%0A%0A%09%7D else if grid%5Bl%5D%5Bc%5D ==\n  1 %7B\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-19_18-23-26",
+            "content": "@@ -758,16 +758,384 @@\n %09%7D%0A%0A%09%7D%0A%0A\n+%09if grid%5Bl%5D%5Bc%5D == 0 %7B%0A%09%09if l+1 %3C len(grid) && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l+1, c)%0A%09%09%7D%0A%09%09if l-1 %3E= 0 && c %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l-1, c)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c+1 %3C len(grid%5Bl%5D) %7B%0A%09%09%09rotten(grid, value, l, c+1)%0A%09%09%7D%0A%09%09if l %3C len(grid) && c-1 %3E= 0 %7B%0A%09%09%09rotten(grid, value, l, c-1)%0A%09%09%7D%0A%0A%09%7D else if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-04-19_18-24-18",
+            "content": "@@ -766,21 +766,18 @@\n %09return \n-value\n+-1\n %0A%7D%0A%0Afunc\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-19_18-26-06",
+            "content": "@@ -757,78 +757,26 @@\n %09%09%7D%0A\n+%0A\n %09%7D%0A%0A%09\n-if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09rotten(grid, value, l+1, c)%0A%09%7D%0A%0A%09return -1\n+return value\n %0A%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-19_18-28-02",
+            "content": "@@ -813,38 +813,8 @@\n  c)%0A\n-%09%09rotten(grid, value, l, c+1)%0A\n %09%7D%0A%0A\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-19_18-28-44",
+            "content": "@@ -809,16 +809,46 @@\n l+1, c)%0A\n+%09%09rotten(grid, value, l, c+1)%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-19_18-28-57",
+            "content": "@@ -821,21 +821,18 @@\n %09return \n-value\n+-1\n %0A%7D%0A%0Afunc\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-19_18-29-13",
+            "content": "@@ -779,26 +779,16 @@\n  == 1 %7B%0A\n-%09%09value++%0A\n %09%09rotten\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-19_18-29-34",
+            "content": "@@ -757,16 +757,82 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09value++%0A%09%09rotten(grid, value, l+1, c)%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-19_18-30-27",
+            "content": "@@ -765,18 +765,21 @@\n %09return \n--1\n+value\n %0A%7D%0A%0Afunc\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-19_18-30-37",
+            "content": "@@ -430,51 +430,8 @@\n %09%7D%0A%0A\n-%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09if \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-19_18-34-24",
+            "content": "@@ -422,24 +422,67 @@\n n value%0A%09%7D%0A%0A\n+%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09if grid%5Bl%5D%5B\n@@ -804,51 +804,8 @@\n %09%7D%0A%0A\n-%09if grid%5Bl%5D%5Bc%5D == 1 %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 2%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-19_18-36-06",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc createGrid(l, c int) [][]int {\n\tgrid := make([][]int, l)\n\tfor i := 0; i < l; i++ {\n\t\tgrid[i] = make([]int, c)\n\t}\n\treturn grid\n}\n\nfunc alltwo(grid [][]int) bool {\n\tfor i := 0; i < len(grid); i++ {\n\t\tfor j := 0; j < len(grid[i]); j++ {\n\t\t\tif grid[i][j] == 1 {\n\t\t\t\treturn false\n\t\t\t}\n\n\t\t}\n\t}\n\treturn true\n}\n\nfunc rotten(grid [][]int, value, l, c int) int {\n\n\tif alltwo(grid) == true {\n\t\treturn value\n\t}\n\n\tif grid[l][c] == 2 {\n\t\tvalue++\n\t\tif l+1 < len(grid) && c < len(grid[l]) {\n\t\t\trotten(grid, value, l+1, c)\n\t\t}\n\t\tif l-1 >= 0 && c < len(grid[l]) {\n\t\t\trotten(grid, value, l-1, c)\n\t\t}\n\t\tif l < len(grid) && c+1 < len(grid[l]) {\n\t\t\trotten(grid, value, l, c+1)\n\t\t}\n\t\tif l < len(grid) && c-1 >= 0 {\n\t\t\trotten(grid, value, l, c-1)\n\t\t}\n\t}\n\n\tif grid[l][c] == 1 {\n\t\tgrid[l][c] = 2\n\t}\n\n\treturn -1\n}\n\nfunc main() {\n\tvar l, c int\n\tfmt.Scan(&l, &c)\n\tfmt.Scanln()\n\tgrid := createGrid(l, c)\n\n\tfor i := 0; i < l; i++ {\n\t\tfor j := 0; j < c; j++ {\n\t\t\tfmt.Scan(&grid[i][j])\n\t\t}\n\t\tfmt.Scanln()\n\t}\n\n\tfmt.Println(rotten(grid, 0, 0, 0))\n}\n",
+            "lines": "68"
+        }
+    ]
+}

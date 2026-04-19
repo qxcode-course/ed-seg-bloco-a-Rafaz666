@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-04-12_14-03-58",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}\n}\n\nfunc inside(grid [][]rune, p Pos) bool {\n\treturn !(p.l < 0 || p.l >= len(grid) || p.c < 0 || p.c >= len(grid[0]))\n}\n\nfunc match(grid [][]rune, p Pos, value rune) bool {\n\treturn inside(grid, p) && grid[p.l][p.c] == value\n}\n\n// Fun\u00e7\u00e3o recursiva que tenta encontrar o caminho do in\u00edcio ao fim\nfunc search(grid [][]rune, startPos, endPos Pos) bool {\n\t_, _, _ = grid, startPos, endPos\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(grid, startPos, endPos)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "content": "@@ -76,351 +76,294 @@\n %0A%7D%0A%0A\n-// Fun%C3%A7%C3%A3o recursiva que tenta encontrar o caminho do in%C3%ADcio ao fim%0Afunc search(grid %5B%5D%5B%5Drune, startPos, endPos Pos) bool %7B%0A%0A%09l := startPos.l%0A%09c := startPos.c%0A%09lf :\n+func getNeig(p Pos) %5B%5DPos %7B%0A%09return %5B%5DPos%7B%7Bp.l, p.c - 1%7D, %7Bp.l - 1, p.c%7D, %7Bp.l, p.c + 1%7D, %7Bp.l + 1, p.c%7D%7D%0A%7D%0A%0Afunc inside(grid %5B%5D%5B%5Drune, p Pos) bool %7B%0A%09return !(p.l %3C 0 %7C%7C p.l %3E\n = \n+l\n en\n-dPos.l%0A%09cf := endPos.c%0A%0A%09if l == lf && c == cf %7B%0A%09%09return true%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc%5D == ' ' %7B%0A%09%09grid%5Bl%5D%5Bc%5D = '.'%0A%09%7D%0A%0A%09if grid%5Bl+1%5D%5Bc%5D == ' ' %7B%0A%09%09startPos = Pos%7Bl + 1, c%7D%0A%09\n+(grid) %7C%7C p.c %3C 0 %7C%7C p.c %3E= len(grid%5B0%5D))%0A%7D%0A%0Afunc match(grid %5B%5D%5B%5Drune, p Pos, value rune) bool %7B%0A\n %09return \n sear\n@@ -362,201 +362,125 @@\n urn \n-search\n+inside\n (grid, \n-startPos, endPos)%0A%09%7D%0A%0A%09if grid%5Bl-1%5D%5Bc%5D == ' ' %7B%0A%09%09startPos = Pos%7Bl - 1, c%7D%0A%09%09return search(grid, startPos, endPos)%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc+1%5D == ' ' %7B%0A%09%09startPos = Pos%7Bl, c + 1%7D%0A%09%09return\n+p) && grid%5Bp.l%5D%5Bp.c%5D == value%0A%7D%0A%0A// Fun%C3%A7%C3%A3o recursiva que tenta encontrar o caminho do in%C3%ADcio ao fim%0Afunc\n  sea\n@@ -479,32 +479,41 @@\n func search(grid\n+ %5B%5D%5B%5Drune\n , startPos, endP\n@@ -518,83 +518,32 @@\n dPos\n-)%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc-1%5D == ' ' %7B%0A%09%09startPos = Pos%7Bl, c - 1%7D%0A%09%09return search(\n+ Pos) bool %7B%0A%09_, _, _ = \n grid\n@@ -560,21 +560,16 @@\n , endPos\n-)%0A%09%7D%0A\n %0A%09return\n",
             "lines": "66"
+        },
+        {
+            "label": "2026-04-15_16-08-21",
+            "content": "@@ -753,38 +753,13 @@\n urn \n-search(grid, startPos, endPos)\n+false\n %0A%7D%0A%0A\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-15_16-14-29",
+            "content": "@@ -753,13 +753,38 @@\n urn \n-false\n+search(grid, startPos, endPos)\n %0A%7D%0A%0A\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-16_20-14-03",
+            "content": "@@ -351,22 +351,19 @@\n = '.'%0A%09%7D\n- else \n+%0A%0A%09\n if grid%5B\n@@ -440,38 +440,35 @@\n tPos, endPos)%0A%09%7D\n- else \n+%0A%0A%09\n if grid%5Bl-1%5D%5Bc%5D \n@@ -537,38 +537,35 @@\n tPos, endPos)%0A%09%7D\n- else \n+%0A%0A%09\n if grid%5Bl%5D%5Bc+1%5D \n@@ -646,14 +646,11 @@\n )%0A%09%7D\n- else \n+%0A%0A%09\n if g\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-16_20-20-13",
+            "content": "@@ -351,19 +351,22 @@\n = '.'%0A%09%7D\n-%0A%0A%09\n+ else \n if grid%5B\n@@ -443,35 +443,38 @@\n tPos, endPos)%0A%09%7D\n-%0A%0A%09\n+ else \n if grid%5Bl-1%5D%5Bc%5D \n@@ -543,35 +543,38 @@\n tPos, endPos)%0A%09%7D\n-%0A%0A%09\n+ else \n if grid%5Bl%5D%5Bc+1%5D \n@@ -651,19 +651,22 @@\n dPos)%0A%09%7D\n-%0A%0A%09\n+ else \n if grid%5B\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-04-16_20-22-04",
+            "content": "@@ -76,148 +76,74 @@\n %0A%7D%0A%0A\n-func valid(grid %5B%5D%5B%5Drune, startPos Pos) bool %7B%0A%09l := startPos.l%0A%09c := startPos.c%0A%0A%09if grid%5Bl%5D%5Bc%5D == ' ' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A\n+// Fun%C3%A7%C3%A3o recursiva que tenta encontrar o caminho do in%C3%ADcio ao fim\n %0Afun\n@@ -410,38 +410,8 @@\n  c%7D%0A\n-%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -438,36 +438,32 @@\n artPos, endPos)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09if grid%5Bl-1\n@@ -507,38 +507,8 @@\n  c%7D%0A\n-%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -535,36 +535,32 @@\n artPos, endPos)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09if grid%5Bl%5D%5B\n@@ -604,38 +604,8 @@\n  1%7D%0A\n-%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -636,28 +636,24 @@\n os, endPos)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09if grid\n@@ -701,38 +701,8 @@\n  1%7D%0A\n-%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -737,20 +737,16 @@\n endPos)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-16_20-31-00",
+            "content": "@@ -68,24 +68,165 @@\n l, c int%0A%7D%0A%0A\n+func valid(grid %5B%5D%5B%5Drune, startPos Pos) bool %7B%0A%09l := startPos.l%0A%09c := startPos.c%0A%0A%09if grid%5Bl%5D%5Bc%5D == ' ' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func search(\n@@ -459,52 +459,63 @@\n %7B%0A%09%09\n-newPos := startPos%0A%09%09newPos = Pos%7Bl + 1, c%7D%0A\n+startPos = Pos%7Bl + 1, c%7D%0A%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -524,35 +524,37 @@\n rn search(grid, \n-new\n+start\n Pos, endPos)%0A%09%7D%0A\n@@ -542,32 +542,36 @@\n artPos, endPos)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09if grid%5Bl-1\n@@ -590,52 +590,63 @@\n %7B%0A%09%09\n-newPos := startPos%0A%09%09newPos = Pos%7Bl - 1, c%7D%0A\n+startPos = Pos%7Bl - 1, c%7D%0A%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -655,35 +655,37 @@\n rn search(grid, \n-new\n+start\n Pos, endPos)%0A%09%7D%0A\n@@ -673,32 +673,36 @@\n artPos, endPos)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09if grid%5Bl%5D%5B\n@@ -721,52 +721,63 @@\n %7B%0A%09%09\n-newPos := startPos%0A%09%09newPos = Pos%7Bl, c + 1%7D%0A\n+startPos = Pos%7Bl, c + 1%7D%0A%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -786,35 +786,37 @@\n rn search(grid, \n-new\n+start\n Pos, endPos)%0A%09%7D%0A\n@@ -808,24 +808,28 @@\n os, endPos)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09if grid\n@@ -852,52 +852,63 @@\n %7B%0A%09%09\n-newPos := startPos%0A%09%09newPos = Pos%7Bl, c - 1%7D%0A\n+startPos = Pos%7Bl, c - 1%7D%0A%09%09if valid(grid, startPos) %7B%0A%09\n %09%09re\n@@ -929,11 +929,13 @@\n id, \n-new\n+start\n Pos,\n@@ -943,16 +943,20 @@\n endPos)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-04-16_20-34-46",
+            "content": "@@ -754,38 +754,13 @@\n urn \n-search(grid, startPos, endPos)\n+false\n %0A%7D%0A%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-04-16_20-40-44",
+            "content": "@@ -76,321 +76,8 @@\n %0A%7D%0A%0A\n-func point(grid %5B%5D%5B%5Drune, startPos Pos) Pos %7B%0A%09l := startPos.l%0A%09c := startPos.c%0A%0A%09if grid%5Bl+1%5D%5Bc%5D == '.' %7B%0A%09%09return Pos%7Bl + 1, c%7D%0A%09%7D%0A%0A%09if grid%5Bl-1%5D%5Bc%5D == '.' %7B%0A%09%09return Pos%7Bl - 1, c%7D%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc+1%5D == '.' %7B%0A%09%09return Pos%7Bl, c + 1%7D%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc-1%5D == '.' %7B%0A%09%09return Pos%7Bl, c - 1%7D%0A%09%7D%0A%0A%09return startPos%0A%7D%0A%0A\n func\n@@ -754,13 +754,14 @@\n urn \n-point\n+search\n (gri\n@@ -775,21 +775,17 @@\n tPos\n-) != start\n+, end\n Pos\n+)\n %0A%7D%0A%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-04-16_20-48-40",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc point(grid [][]rune, startPos Pos) Pos {\n\tl := startPos.l\n\tc := startPos.c\n\n\tif grid[l+1][c] == '.' {\n\t\treturn Pos{l + 1, c}\n\t}\n\n\tif grid[l-1][c] == '.' {\n\t\treturn Pos{l - 1, c}\n\t}\n\n\tif grid[l][c+1] == '.' {\n\t\treturn Pos{l, c + 1}\n\t}\n\n\tif grid[l][c-1] == '.' {\n\t\treturn Pos{l, c - 1}\n\t}\n\n\treturn startPos\n}\n\nfunc search(grid [][]rune, startPos, endPos Pos) bool {\n\n\tl := startPos.l\n\tc := startPos.c\n\tlf := endPos.l\n\tcf := endPos.c\n\n\tif l == lf && c == cf {\n\t\treturn true\n\t}\n\n\tif grid[l][c] == ' ' {\n\t\tgrid[l][c] = '.'\n\t}\n\n\tif grid[l+1][c] == ' ' {\n\t\tnewPos := startPos\n\t\tnewPos = Pos{l + 1, c}\n\t\treturn search(grid, newPos, endPos)\n\t}\n\n\tif grid[l-1][c] == ' ' {\n\t\tnewPos := startPos\n\t\tnewPos = Pos{l - 1, c}\n\t\treturn search(grid, newPos, endPos)\n\t}\n\n\tif grid[l][c+1] == ' ' {\n\t\tnewPos := startPos\n\t\tnewPos = Pos{l, c + 1}\n\t\treturn search(grid, newPos, endPos)\n\t}\n\n\tif grid[l][c-1] == ' ' {\n\t\tnewPos := startPos\n\t\tnewPos = Pos{l, c - 1}\n\t\treturn search(grid, newPos, endPos)\n\t}\n\n\treturn point(grid, startPos) != startPos\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(grid, startPos, endPos)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "113"
         }
     ]
 }

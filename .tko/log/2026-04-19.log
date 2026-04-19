@@ -1,0 +1,128 @@
+2026-04-19 11:39:59, MOVE, v:1, k:es@fractais_png, mode:PICK
+2026-04-19 11:40:00, EXEC, v:1, k:es@fractais_png, mode:FULL, size:136, fail:COMP
+2026-04-19 11:42:35, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-19 11:42:57, EXEC, v:1, k:es@fractais_png, mode:FULL, fail:COMP
+2026-04-19 11:42:57, EXEC, v:1, k:es@fractais_png, mode:FULL, fail:COMP
+2026-04-19 11:46:32, MOVE, v:1, k:es@fractais_png, mode:BACK
+2026-04-19 12:31:50, EXEC, v:1, k:src@go, mode:FREE
+2026-04-19 12:33:06, MOVE, v:1, k:es@fractais_png, mode:PICK
+2026-04-19 12:33:08, EXEC, v:1, k:es@fractais_png, mode:LOCK, rate:0
+2026-04-19 12:51:15, MOVE, v:1, k:es@gomos, mode:DOWN
+2026-04-19 12:51:42, MOVE, v:1, k:es@gomos, mode:PICK
+2026-04-19 12:51:43, EXEC, v:1, k:es@gomos, mode:FULL, size:90, fail:COMP
+2026-04-19 12:52:51, EXEC, v:1, k:es@gomos, mode:FULL, rate:0, size:57
+2026-04-19 12:53:33, MOVE, v:1, k:es@gomos, mode:BACK
+2026-04-19 12:53:39, MOVE, v:1, k:es@casais, mode:PICK
+2026-04-19 12:53:40, EXEC, v:1, k:es@casais, mode:FULL, rate:100
+2026-04-19 12:53:51, MOVE, v:1, k:es@casais, mode:BACK
+2026-04-19 12:53:53, MOVE, v:1, k:es@casais, mode:PICK
+2026-04-19 12:53:56, EXEC, v:1, k:es@casais, mode:FULL, rate:100
+2026-04-19 12:54:05, SELF, v:1, k:es@casais, self:1, rate:100, study:90
+2026-04-19 12:54:07, MOVE, v:1, k:es@casais, mode:BACK
+2026-04-19 12:54:22, MOVE, v:1, k:es@princesa, mode:PICK
+2026-04-19 12:54:25, EXEC, v:1, k:es@princesa, mode:FULL, rate:100
+2026-04-19 12:54:51, SELF, v:1, k:es@princesa, self:1, rate:100, study:300, concept:1, problem:1
+2026-04-19 12:54:53, MOVE, v:1, k:es@princesa, mode:BACK
+2026-04-19 12:55:14, MOVE, v:1, k:es@especiais, mode:PICK
+2026-04-19 12:55:16, EXEC, v:1, k:es@especiais, mode:FULL, rate:100
+2026-04-19 12:55:25, MOVE, v:1, k:es@especiais, mode:BACK
+2026-04-19 12:55:34, MOVE, v:1, k:es@apagando, mode:PICK
+2026-04-19 12:55:42, SELF, v:1, k:es@apagando, self:1, rate:100, study:60
+2026-04-19 12:55:45, MOVE, v:1, k:es@apagando, mode:BACK
+2026-04-19 12:55:54, MOVE, v:1, k:es@manipulacao, mode:PICK
+2026-04-19 12:55:56, EXEC, v:1, k:es@manipulacao, mode:FULL, rate:100
+2026-04-19 12:55:59, MOVE, v:1, k:es@manipulacao, mode:BACK
+2026-04-19 12:56:02, MOVE, v:1, k:es@manipulacao, mode:PICK
+2026-04-19 12:56:07, MOVE, v:1, k:es@manipulacao, mode:BACK
+2026-04-19 12:56:10, MOVE, v:1, k:es@manipulacao, mode:PICK
+2026-04-19 12:56:13, EXEC, v:1, k:es@manipulacao, mode:FULL, rate:100
+2026-04-19 12:56:15, EXEC, v:1, k:es@manipulacao, mode:FULL, rate:100
+2026-04-19 12:56:22, SELF, v:1, k:es@manipulacao, self:1, rate:100, study:90, concept:1
+2026-04-19 12:56:24, MOVE, v:1, k:es@manipulacao, mode:BACK
+2026-04-19 12:56:33, MOVE, v:1, k:es@alternando, mode:PICK
+2026-04-19 12:56:36, EXEC, v:1, k:es@alternando, mode:FULL, rate:7
+2026-04-19 12:56:39, MOVE, v:1, k:es@alternando, mode:BACK
+2026-04-19 12:56:42, MOVE, v:1, k:es@especiais, mode:PICK
+2026-04-19 12:56:46, EXEC, v:1, k:es@especiais, mode:FULL, rate:100
+2026-04-19 12:56:46, MOVE, v:1, k:es@especiais, mode:BACK
+2026-04-19 12:56:49, MOVE, v:1, k:es@especiais, mode:PICK
+2026-04-19 12:56:52, EXEC, v:1, k:es@especiais, mode:FULL, rate:100
+2026-04-19 12:57:06, SELF, v:1, k:es@especiais, self:1, rate:100, study:300, concept:1
+2026-04-19 12:57:07, MOVE, v:1, k:es@especiais, mode:BACK
+2026-04-19 12:57:10, MOVE, v:1, k:es@buscas, mode:PICK
+2026-04-19 12:57:13, EXEC, v:1, k:es@buscas, mode:FULL, rate:100
+2026-04-19 12:57:16, MOVE, v:1, k:es@buscas, mode:BACK
+2026-04-19 12:57:18, MOVE, v:1, k:es@buscas, mode:PICK
+2026-04-19 12:57:21, EXEC, v:1, k:es@buscas, mode:FULL, rate:100
+2026-04-19 12:57:27, SELF, v:1, k:es@buscas, self:1, rate:100, study:60
+2026-04-19 12:57:29, EXEC, v:1, k:es@buscas, mode:FULL, rate:100
+2026-04-19 12:57:33, MOVE, v:1, k:es@buscas, mode:BACK
+2026-04-19 12:57:39, MOVE, v:1, k:es@rotacoes, mode:PICK
+2026-04-19 12:57:43, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:100
+2026-04-19 12:57:43, MOVE, v:1, k:es@rotacoes, mode:BACK
+2026-04-19 12:57:45, MOVE, v:1, k:es@rotacoes, mode:PICK
+2026-04-19 12:57:46, MOVE, v:1, k:es@rotacoes, mode:BACK
+2026-04-19 12:57:47, MOVE, v:1, k:es@rotacoes, mode:PICK
+2026-04-19 12:57:53, SELF, v:1, k:es@rotacoes, self:1, rate:100, study:30
+2026-04-19 12:57:55, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:100
+2026-04-19 12:57:57, EXEC, v:1, k:es@rotacoes, mode:FULL, rate:100
+2026-04-19 12:57:58, MOVE, v:1, k:es@rotacoes, mode:BACK
+2026-04-19 13:00:53, MOVE, v:1, k:es@rotten, mode:DOWN
+2026-04-19 13:01:00, MOVE, v:1, k:es@caminho, mode:DOWN
+2026-04-19 13:01:02, MOVE, v:1, k:es@detonate, mode:DOWN
+2026-04-19 14:09:53, MOVE, v:1, k:es@rotten, mode:DOWN
+2026-04-19 14:10:17, MOVE, v:1, k:es@caminho, mode:DOWN
+2026-04-19 14:10:19, MOVE, v:1, k:es@detonate, mode:DOWN
+2026-04-19 14:18:39, MOVE, v:1, k:es@rotten, mode:PICK
+2026-04-19 14:18:41, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:5
+2026-04-19 14:18:51, MOVE, v:1, k:es@rotten, mode:BACK
+2026-04-19 14:20:02, MOVE, v:1, k:es@rotten, mode:PICK
+2026-04-19 14:20:02, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:36
+2026-04-19 14:21:05, EXEC, v:1, k:es@rotten, mode:FULL, rate:0
+2026-04-19 14:21:20, MOVE, v:1, k:es@rotten, mode:BACK
+2026-04-19 14:21:23, MOVE, v:1, k:es@rotten, mode:DOWN
+2026-04-19 14:22:10, MOVE, v:1, k:es@rotten, mode:PICK
+2026-04-19 14:22:10, EXEC, v:1, k:es@rotten, mode:FULL, rate:0
+2026-04-19 14:22:38, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:31
+2026-04-19 17:25:44, MOVE, v:1, k:es@rotten, mode:PICK
+2026-04-19 17:25:46, EXEC, v:1, k:es@rotten, mode:FULL, size:36, fail:COMP
+2026-04-19 17:26:26, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:36
+2026-04-19 17:27:03, EXEC, v:1, k:es@rotten, mode:FULL, size:36, fail:COMP
+2026-04-19 17:27:35, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:36
+2026-04-19 17:33:53, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:36
+2026-04-19 17:53:07, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:59
+2026-04-19 17:54:16, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:56
+2026-04-19 17:54:59, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:56
+2026-04-19 17:56:49, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:56
+2026-04-19 18:00:36, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:56
+2026-04-19 18:03:32, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:60
+2026-04-19 18:06:00, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:60
+2026-04-19 18:06:40, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:60
+2026-04-19 18:07:23, EXEC, v:1, k:es@rotten, mode:FULL, rate:0
+2026-04-19 18:09:02, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:60
+2026-04-19 18:10:06, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:60
+2026-04-19 18:11:39, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:60
+2026-04-19 18:12:17, MOVE, v:1, k:es@rotten, mode:PICK
+2026-04-19 18:12:18, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:55
+2026-04-19 18:21:07, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:69
+2026-04-19 18:21:30, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:69
+2026-04-19 18:21:55, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:69
+2026-04-19 18:23:26, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:83
+2026-04-19 18:24:18, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:65
+2026-04-19 18:25:42, EXEC, v:1, k:es@rotten, mode:FULL, rate:66
+2026-04-19 18:25:56, EXEC, v:1, k:es@rotten, mode:FULL, rate:66
+2026-04-19 18:26:06, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:65
+2026-04-19 18:28:02, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:68
+2026-04-19 18:28:44, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:69
+2026-04-19 18:28:57, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:68
+2026-04-19 18:29:04, EXEC, v:1, k:es@rotten, mode:FULL, rate:66
+2026-04-19 18:29:13, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:68
+2026-04-19 18:29:34, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:69
+2026-04-19 18:30:27, EXEC, v:1, k:es@rotten, mode:FULL, rate:33, size:64
+2026-04-19 18:30:37, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:64
+2026-04-19 18:34:24, EXEC, v:1, k:es@rotten, mode:FULL, rate:0, size:68
+2026-04-19 18:36:06, EXEC, v:1, k:es@rotten, mode:FULL, rate:66, size:68
+2026-04-19 18:36:28, MOVE, v:1, k:es@rotten, mode:BACK
+2026-04-19 18:36:43, MOVE, v:1, k:es@caminho, mode:PICK
+2026-04-19 18:37:31, MOVE, v:1, k:es@caminho, mode:BACK
+2026-04-19 18:37:37, MOVE, v:1, k:es@detonate, mode:PICK
