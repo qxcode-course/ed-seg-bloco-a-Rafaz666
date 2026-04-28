@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-20_12-08-24",
+            "content": "@@ -475,13 +475,8 @@\n %5D%5Bj%5D\n-, %22 %22\n )%0A%09%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-20_12-11-18",
+            "content": "@@ -222,16 +222,30 @@\n inputY)%0A\n+%09fmt.Scanln()%0A\n %09grid :=\n@@ -366,16 +366,31 @@\n j%5D)%0A%09%09%7D%0A\n+%09%09fmt.Scanln()%0A\n %09%7D%0A%0A%09for\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-20_12-18-43",
+            "content": "@@ -25,211 +25,8 @@\n t%22%0A%0A\n-type bomb struct %7B%0A%09x, y, r int%0A%7D%0A%0Afunc createBomb(grid %5B%5D%5B%5Dint) %5B%5Dbomb %7B%0A%09bombs := %5B%5Dbomb%7B%7D%0A%0A%09for i := 0; i %3C len(grid); i++ %7B%0A%09%09bombs%5Bi%5D = bomb%7Bgrid%5Bi%5D%5B0%5D, grid%5Bi%5D%5B1%5D, grid%5Bi%5D%5B2%5D%7D%0A%09%7D%0A%0A%09return bombs%0A%7D%0A%0A\n func\n@@ -475,53 +475,8 @@\n )%0A%09%7D\n-%0A%09bombs := createBomb(grid)%0A%09fmt.Print(bombs)\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-20_12-41-39",
+            "content": "@@ -118,27 +118,9 @@\n b%7B%7D%0A\n-%09if grid != nil %7B%0A%09\n+%0A\n %09for\n@@ -149,17 +149,16 @@\n ; i++ %7B%0A\n-%09\n %09%09bombs%5B\n@@ -203,20 +203,16 @@\n %5Bi%5D%5B2%5D%7D%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09ret\n@@ -675,17 +675,16 @@\n ln()%0A%09%7D%0A\n-%0A\n %09bombs :\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-20_12-43-58",
+            "content": "@@ -699,16 +699,43 @@\n n()%0A%09%7D%0A%0A\n+%09bombs := createBomb(grid)%0A\n %09fmt.Pri\n@@ -737,17 +737,18 @@\n t.Print(\n-grid\n+bombs\n )%0A%0A%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-20_12-45-22",
+            "content": "@@ -582,16 +582,133 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09for i := 0; i %3C inputX; i++ %7B%0A%09%09for j := 0; j %3C inputY; j++ %7B%0A%09%09%09fmt.Print(grid%5Bi%5D%5Bj%5D, %22 %22)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%0A\n %09fmt.Pri\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-20_12-45-36",
+            "content": "@@ -179,24 +179,13 @@\n ombs\n- = append(bombs,\n+%5Bi%5D =\n  bom\n@@ -221,17 +221,16 @@\n d%5Bi%5D%5B2%5D%7D\n-)\n %0A%09%09%7D%0A%09%7D%0A\n@@ -602,53 +602,8 @@\n rid)\n-%0A%09bombs := createBomb(grid)%0A%09fmt.Print(bombs)\n %0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-20_12-49-10",
+            "content": "@@ -615,23 +615,8 @@\n id)%0A\n-%09fmt.Println()%0A\n %09bom\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-20_12-49-34",
+            "content": "package main\n\nimport \"fmt\"\n\ntype bomb struct {\n\tx, y, r int\n}\n\nfunc createBomb(grid [][]int) []bomb {\n\tbombs := []bomb{}\n\tif grid != nil {\n\t\tfor i := 0; i < len(grid); i++ {\n\t\t\tbombs = append(bombs, bomb{grid[i][0], grid[i][1], grid[i][2]})\n\t\t}\n\t}\n\n\treturn bombs\n}\n\nfunc createInput(x, y int) [][]int {\n\tgrid := make([][]int, x)\n\tfor i := 0; i < x; i++ {\n\t\tgrid[i] = make([]int, y)\n\t}\n\treturn grid\n}\n\nfunc main() {\n\tvar inputX, inputY int\n\tfmt.Scan(&inputX, &inputY)\n\tgrid := createInput(inputX, inputY)\n\n\tfor i := 0; i < inputX; i++ {\n\t\tfor j := 0; j < inputY; j++ {\n\t\t\tfmt.Scan(&grid[i][j])\n\t\t}\n\t}\n\n\tfmt.Print(grid)\n\tfmt.Println()\n\tbombs := createBomb(grid)\n\tfmt.Print(bombs)\n\n}\n",
+            "lines": "44"
+        }
+    ]
+}
