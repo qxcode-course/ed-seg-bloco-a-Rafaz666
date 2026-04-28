@@ -15,7 +15,7 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@bfs
+- es@vector
 flags:
   inbox: all
   panel: help
@@ -23,5 +23,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@detonate
-selected_index: 12
+selected: es@bettersearch
+selected_index: 7
