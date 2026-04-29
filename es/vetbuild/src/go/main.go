@@ -3,6 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"strconv"
 	"strings"
 )
 
@@ -20,52 +22,66 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
+func (v *Vector) Capacity() int {
+	return v.capacity
+}
 
-func Join(slice []int, sep string) string {
-	if len(slice) == 0 {
-		return ""
+func (v *Vector) Get(indexValue int) int {
+	return v.data[indexValue]
+}
+
+func (v *Vector) At(indexValue int) (int, string) {
+	if indexValue >= v.Capacity() || indexValue < 0 {
+		return -1, "indice not exists" // precisa ver se o veotr não está vazio, não se o indice existe, troque isso
 	}
-	var result strings.Builder
-	fmt.Fprintf(&result, "%d", slice[0])
-	for _, value := range slice[1:] {
-		fmt.Fprintf(&result, "%s%d", sep, value)
-	}
-	return result.String()
+}
+
+func PushBack(int index) {
+
 }
 
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// v := NewVector(0)
+	v := NewVector(0)
 	for {
+
 		fmt.Print("$")
 		if !scanner.Scan() {
 			break
 		}
+
 		line = scanner.Text()
 		fmt.Println(line)
 		parts := strings.Fields(line)
 		if len(parts) == 0 {
 			continue
 		}
+
 		cmd = parts[0]
 
 		switch cmd {
+
 		case "end":
 			return
+
 		case "init":
-			// value, _ := strconv.Atoi(parts[1])
-			// v = NewVector(value)
+			capacity, _ := strconv.Atoi(parts[1])
+			v = NewVector(capacity)
+
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
+				v.PushBack(value)
+			}
+
 		case "show":
 			// fmt.Println(v)
+
 		case "status":
 			// fmt.Println(v.Status())
+
 		case "pop":
 			// err := v.PopBack()
 			// if err != nil {
@@ -97,8 +113,10 @@ func main() {
 			// }
 		case "clear":
 			// v.Clear()
+
 		case "capacity":
 			// fmt.Println(v.Capacity())
+
 		case "get":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, err := v.At(index)
@@ -114,7 +132,7 @@ func main() {
 			// if err != nil {
 			// 	fmt.Println(err)
 			// }
-			// 
+			//
 		case "reserve":
 			// newCapacity, _ := strconv.Atoi(parts[1])
 			// v.Reserve(newCapacity)
