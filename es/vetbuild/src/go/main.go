@@ -30,20 +30,45 @@ func (v *Vector) Get(indexValue int) int {
 	return v.data[indexValue]
 }
 
-func (v *Vector) At(indexValue int) (int, string) {
-	if indexValue >= v.Capacity() || indexValue < 0 {
-		return -1, "indice not exists" // precisa ver se o veotr não está vazio, não se o indice existe, troque isso
-	}
+func (v *Vector) Set(indexValue, value int) {
+	v.data[indexValue] = value
 }
 
-func PushBack(int index) {
+func (v *Vector) At(indexValue int) (int, string) {
+	vazio := true
+	for i := 0; i < v.Capacity(); i++ {
+		vazio = false
+		break
+	}
 
+	if vazio {
+		return -1, "vetor vazio"
+	}
+
+	return v.Get(indexValue), ""
+}
+
+func (v *Vector) Clear() {
+	for i := 0; i < v.Capacity(); i++ {
+		v.Set(i, 0)
+	}
+
+	v.size = 0
+}
+
+func (v *Vector) PushBack(value int) {
+	if v.Get(v.Capacity()-1) != 0 {
+		v.data = append(v.data, value)
+		v.capacity = v.capacity + 1
+		v.size = v.size + 1
+	}
+
+	v.Set(v.Capacity()-1, value)
 }
 
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
-
 	v := NewVector(0)
 	for {
 
@@ -77,7 +102,7 @@ func main() {
 			}
 
 		case "show":
-			// fmt.Println(v)
+			fmt.Println(v)
 
 		case "status":
 			// fmt.Println(v.Status())

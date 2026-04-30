@@ -26,6 +26,7 @@ func createInput(x, y int) [][]int {
 }
 
 func boom(x, y bomb) bool {
+	pX := 
 
 }
 
