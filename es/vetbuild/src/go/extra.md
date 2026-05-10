@@ -16,7 +16,7 @@ class Vector {
   + PopBack(): (int, error)                 ' Remove e retorna o último elemento do vetor. Retorna um erro se o vetor estiver vazio
   + Capacity(): int                         ' Retorna a capacidade atual do vetor
   + Status(): string                        ' Retorna o tamanho e a capacidade do vetor
-  + String(): string                        ' Retorna uma representação em string dos elementos do vetor
+  + String(): string                        ' Retorna uma representação em string dos elementos do vetor 
   --
   + Get(index: int): int                    ' Retorna o elemento no índice especificado sem verificação de limites
   + At(index: int): (int, error)            ' Retorna o elemento no índice especificado com verificação de limites.

@@ -148,6 +148,37 @@ func (v *Vector) Insert(pos, value int) error {
 	return nil
 }
 
+func (v *Vector) Erase(pos int) error {
+	if pos < 0 || pos >= v.Capacity() {
+		return fmt.Errorf("index out of range")
+	}
+
+	v.size--
+	v.data[pos] = 0
+	return nil
+}
+
+func (v *Vector) Slice(start, end int) string {
+	if start < 0 {
+		start = start + v.size
+	}
+
+	if end < 0 {
+		end = end + v.size
+	}
+
+	newData := make([]int, end-start)
+	copy(newData, v.data[start:end])
+
+	v2 := Vector{
+		data:     newData,
+		size:     len(newData),
+		capacity: len(newData),
+	}
+
+	return v2.String()
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -172,7 +203,6 @@ func main() {
 
 		case "end":
 			return
-
 		case "init":
 			capacity, _ := strconv.Atoi(parts[1])
 			v = NewVector(capacity)
@@ -198,11 +228,11 @@ func main() {
 				fmt.Println(err)
 			}
 		case "erase":
-			// index, _ := strconv.Atoi(parts[1])
-			// err := v.Erase(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			err := v.Erase(index)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "indexOf":
 			value, _ := strconv.Atoi(parts[1])
 			index := v.IndexOf(value)
@@ -233,15 +263,14 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-
 		case "reserve":
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}

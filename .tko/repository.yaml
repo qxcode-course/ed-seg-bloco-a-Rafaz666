@@ -16,6 +16,15 @@ sources:
   tasks: null
 expanded:
 - es@vector
+- es@linear
+- es@rec
+- es@tree
+- es@list
+- es@backtrack
+- es@dfs
+- es@bfs
+- es@map_set
+- es@basic
 flags:
   inbox: all
   panel: help
@@ -24,4 +33,4 @@ flags:
   show_time: 'true'
 lang: go
 selected: es@vetbuild
-selected_index: 5
+selected_index: 50
