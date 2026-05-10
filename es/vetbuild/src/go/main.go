@@ -16,7 +16,7 @@ type Vector struct {
 
 func NewVector(capacity int) *Vector {
 	return &Vector{
-		data:     make([]int, capacity), // nunca use len(data) ou cap(data) ou qq método do go de manipulação de array
+		data:     make([]int, capacity),
 		size:     0,
 		capacity: capacity,
 	}

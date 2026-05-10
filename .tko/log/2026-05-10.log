@@ -17,3 +17,10 @@
 2026-05-10 09:39:53, EXEC, v:1, k:es@vetbuild, mode:FULL, rate:100
 2026-05-10 09:40:26, SELF, v:1, k:es@vetbuild, self:1, rate:100, study:360, concept:1
 2026-05-10 09:41:46, MOVE, v:1, k:es@vetbuild, mode:BACK
+2026-05-10 09:43:07, MOVE, v:1, k:es@setbuild, mode:DOWN
+2026-05-10 18:33:27, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-10 18:39:32, EXEC, v:1, k:es@setbuild, mode:FULL, size:108, fail:COMP
+2026-05-10 19:05:52, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:124
+2026-05-10 19:08:59, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:137
+2026-05-10 19:09:57, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:137
+2026-05-10 19:10:45, MOVE, v:1, k:es@setbuild, mode:BACK

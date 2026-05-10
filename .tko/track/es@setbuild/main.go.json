@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_18-39-32",
+            "content": "@@ -771,24 +771,29 @@\n Set) Insert(\n+pos, \n value int) %7B\n@@ -791,17 +791,96 @@\n ue int) \n-%7B\n+error %7B%0A%09if pos %3C 0 %7C%7C pos %3E= v.Capacity() %7B%0A%09%09return fmt.Errorf(%22index out%22)%0A%09%7D\n %0A%0A%09if v.\n@@ -977,198 +977,8 @@\n e++%0A\n-%09pos := 0%0A%0A%09for i := 0; i %3C v.size; i++ %7B%0A%09%09if value == v.data%5Bi%5D %7B%0A%09%09%09return%0A%09%09%7D%0A%0A%09%09if v.size == 0 %7B%0A%09%09%09v.data%5B0%5D = value%0A%09%09%09return%0A%09%09%7D%0A%0A%09%09if value %3C v.data%5Bi%5D %7B%0A%09%09%09pos = i%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A\n %09cop\n@@ -1009,16 +1009,16 @@\n %5Bpos:%5D)%0A\n-\n %09v.data%5B\n@@ -1030,16 +1030,28 @@\n = value%0A\n+%09return nil%0A\n %7D%0A%0Afunc \n@@ -1486,19 +1486,17 @@\n %09value, \n-err\n+_\n  := strc\n@@ -1514,55 +1514,8 @@\n rt)%0A\n-%09%09%09%09if err == nil %7B%0A%09%09%09%09%09v.Insert(value)%0A%09%09%09%09%7D%0A\n %09%09%09%7D\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-05-10_19-05-52",
+            "content": "@@ -1143,140 +1143,8 @@\n %0A%7D%0A%0A\n-func (v *Set) Contains(value int) bool %7B%0A%09for i := range v.data %7B%0A%09%09if value == v.data%5Bi%5D %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -1779,26 +1779,27 @@\n ns%22:%0A%09%09%09\n+// \n value, \n-err\n+_\n  := strc\n@@ -1821,54 +1821,8 @@\n 1%5D)%0A\n-%09%09%09if err == nil %7B%0A%09%09%09%09v.Contains(value)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-05-10_19-08-59",
+            "content": "@@ -1971,28 +1971,16 @@\n l %7B%0A%09%09%09%09\n-fmt.Println(\n v.Contai\n@@ -1988,17 +1988,16 @@\n s(value)\n-)\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-05-10_19-09-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Set struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewSet(capacity int) *Set {\n\treturn &Set{\n\t\tdata:     make([]int, capacity),\n\t\tsize:     0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (v *Set) String() string {\n\tif v.size == 0 {\n\t\treturn fmt.Sprintf(\"[]\")\n\t}\n\n\tstr := \"\"\n\tfor i := range v.data {\n\t\tif v.data[i] != 0 {\n\t\t\tstr += strconv.Itoa(v.data[i]) + \", \"\n\t\t}\n\t}\n\n\tposv := strings.LastIndex(str, \",\")\n\tnewstr := str[:posv]\n\treturn fmt.Sprintf(\"[%s]\", newstr)\n}\n\nfunc (v *Set) Erase(pos int) error {\n\tif pos < 0 || pos >= v.Capacity() {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tv.size--\n\tv.data[pos] = 0\n\treturn nil\n}\n\nfunc (v *Set) Capacity() int {\n\treturn v.capacity\n}\n\nfunc (v *Set) Insert(value int) {\n\n\tif v.capacity == v.size {\n\t\tv.data = append(v.data, 0)\n\t\tv.capacity = v.capacity * 2\n\t}\n\n\tv.size++\n\tpos := 0\n\n\tfor i := 0; i < v.size; i++ {\n\t\tif value == v.data[i] {\n\t\t\treturn\n\t\t}\n\n\t\tif v.size == 0 {\n\t\t\tv.data[0] = value\n\t\t\treturn\n\t\t}\n\n\t\tif value < v.data[i] {\n\t\t\tpos = i\n\t\t\tbreak\n\t\t}\n\t}\n\tcopy(v.data[pos+1:], v.data[pos:])\n\tv.data[pos] = value\n}\n\nfunc (v *Set) Contains(value int) bool {\n\tfor i := range v.data {\n\t\tif value == v.data[i] {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, err := strconv.Atoi(part)\n\t\t\t\tif err == nil {\n\t\t\t\t\tv.Insert(value)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(v.String())\n\t\tcase \"erase\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\tcase \"contains\":\n\t\t\tvalue, err := strconv.Atoi(parts[1])\n\t\t\tif err == nil {\n\t\t\t\tfmt.Println(v.Contains(value))\n\t\t\t}\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "137"
+        }
+    ]
+}
