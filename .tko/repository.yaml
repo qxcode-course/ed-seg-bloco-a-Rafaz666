@@ -15,16 +15,16 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@dfs
-- es@rec
-- es@list
-- es@tree
-- es@vector
-- es@map_set
-- es@linear
-- es@basic
 - es@bfs
+- es@basic
+- es@tree
 - es@backtrack
+- es@dfs
+- es@linear
+- es@rec
+- es@vector
+- es@list
+- es@map_set
 flags:
   inbox: all
   panel: help
@@ -32,5 +32,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@setbuild
-selected_index: 51
+selected: es@permutacoes
+selected_index: 46
