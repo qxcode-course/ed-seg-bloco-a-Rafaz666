@@ -85,6 +85,23 @@ func Join(slice []int, sep string) string {
 	return result
 }
 
+func (v *Set) String() string {
+	if v.size == 0 {
+		return fmt.Sprintf("[]")
+	}
+
+	str := ""
+	for i := range v.data {
+		if v.data[i] != 0 {
+			str += strconv.Itoa(v.data[i]) + ", "
+		}
+	}
+
+	posv := strings.LastIndex(str, ",")
+	newstr := str[:posv]
+	return fmt.Sprintf("[%s]", newstr)
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -112,12 +129,22 @@ func main() {
 		case "insert":
 			 for _, part := range args[1:] {
 			 	value, _ := strconv.Atoi(part)
+				if _ == nil {
+				v.Insert(value)
+			 }
 			 }
 		case "show":
+			fmt.Println(v.String)
 		case "erase":
 			value, _ := strconv.Atoi(args[1])
+			if _ == nil {
+				v.Erase(value)
+			 }
 		case "contains":
 			 value, _ := strconv.Atoi(args[1])
+			 if _ == nil {
+				v.Contains(value)
+			 }
 		case "count":
 			// value, _ := strconv.Atoi(args[1])
 		case "unique":

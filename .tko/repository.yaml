@@ -6,31 +6,20 @@ sources:
   type: local
   writeable: true
   quests: null
-  tasks: null
 - name: es
   target: https://github.com/qxcodeed/arcade.git
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 expanded:
-- es@bfs
-- es@basic
-- es@tree
-- es@backtrack
-- es@dfs
-- es@linear
 - es@rec
-- es@vector
-- es@list
-- es@map_set
 flags:
   inbox: all
-  panel: help
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@permutacoes
-selected_index: 46
+selected: es@enesimo
+selected_index: 12

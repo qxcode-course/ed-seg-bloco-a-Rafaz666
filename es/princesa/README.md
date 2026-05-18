@@ -1,6 +1,6 @@
 # Princesa v1
 
-[![_](../../.tko/cache/es/base/princesa/cover.jpg)](https://www.youtube.com/watch?v=uCsD3ZGzMgE)
+[![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/princesa/assets/cover.jpg)](https://www.youtube.com/watch?v=uCsD3ZGzMgE)
 
 [](solver.cpp)
 Um problema bem interessante e antigo da matemática é conhecido como Josephus Problem. No link da imagem você pode, por curiosidades aprender bastantes sobre ele e o modelo matemático que se propõe a modelá-lo.
@@ -55,80 +55,36 @@ pos = pos % size; //se ele era o último agora é o zero
 - Qual dos algoritmos você acha que é mais eficiente?
 - Implemente os dois e vá aumentando a instância do problema e veja o resultado.
 
-```txt
->>>>>>>> 01
+## Exemplos
+
+<!-- load tests.toml --tests 3 -->
+```py
+>>>>>>>> INSERT
 3 1
-========
+======== EXPECT
 [ 1> 2 3 ]
 [ 1 3> ]
 [ 3> ]
-<<<<<<<<
+<<<<<<<< FINISH
+```
 
->>>>>>>> 02
+```py
+>>>>>>>> INSERT
 3 2
-========
+======== EXPECT
 [ 1 2> 3 ]
 [ 1> 2 ]
 [ 1> ]
-<<<<<<<<
+<<<<<<<< FINISH
+```
 
->>>>>>>> 03
+```py
+>>>>>>>> INSERT
 3 3
-========
+======== EXPECT
 [ 1 2 3> ]
 [ 2> 3 ]
 [ 2> ]
-<<<<<<<<
-
->>>>>>>> 04
-6 3
-========
-[ 1 2 3> 4 5 6 ]
-[ 1 2 3 5> 6 ]
-[ 1> 2 3 5 ]
-[ 1 3> 5 ]
-[ 1> 3 ]
-[ 1> ]
-<<<<<<<<
-
->>>>>>>> 05
-9 9
-========
-[ 1 2 3 4 5 6 7 8 9> ]
-[ 2> 3 4 5 6 7 8 9 ]
-[ 2 4> 5 6 7 8 9 ]
-[ 2 4 6> 7 8 9 ]
-[ 2 4 6 8> 9 ]
-[ 2> 4 6 8 ]
-[ 2 6> 8 ]
-[ 2> 6 ]
-[ 2> ]
-<<<<<<<<
-
->>>>>>>> 06
-20 1
-========
-[ 1> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
-[ 1 3> 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
-[ 1 3 5> 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
-[ 1 3 5 7> 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
-[ 1 3 5 7 9> 10 11 12 13 14 15 16 17 18 19 20 ]
-[ 1 3 5 7 9 11> 12 13 14 15 16 17 18 19 20 ]
-[ 1 3 5 7 9 11 13> 14 15 16 17 18 19 20 ]
-[ 1 3 5 7 9 11 13 15> 16 17 18 19 20 ]
-[ 1 3 5 7 9 11 13 15 17> 18 19 20 ]
-[ 1 3 5 7 9 11 13 15 17 19> 20 ]
-[ 1> 3 5 7 9 11 13 15 17 19 ]
-[ 1 5> 7 9 11 13 15 17 19 ]
-[ 1 5 9> 11 13 15 17 19 ]
-[ 1 5 9 13> 15 17 19 ]
-[ 1 5 9 13 17> 19 ]
-[ 1> 5 9 13 17 ]
-[ 1 9> 13 17 ]
-[ 1 9 17> ]
-[ 9> 17 ]
-[ 9> ]
-<<<<<<<<
-
-
+<<<<<<<< FINISH
 ```
+<!-- load -->

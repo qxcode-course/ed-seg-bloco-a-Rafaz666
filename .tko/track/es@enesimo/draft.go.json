@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_18-58-48",
+            "content": "@@ -43,11 +43,8 @@\n (num\n-, i\n  int\n@@ -108,20 +108,8 @@\n  0%7B%0A\n-        i++%0A\n     \n@@ -131,17 +131,17 @@\n imo(num+\n-i\n+1\n )%0A    %7D%0A\n@@ -163,12 +163,8 @@\n  num\n- + i\n %0A%7D%0A%0A\n@@ -249,11 +249,8 @@\n (num\n-, 0\n ))%0A%7D\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-18_18-59-53",
+            "content": "@@ -145,18 +145,17 @@\n rimo(num\n-, \n++\n i)%0A    %7D\n@@ -160,21 +160,16 @@\n  %7D%0A    %0A\n-    %0A\n     retu\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-18_19-00-34",
+            "content": "@@ -10,17 +10,16 @@\n ain%0A\n-%0A\n import (\n %0A%09%22f\n@@ -18,16 +18,13 @@\n rt (\n-%0A%09\n %22fmt%22\n-%0A\n )%0A%0Af\n@@ -34,20 +34,24 @@\n  ehprimo\n+ \n (num\n+, i\n  int) in\n@@ -58,146 +58,138 @@\n t %7B%0A\n-%09\n+    \n if num\n-%25\n+ %25 \n 2 == 0 \n-%7B%0A%09%09return ehprimo(num + 1)%0A%09%7D%0A%0A%09for i := 0; i %3C num+10; i++ %7B%0A%09%09if (num + 1%252) != 0 %7B%0A%09%09%09return num + 1%0A%09%09%7D%0A%09%7D%0A%0A%09return -1\n+%7C%7C num %25 3 == 0 %7C%7C num %25 5 == 0%7B%0A        i++%0A        return ehprimo(num, i)%0A    %7D%0A    %0A    %0A    return num + i\n %0A%7D%0A%0A\n@@ -202,17 +202,19 @@\n ain() %7B%0A\n-%09\n+   \n var num \n@@ -216,18 +216,22 @@\n  num int\n-%0A%09\n+ %0A    \n fmt.Scan\n@@ -247,9 +247,12 @@\n um)%0A\n-%09\n+    \n fmt.\n@@ -270,13 +270,16 @@\n rimo(num\n+, 0\n ))%0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-18_19-11-37",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc ehprimo(num int) int {\n\tif num%2 == 0 {\n\t\treturn ehprimo(num + 1)\n\t}\n\n\tfor i := 0; i < num+10; i++ {\n\t\tif (num + 1%2) != 0 {\n\t\t\treturn num + 1\n\t\t}\n\t}\n\n\treturn -1\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(\"%d\", &num)\n\tfmt.Println(ehprimo(num))\n}\n",
+            "lines": "25"
+        }
+    ]
+}
