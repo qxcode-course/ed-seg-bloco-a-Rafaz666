@@ -1,0 +1,36 @@
+2026-05-15 11:17:38, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 11:17:40, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 11:30:00, MOVE, v:1, k:es@setbuild, mode:BACK
+2026-05-15 12:25:18, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 12:25:19, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:159
+2026-05-15 12:26:16, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0
+2026-05-15 12:27:25, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:162
+2026-05-15 12:49:14, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 12:49:15, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:163
+2026-05-15 12:53:43, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:164
+2026-05-15 13:00:22, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 13:00:23, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:165
+2026-05-15 13:00:48, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:165
+2026-05-15 13:02:00, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:164
+2026-05-15 19:19:35, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 19:19:36, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:160
+2026-05-15 19:19:55, MOVE, v:1, k:es@setbuild, mode:BACK
+2026-05-15 19:19:58, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-05-15 19:20:01, EXEC, v:1, k:es@setbuild, mode:FREE
+2026-05-15 19:25:25, EXEC, v:1, k:es@setbuild, mode:FULL, rate:33, size:157
+2026-05-15 19:27:03, EXEC, v:1, k:es@setbuild, mode:FULL, rate:33, size:157
+2026-05-15 19:32:34, EXEC, v:1, k:es@setbuild, mode:FULL, rate:33, size:157
+2026-05-15 19:40:42, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:42:13, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0
+2026-05-15 19:43:13, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:44:24, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:44:52, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:48:14, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:54:41, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:162
+2026-05-15 19:55:02, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:161
+2026-05-15 19:56:18, EXEC, v:1, k:es@setbuild, mode:FULL, size:163, fail:COMP
+2026-05-15 19:56:29, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:163
+2026-05-15 20:01:00, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:164
+2026-05-15 20:01:17, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:164
+2026-05-15 20:01:49, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:164
+2026-05-15 20:02:00, EXEC, v:1, k:es@setbuild, mode:FULL, rate:0, size:163

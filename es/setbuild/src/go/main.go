@@ -39,14 +39,15 @@ func (v *Set) String() string {
 	return fmt.Sprintf("[%s]", newstr)
 }
 
-func (v *Set) Erase(pos int) error {
-	if pos < 0 || pos >= v.Capacity() {
-		return fmt.Errorf("index out of range")
+func (v *Set) Erase(value int) string {
+	for i := 0; i < v.size; i++ {
+		if v.data[i] == value {
+			v.data[i] = 0
+			copy(v.data[i+1:], v.data[i:])
+			return ""
+		}
 	}
-
-	v.size--
-	v.data[pos] = 0
-	return nil
+	return "value not found\n"
 }
 
 func (v *Set) Capacity() int {
@@ -54,42 +55,56 @@ func (v *Set) Capacity() int {
 }
 
 func (v *Set) Insert(value int) {
-
 	if v.capacity == v.size {
-		v.data = append(v.data, 0)
 		v.capacity = v.capacity * 2
 	}
 
-	v.size++
-	pos := 0
+	if v.Contains(value) {
+		return
+	}
+
+	v.data = append(v.data, 0)
 
 	for i := 0; i < v.size; i++ {
-		if value == v.data[i] {
-			return
-		}
-
-		if v.size == 0 {
-			v.data[0] = value
-			return
-		}
-
 		if value < v.data[i] {
-			pos = i
-			break
+			copy(v.data[i+1:], v.data[i:])
+			v.data[i] = value
+			v.size++
+			return
 		}
 	}
-	copy(v.data[pos+1:], v.data[pos:])
-	v.data[pos] = value
+
+	v.data[v.size] = value
+	v.size++
 }
 
 func (v *Set) Contains(value int) bool {
-	for i := range v.data {
-		if value == v.data[i] {
-			return true
-		}
+	if v.binarySearch(value) != -1 {
+		return true
 	}
 
 	return false
+}
+
+func (v *Set) binarySearch(value int) int {
+
+	left := 0
+	right := v.size - 1
+	for left <= right {
+		mid := (left + right) / 2
+
+		if v.data[mid] == value {
+			return mid
+		}
+
+		if v.data[mid] < value {
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
+	}
+
+	return -1
 }
 
 func main() {
@@ -124,15 +139,15 @@ func main() {
 			fmt.Println(v.String())
 		case "erase":
 			value, err := strconv.Atoi(parts[1])
-			if err != nil {
-				fmt.Println(v.Erase(value))
+			if err == nil {
+				fmt.Print(v.Erase(value))
 			}
+
 		case "contains":
 			value, err := strconv.Atoi(parts[1])
 			if err == nil {
 				fmt.Println(v.Contains(value))
 			}
-		case "clear":
 		default:
 			fmt.Println("fail: comando invalido")
 		}

@@ -15,16 +15,16 @@ sources:
   quests: null
   tasks: null
 expanded:
-- es@linear
-- es@map_set
-- es@tree
-- es@rec
-- es@vector
-- es@bfs
 - es@dfs
+- es@rec
 - es@list
-- es@backtrack
+- es@tree
+- es@vector
+- es@map_set
+- es@linear
 - es@basic
+- es@bfs
+- es@backtrack
 flags:
   inbox: all
   panel: help
