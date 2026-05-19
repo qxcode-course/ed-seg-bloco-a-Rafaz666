@@ -1,0 +1,24 @@
+2026-05-19 18:34:46, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:39:21, MOVE, v:1, k:es@enesimo, mode:PICK
+2026-05-19 18:39:23, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12, size:37
+2026-05-19 18:39:06, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:39:23, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:40:30, MOVE, v:1, k:es@enesimo, mode:BACK
+2026-05-19 18:40:34, MOVE, v:1, k:es@enesimo, mode:PICK
+2026-05-19 18:40:36, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12
+2026-05-19 18:40:38, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12
+2026-05-19 18:40:54, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12
+2026-05-19 18:40:56, EXEC, v:1, k:es@enesimo, mode:FREE
+2026-05-19 18:42:24, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12
+2026-05-19 18:44:49, EXEC, v:1, k:es@enesimo, mode:FULL, rate:37, size:37
+2026-05-19 18:44:49, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:44:43, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:49:12, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12, size:42
+2026-05-19 18:49:47, EXEC, v:1, k:es@enesimo, mode:FULL, rate:12, size:42
+2026-05-19 18:49:44, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:49:46, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-19 18:50:44, EXEC, v:1, k:es@enesimo, mode:FULL, rate:100, size:41
+2026-05-19 18:50:59, MOVE, v:1, k:es@enesimo, mode:BACK
+2026-05-19 18:51:03, MOVE, v:1, k:es@enesimo, mode:PICK
+2026-05-19 18:51:12, SELF, v:1, k:es@enesimo, self:1, rate:100, study:80
+2026-05-19 18:51:14, MOVE, v:1, k:es@enesimo, mode:BACK
