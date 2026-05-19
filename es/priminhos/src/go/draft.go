@@ -1,6 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func listing(size int) []int {
+	vet := make([]int, size)
+	primo := 2
+	for i := 0; i < size; i++ {
+		for {
+			if ehprimo(primo, 2) {
+				vet[i] = primo
+				primo++
+				break
+			}
+			primo++
+		}
+	}
+	return vet
+}
 
 func ehprimo(x int, div int) bool {
 
@@ -19,28 +37,19 @@ func ehprimo(x int, div int) bool {
 	return ehprimo(x, div+1)
 }
 
-func Gerated(primos int) []int {
-	vet := make([]int, primos)
-	qtd := 0
-	eh := false
-	for i := 2; qtd < primos; i++ {
-		for j := 2; eh == false; j++ {
-			if ehprimo(i, j) == true {
-				eh = true
-				vet[qtd] = i
-				qtd++
-				break
-			}
-		}
-
-		eh = false
-	}
-
-	return vet
-}
-
 func main() {
 	var num int
 	fmt.Scan(&num)
-	fmt.Println(Gerated(num))
+	vet := listing(num)
+	str := ""
+
+	for i := 0; i < num; i++ {
+		str += fmt.Sprintf("%d", vet[i])
+		if i < num-1 {
+			str += ", "
+		}
+	}
+
+	str = "[" + str + "]"
+	fmt.Println(str)
 }

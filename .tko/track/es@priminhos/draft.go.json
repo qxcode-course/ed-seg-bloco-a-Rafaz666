@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2026-05-18_23-19-29",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc ehprimo(x int, div int) bool {\n\n\tif div == x {\n\t\treturn true\n\t}\n\n\tif x < 2 {\n\t\treturn false\n\t}\n\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\n\treturn ehprimo(x, div+1)\n}\n\nfunc Gerated(primos int) []int {\n\tvet := make([]int, primos)\n\tqtd := 0\n\teh := false\n\tfor i := 1; qtd < primos; i++ {\n\t\tfor j := 1; eh == false; j++ {\n\t\t\tif ehprimo(i, j) == true {\n\t\t\t\teh = true\n\t\t\t\tvet[qtd] = i\n\t\t\t\tqtd++\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\teh = false\n\t}\n\treturn vet\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\tfmt.Println(Gerated(num))\n}\n",
+            "content": "@@ -10,227 +10,138 @@\n ain%0A\n+%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afunc \n-listing(size int) %5B%5Dint %7B%5D%0A%09vet := make(%5B%5Dint, size)%0A%09primo := 2%0A%09for i:=0; i%3Csize; i++\n+ehprimo(x int, div int) bool %7B%0A%0A%09if div == x \n %7B%0A%09%09\n-vet%5Bi%5D = enesimo(primo)%0A%09%09primo++%0A%09%7D%0A%7D%0A%0Afunc enesimo(num int) int %7B%0A%09%0A%09num++%0A%09if ehprimo(num, 2) == true\n+return true%0A%09%7D%0A%0A%09if x %3C 2 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if x%25div == 0\n  %7B%0A%09\n@@ -148,19 +148,21 @@\n %09return \n-num\n+false\n %0A%09%7D%0A%0A%09re\n@@ -171,18 +171,23 @@\n rn e\n-nes\n+hpr\n imo(\n-num\n+x, div+1\n )%0A%7D%0A\n@@ -196,129 +196,249 @@\n unc \n-eh\n+Gerated(\n primo\n-(x\n+s\n  int\n-, div int) bool %7B%0A%0A%09if div == x %7B%0A%09%09return true%0A%09%7D%0A%0A%09if x %3C 2 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if x%25div == 0 %7B%0A%09%09return\n+) %5B%5Dint %7B%0A%09vet := make(%5B%5Dint, primos)%0A%09qtd := 0%0A%09eh := false%0A%09for i := 1; qtd %3C primos; i++ %7B%0A%09%09for j := 1; eh == false; j++ %7B%0A%09%09%09if ehprimo(i, j) == true %7B%0A%09%09%09%09eh = true%0A%09%09%09%09vet%5Bqtd%5D = i%0A%09%09%09%09qtd++%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09eh =\n  fal\n@@ -439,33 +439,32 @@\n  = false%0A%09%7D%0A\n-%0A\n %09return \n ehprimo(x, d\n@@ -451,33 +451,19 @@\n %09return \n-ehprimo(x, div+1)\n+vet\n %0A%7D%0A%0Afunc\n@@ -518,15 +518,15 @@\n tln(\n-listing\n+Gerated\n (num\n",
             "lines": "44"
+        },
+        {
+            "label": "2026-05-19_19-01-01",
+            "content": "@@ -55,16 +55,17 @@\n  %5B%5Dint %7B\n+%5D\n %0A%09vet :=\n@@ -162,20 +162,8 @@\n %0A%09%7D%0A\n-%09return vet%0A\n %7D%0A%0Af\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-19_19-01-51",
+            "content": "@@ -124,91 +124,143 @@\n %7B%0A%09%09\n-for%7B%0A%09%09%09if ehprimo(primo, 2) %7B%0A%09%09%09%09vet%5Bi%5D = primo%0A%09%09%09%09primo++%0A%09%09%09%09break%0A%09%09%09%7D%0A%09\n+vet%5Bi%5D = enesimo(primo)%0A%09%09primo++%0A%09%7D%0A%09return vet%0A%7D%0A%0Afunc enesimo(num int) int %7B%0A%09%0A%09num++%0A%09if ehprimo(num, 2) == true %7B%0A%09%09return num%0A\n %09%7D%0A\n-%09%7D\n %0A%09re\n@@ -256,35 +256,44 @@\n num%0A%09%7D%0A%0A%09return \n-vet\n+enesimo(num)\n %0A%7D%0A%0Afunc ehprimo\n@@ -494,172 +494,32 @@\n m)%0A%09\n-vet:=listing(num)%0A%09str:=%22%22%0A%0A%09for i:=0; i%3Cnum; i++ %7B%0A%09%09str += \n fmt.\n-Sp\n+P\n rint\n-f(%22%25d%22, vet%5Bi%5D)%0A%09%09if i%3Cnum-1 %7B%0A%09%09%09str += %22, %22%0A%09%09%7D%0A%09%7D%0A%0A%09str = %22%5B%22 + str + %22%5D%22%0A%09fmt.Println(str\n+ln(listing(num)\n )%0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-19_19-19-13",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -100,27 +100,23 @@\n 2%0A%09for i\n- \n :=\n- \n 0; i\n- %3C \n+%3C\n size; i+\n@@ -120,17 +120,15 @@\n  i++\n- \n %7B%0A%09%09for\n- \n %7B%0A%09%09\n@@ -197,27 +197,16 @@\n ak%0A%09%09%09%7D%0A\n-%09%09%09primo++%0A\n %09%09%7D%0A%09%7D%0A%09\n@@ -432,20 +432,18 @@\n um)%0A%09vet\n- \n :=\n- \n listing(\n@@ -451,20 +451,18 @@\n um)%0A%09str\n- \n :=\n- \n %22%22%0A%0A%09for\n@@ -467,19 +467,15 @@\n or i\n- \n :=\n- \n 0; i\n- %3C \n+%3C\n num;\n@@ -522,19 +522,17 @@\n )%0A%09%09if i\n- %3C \n+%3C\n num-1 %7B%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-19_19-20-11",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc listing(size int) []int {\n\tvet := make([]int, size)\n\tprimo := 2\n\tfor i := 0; i < size; i++ {\n\t\tfor {\n\t\t\tif ehprimo(primo, 2) {\n\t\t\t\tvet[i] = primo\n\t\t\t\tprimo++\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tprimo++\n\t\t}\n\t}\n\treturn vet\n}\n\nfunc ehprimo(x int, div int) bool {\n\n\tif div == x {\n\t\treturn true\n\t}\n\n\tif x < 2 {\n\t\treturn false\n\t}\n\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\n\treturn ehprimo(x, div+1)\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\tvet := listing(num)\n\tstr := \"\"\n\n\tfor i := 0; i < num; i++ {\n\t\tstr += fmt.Sprintf(\"%d\", vet[i])\n\t\tif i < num-1 {\n\t\t\tstr += \", \"\n\t\t}\n\t}\n\n\tstr = \"[\" + str + \"]\"\n\tfmt.Println(str)\n}\n",
+            "lines": "55"
         }
     ]
 }
