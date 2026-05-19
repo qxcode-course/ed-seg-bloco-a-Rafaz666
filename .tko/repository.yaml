@@ -21,5 +21,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@diagonal
-selected_index: 16
+selected: es@priminhos
+selected_index: 13

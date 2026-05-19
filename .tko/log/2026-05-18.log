@@ -83,3 +83,5 @@
 2026-05-18 23:02:04, EXEC, v:1, k:es@binomiais, mode:FULL, rate:100, size:20
 2026-05-18 23:02:16, SELF, v:1, k:es@binomiais, self:1, rate:100, study:10
 2026-05-18 23:02:18, MOVE, v:1, k:es@binomiais, mode:BACK
+2026-05-18 23:19:28, MOVE, v:1, k:es@priminhos, mode:PICK
+2026-05-18 23:19:29, EXEC, v:1, k:es@priminhos, mode:FULL, rate:0, size:44

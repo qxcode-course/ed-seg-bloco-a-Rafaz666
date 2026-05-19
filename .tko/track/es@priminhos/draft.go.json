@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_23-19-29",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ehprimo(x int, div int) bool {\n\n\tif div == x {\n\t\treturn true\n\t}\n\n\tif x < 2 {\n\t\treturn false\n\t}\n\n\tif x%div == 0 {\n\t\treturn false\n\t}\n\n\treturn ehprimo(x, div+1)\n}\n\nfunc Gerated(primos int) []int {\n\tvet := make([]int, primos)\n\tqtd := 0\n\teh := false\n\tfor i := 1; qtd < primos; i++ {\n\t\tfor j := 1; eh == false; j++ {\n\t\t\tif ehprimo(i, j) == true {\n\t\t\t\teh = true\n\t\t\t\tvet[qtd] = i\n\t\t\t\tqtd++\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\teh = false\n\t}\n\treturn vet\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\tfmt.Println(Gerated(num))\n}\n",
+            "lines": "44"
+        }
+    ]
+}
