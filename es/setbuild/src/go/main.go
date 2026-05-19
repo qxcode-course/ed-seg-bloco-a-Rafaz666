@@ -107,6 +107,16 @@ func (v *Set) binarySearch(value int) int {
 	return -1
 }
 
+func (v *Set) Unique() int {
+	qtd := 0
+	for i := 0; i < v.size-1; i++ {
+		if v.data[i] != v.data[i+1] {
+			qtd++
+		}
+	}
+	return qtd
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)

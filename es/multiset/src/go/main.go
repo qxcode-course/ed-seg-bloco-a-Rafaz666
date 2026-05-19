@@ -14,6 +14,13 @@ type MultiSet struct {
 	capacity int
 }
 
+func NewMultiSet(cap int) *MultiSet {
+	return &MultiSet{
+		data:     make([]int, cap),
+		size:     0,
+		capacity: cap,
+	}
+}
 func (v *MultiSet) binarySearch(value int) (bool, int) {
 
 	left := 0
@@ -56,22 +63,75 @@ func (v *MultiSet) Insert(value int) {
 }
 
 func (v *MultiSet) Contains(value int) bool {
-	if v.binarySearch(value) != false, -1 {
+	boolean, inteiro := v.binarySearch(value)
+	if boolean == true && inteiro != -1 {
 		return true
 	}
 
 	return false
 }
 
-func (v *Set) Erase(value int) string {
+func (v *MultiSet) Erase(value int) error {
 	for i := 0; i < v.size; i++ {
 		if v.data[i] == value {
 			v.data[i] = 0
-			copy(v.data[i+1:], v.data[i:])
-			return ""
+			copy(v.data[i:], v.data[i+1:])
+			v.size--
+			v.data = v.data[:v.size]
+			return nil
 		}
 	}
-	return "value not found\n"
+
+	return fmt.Errorf("value not found")
+}
+
+func (v *MultiSet) Count(value int) int {
+	qtd := 0
+	for i := 0; i < v.size; i++ {
+		if v.data[i] == value {
+			qtd++
+		}
+	}
+	return qtd
+}
+
+func (v *MultiSet) search(value int) (bool, int) {
+	if v.Contains(value) {
+		achou := false
+		for i := 0; i < v.size; i++ {
+			if achou == true {
+				if v.data[i] != value {
+					return true, i - 1
+				}
+				continue
+			}
+
+			if v.data[i] == value {
+				achou = true
+			}
+		}
+	}
+
+	return false, -1
+}
+
+func (v *MultiSet) Unique() int {
+	qtd := 0
+	if v.size > 0 {
+		for i := 0; i < v.size-1; i++ {
+			if v.data[i] != v.data[i+1] {
+				qtd++
+			}
+		}
+	} else {
+		qtd--
+	}
+	return qtd + 1
+}
+
+func (v *MultiSet) Clear() {
+	v.data = v.data[:0]
+	v.size = 0
 }
 
 func Join(slice []int, sep string) string {
@@ -85,7 +145,7 @@ func Join(slice []int, sep string) string {
 	return result
 }
 
-func (v *Set) String() string {
+func (v *MultiSet) String() string {
 	if v.size == 0 {
 		return fmt.Sprintf("[]")
 	}
@@ -105,7 +165,7 @@ func (v *Set) String() string {
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
-	 ms := NewMultiSet(0)
+	v := NewMultiSet(0)
 
 	for scanner.Scan() {
 		fmt.Print("$")
@@ -121,34 +181,42 @@ func main() {
 		case "end":
 			return
 		case "init":
-			value, _ := strconv.Atoi(args[1])
-			if _ == nil {
-				ms = NewMultiSet(value)
+			value, err := strconv.Atoi(args[1])
+			if err == nil {
+				v = NewMultiSet(value)
 			}
 
 		case "insert":
-			 for _, part := range args[1:] {
-			 	value, _ := strconv.Atoi(part)
-				if _ == nil {
-				v.Insert(value)
-			 }
-			 }
+			for _, part := range args[1:] {
+				value, err := strconv.Atoi(part)
+				if err == nil {
+					v.Insert(value)
+				}
+			}
 		case "show":
-			fmt.Println(v.String)
+			fmt.Println(v.String())
 		case "erase":
-			value, _ := strconv.Atoi(args[1])
-			if _ == nil {
-				v.Erase(value)
-			 }
+			value, err := strconv.Atoi(args[1])
+			notfound := v.Erase(value)
+			if err == nil {
+				if notfound != nil {
+					fmt.Println(notfound)
+				}
+			}
 		case "contains":
-			 value, _ := strconv.Atoi(args[1])
-			 if _ == nil {
-				v.Contains(value)
-			 }
+			value, err := strconv.Atoi(args[1])
+			if err == nil {
+				fmt.Println(v.Contains(value))
+			}
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			value, err := strconv.Atoi(args[1])
+			if err == nil {
+				fmt.Println(v.Count(value))
+			}
 		case "unique":
+			fmt.Println(v.Unique())
 		case "clear":
+			v.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}

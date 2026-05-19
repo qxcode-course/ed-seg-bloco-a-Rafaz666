@@ -31,3 +31,55 @@
 2026-05-18 19:30:00, MOVE, v:1, k:es@enesimo, mode:EDIT
 2026-05-18 19:55:59, MOVE, v:1, k:es@enesimo, mode:EDIT
 2026-05-18 20:00:07, MOVE, v:1, k:es@enesimo, mode:EDIT
+2026-05-18 20:12:41, MOVE, v:1, k:es@multiset, mode:PICK
+2026-05-18 20:12:45, EXEC, v:1, k:es@multiset, mode:FULL, size:156, fail:COMP
+2026-05-18 20:25:48, EXEC, v:1, k:es@multiset, mode:FULL, rate:0, size:165
+2026-05-18 20:26:50, EXEC, v:1, k:es@multiset, mode:FULL, rate:16, size:165
+2026-05-18 20:35:14, EXEC, v:1, k:es@multiset, mode:FULL, rate:16, size:184
+2026-05-18 20:35:46, EXEC, v:1, k:es@multiset, mode:FULL, rate:16, size:184
+2026-05-18 20:36:13, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:184
+2026-05-18 20:39:46, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:185
+2026-05-18 20:40:32, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:186
+2026-05-18 20:40:44, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:185
+2026-05-18 20:41:36, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:186
+2026-05-18 20:42:59, EXEC, v:1, k:es@multiset, mode:FULL, rate:33, size:188
+2026-05-18 20:45:12, EXEC, v:1, k:es@multiset, mode:FULL, rate:50, size:189
+2026-05-18 20:45:29, MOVE, v:1, k:es@multiset, mode:BACK
+2026-05-18 20:46:38, MOVE, v:1, k:es@multiset, mode:PICK
+2026-05-18 20:46:40, EXEC, v:1, k:es@multiset, mode:FULL, rate:50
+2026-05-18 20:53:48, EXEC, v:1, k:es@multiset, mode:FULL, rate:66, size:203
+2026-05-18 20:56:43, EXEC, v:1, k:es@multiset, mode:FULL, rate:66
+2026-05-18 20:58:32, EXEC, v:1, k:es@multiset, mode:FULL, rate:66, size:214
+2026-05-18 20:58:49, EXEC, v:1, k:es@multiset, mode:FULL, rate:66, size:214
+2026-05-18 20:59:28, EXEC, v:1, k:es@multiset, mode:FULL, rate:83, size:214
+2026-05-18 21:00:41, EXEC, v:1, k:es@multiset, mode:FULL, rate:83, size:220
+2026-05-18 21:01:06, EXEC, v:1, k:es@multiset, mode:FULL, rate:83, size:221
+2026-05-18 21:02:29, EXEC, v:1, k:es@multiset, mode:FULL, rate:83, size:221
+2026-05-18 21:03:38, EXEC, v:1, k:es@multiset, mode:FULL, rate:83, size:220
+2026-05-18 21:04:58, EXEC, v:1, k:es@multiset, mode:FULL, rate:100, size:224
+2026-05-18 21:05:22, SELF, v:1, k:es@multiset, self:1, rate:100, study:150
+2026-05-18 21:05:29, MOVE, v:1, k:es@multiset, mode:BACK
+2026-05-18 21:06:14, MOVE, v:1, k:es@enesimo, mode:PICK
+2026-05-18 21:06:17, MOVE, v:1, k:es@enesimo, mode:BACK
+2026-05-18 21:10:29, MOVE, v:1, k:es@priminhos, mode:DOWN
+2026-05-18 21:10:31, MOVE, v:1, k:es@escada, mode:DOWN
+2026-05-18 21:10:32, MOVE, v:1, k:es@binomiais, mode:DOWN
+2026-05-18 21:10:34, MOVE, v:1, k:es@diagonal, mode:DOWN
+2026-05-18 21:10:36, MOVE, v:1, k:es@sufixos, mode:DOWN
+2026-05-18 21:10:38, MOVE, v:1, k:es@padroes1, mode:DOWN
+2026-05-18 21:10:39, MOVE, v:1, k:es@padroes2, mode:DOWN
+2026-05-18 21:10:41, MOVE, v:1, k:es@padroes3, mode:DOWN
+2026-05-18 21:10:42, MOVE, v:1, k:es@quadrado, mode:DOWN
+2026-05-18 21:10:44, MOVE, v:1, k:es@fib1, mode:DOWN
+2026-05-18 21:10:46, MOVE, v:1, k:es@fib2, mode:DOWN
+2026-05-18 21:10:47, MOVE, v:1, k:es@santo, mode:DOWN
+2026-05-18 21:10:49, MOVE, v:1, k:es@bitcoin, mode:DOWN
+2026-05-18 22:53:12, MOVE, v:1, k:es@escada, mode:PICK
+2026-05-18 22:53:15, EXEC, v:1, k:es@escada, mode:FULL, rate:0, size:22
+2026-05-18 22:54:08, EXEC, v:1, k:es@escada, mode:FULL, rate:100, size:22
+2026-05-18 22:54:22, MOVE, v:1, k:es@escada, mode:BACK
+2026-05-18 22:54:44, SELF, v:1, k:es@escada, self:1, rate:100, study:35
+2026-05-18 23:02:03, MOVE, v:1, k:es@binomiais, mode:PICK
+2026-05-18 23:02:04, EXEC, v:1, k:es@binomiais, mode:FULL, rate:100, size:20
+2026-05-18 23:02:16, SELF, v:1, k:es@binomiais, self:1, rate:100, study:10
+2026-05-18 23:02:18, MOVE, v:1, k:es@binomiais, mode:BACK

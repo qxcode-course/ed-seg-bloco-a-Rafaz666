@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_23-02-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc Calc(n, k int) int {\n\tif k == 0 || n == k {\n\t\treturn 1\n\t}\n\n\tif 1 <= k && k <= n {\n\t\treturn Calc(n-1, k-1) + Calc(n-1, k)\n\t}\n\treturn -1\n}\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tfmt.Println(Calc(n, k))\n}\n",
+            "lines": "20"
+        }
+    ]
+}

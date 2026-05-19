@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_22-53-15",
+            "content": "@@ -220,9 +220,14 @@\n can(\n-&\n+%22%25d%22, \n deg)\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-18_22-54-08",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc Counting(value int) int {\n\tif value == 1 || value == 2 {\n\t\treturn 1\n\t}\n\n\tif value == 3 {\n\t\treturn 2\n\t}\n\n\treturn Counting(value-1) + Counting(value-3)\n}\n\nfunc main() {\n\tvar deg int\n\tfmt.Scan(&deg)\n\tfmt.Println(Counting(deg))\n\n}\n",
+            "lines": "22"
+        }
+    ]
+}
