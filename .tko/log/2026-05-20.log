@@ -1,0 +1,7 @@
+2026-05-20 21:47:54, MOVE, v:1, k:es@lista_d1, mode:DOWN
+2026-05-20 22:12:26, MOVE, v:1, k:es@lista_d1, mode:PICK
+2026-05-20 22:12:27, EXEC, v:1, k:es@lista_d1, mode:FULL, rate:0, size:89
+2026-05-20 22:13:16, EXEC, v:1, k:es@lista_d1, mode:FULL, rate:0, size:89
+2026-05-20 22:21:42, EXEC, v:1, k:es@lista_d1, mode:FULL, rate:0, size:99
+2026-05-20 22:22:43, EXEC, v:1, k:es@lista_d1, mode:FULL, rate:0, size:100
+2026-05-20 22:26:39, EXEC, v:1, k:es@lista_d1, mode:FULL, rate:42, size:118

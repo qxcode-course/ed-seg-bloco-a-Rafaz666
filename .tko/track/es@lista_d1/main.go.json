@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_22-12-27",
+            "content": "@@ -367,17 +367,17 @@\n size := \n-1\n+0\n %0A%09for p \n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-05-20_22-13-16",
+            "content": "@@ -367,17 +367,17 @@\n size := \n-0\n+1\n %0A%09for p \n@@ -453,166 +453,8 @@\n %0A%7D%0A%0A\n-func (ll *List) PushFront(val int) %7B%0A%09node := &Node%7B%0A%09%09value: val,%0A%09%09next:  ll.root.next,%0A%09%09prev:  ll.root,%0A%09%7D%0A%09node.next.prev = node%0A%09ll.root.next = node%0A%7D%0A%0A\n func\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-05-20_22-21-42",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -1118,16 +1118,19 @@\n nt%22:%0A%09%09%09\n+// \n for _, v\n@@ -1153,16 +1153,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09num, _ \n@@ -1186,16 +1186,19 @@\n i(v)%0A%09%09%09\n+// \n %09ll.Push\n@@ -1211,16 +1211,19 @@\n num)%0A%09%09%09\n+// \n %7D%0A%09%09case\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-05-20_22-22-43",
+            "content": "@@ -622,318 +622,8 @@\n %0A%7D%0A%0A\n-func (v *List) String() string %7B%0A%0A%09if v.Size() == 0 %7B%0A%09%09return fmt.Sprintf(%22%5B%5D%22)%0A%09%7D%0A%0A%09str := %22%22%0A%09for i := v.root.next; i != v.root; i = i.next %7B%0A%09%09if i.value != 0 %7B%0A%09%09%09str += strconv.Itoa(i.value) + %22, %22%0A%09%09%7D%0A%09%7D%0A%0A%09posv := strings.LastIndex(str, %22,%22)%0A%09newstr := str%5B:posv%5D%0A%09return fmt.Sprintf(%22%5B%25s%5D%22, newstr)%0A%7D%0A%0A\n func\n@@ -632,16 +632,16 @@\n ain() %7B%0A\n+\n %09scanner\n@@ -913,19 +913,22 @@\n %22show%22:%0A\n-\n %09%09%09\n+// \n fmt.Prin\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-05-20_22-26-39",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tvalue int\n\tnext  *Node\n\tprev  *Node\n}\n\ntype List struct {\n\troot *Node\n}\n\nfunc NewList() *List {\n\thead := &Node{}\n\thead.prev = head\n\thead.next = head\n\n\treturn &List{\n\t\troot: head,\n\t}\n}\n\nfunc (ll *List) Size() int {\n\tif ll.root.next == ll.root && ll.root.prev == ll.root {\n\t\treturn 0\n\t}\n\n\tsize := 0\n\tfor p := ll.root.next; p != ll.root; p = p.next {\n\t\tsize++\n\t}\n\n\treturn size\n}\n\nfunc (ll *List) PushFront(val int) {\n\tnode := &Node{\n\t\tvalue: val,\n\t\tnext:  ll.root.next,\n\t\tprev:  ll.root,\n\t}\n\tnode.next.prev = node\n\tll.root.next = node\n}\n\nfunc (v *List) String() string {\n\n\tif v.Size() == 0 {\n\t\treturn fmt.Sprintf(\"[]\")\n\t}\n\n\tstr := \"\"\n\tfor i := v.root.next; i != v.root; i = i.next {\n\t\tif i.value != 0 {\n\t\t\tstr += strconv.Itoa(i.value) + \", \"\n\t\t}\n\t}\n\n\tposv := strings.LastIndex(str, \",\")\n\tnewstr := str[:posv]\n\treturn fmt.Sprintf(\"[%s]\", newstr)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tll := NewList()\n\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(line)\n\t\targs := strings.Fields(line)\n\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tcmd := args[0]\n\n\t\tswitch cmd {\n\t\tcase \"show\":\n\t\t\tfmt.Println(ll.String())\n\t\tcase \"size\":\n\t\t\tfmt.Println(ll.Size())\n\t\tcase \"push_back\":\n\t\t\t// for _, v := range args[1:] {\n\t\t\t// \tnum, _ := strconv.Atoi(v)\n\t\t\t// \tll.PushBack(num)\n\t\t\t// }\n\t\tcase \"push_front\":\n\t\t\tfor _, v := range args[1:] {\n\t\t\t\tnum, _ := strconv.Atoi(v)\n\t\t\t\tll.PushFront(num)\n\t\t\t}\n\t\tcase \"pop_back\":\n\t\t\t// ll.PopBack()\n\t\tcase \"pop_front\":\n\t\t\t// ll.PopFront()\n\t\tcase \"clear\":\n\t\t\t// ll.Clear()\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "118"
+        }
+    ]
+}
