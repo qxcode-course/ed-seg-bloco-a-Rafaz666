@@ -108,11 +108,14 @@ func (ll *List) PopBack() {
 }
 
 func (ll *List) Insert(node *Node, val int) {
-	for p := ll.Front(); p != nil; p = p.Next() {
-		if p.value == val {
-			p.value = val
-		}
-	}
+	new := &Node{}
+	new.value = val
+	new.next = node
+	new.prev = node.prev
+	new.root = node.root
+
+	node.prev = new
+	new.prev.next = new
 }
 
 func (ll *List) Clear() {
@@ -128,6 +131,12 @@ func (ll *List) Search(valu int) *Node {
 	}
 
 	return nil
+}
+
+func (ll *List) Remove(node *Node) {
+	p := ll.Search(node.value)
+	p.next.prev = p.prev
+	p.prev.next = p.next
 }
 
 func (v *List) String() string {
@@ -216,13 +225,13 @@ func main() {
 				fmt.Println("fail: not found")
 			}
 		case "remove":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	ll.Remove(node)
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				ll.Remove(node)
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "end":
 			return
 		default:
