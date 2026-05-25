@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-22_16-41-49",
+            "content": "@@ -411,11 +411,42 @@\n )%0A%09%09%7D%0A%09%7D\n+%0A%0A%09fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-22_16-42-01",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc InputFormat(str string) [][]rune {\n\treturn [][]rune{}\n}\n\nfunc InString(rune []rune) string {\n\tstr := string(rune)\n\treturn str\n}\n\nfunc main() {\n\n\tf := make([][]rune, 30)\n\n\tfor i := range f {\n\t\tf[i] = make([]rune, 30)\n\t}\n\n\tvar input string\n\tfmt.Scan(input)\n\ttxt := InputFormat(input)\n\n\tfor j := range len(txt) {\n\t\tfor i := range len(txt[j]) {\n\t\t\tfmt.Println(InString(txt[i]))\n\t\t}\n\t}\n}\n",
+            "lines": "33"
+        }
+    ]
+}

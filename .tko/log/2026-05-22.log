@@ -23,3 +23,35 @@
 2026-05-22 14:08:07, SELF, v:1, k:es@lista_d4, self:1, rate:100, study:20
 2026-05-22 14:08:10, MOVE, v:1, k:es@lista_d4, mode:BACK
 2026-05-22 14:08:31, MOVE, v:1, k:es@prin_list1, mode:DOWN
+2026-05-22 15:40:02, MOVE, v:1, k:es@prin_list1, mode:PICK
+2026-05-22 15:40:03, EXEC, v:1, k:es@prin_list1, mode:FULL, size:172, fail:COMP
+2026-05-22 15:40:15, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:171
+2026-05-22 15:44:52, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:181
+2026-05-22 15:45:28, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:181
+2026-05-22 15:54:24, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:187
+2026-05-22 15:55:52, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:186
+2026-05-22 15:59:42, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:186
+2026-05-22 16:00:12, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0
+2026-05-22 16:01:03, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:186
+2026-05-22 16:03:29, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:191
+2026-05-22 16:04:07, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:191
+2026-05-22 16:05:37, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:190
+2026-05-22 16:07:39, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:07:54, MOVE, v:1, k:es@prin_list1, mode:BACK
+2026-05-22 16:07:57, MOVE, v:1, k:es@prin_list1, mode:PICK
+2026-05-22 16:08:45, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:186
+2026-05-22 16:09:31, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:11:50, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:12:23, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:13:34, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:14:00, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:185
+2026-05-22 16:14:20, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:0, size:184
+2026-05-22 16:14:50, MOVE, v:1, k:es@prin_list1, mode:PICK
+2026-05-22 16:14:50, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:100, size:184
+2026-05-22 16:15:03, SELF, v:1, k:es@prin_list1, self:1, rate:100, study:35
+2026-05-22 16:15:04, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:100
+2026-05-22 16:15:06, MOVE, v:1, k:es@prin_list1, mode:BACK
+2026-05-22 16:15:20, MOVE, v:1, k:es@editor, mode:PICK
+2026-05-22 16:41:49, EXEC, v:1, k:es@editor, mode:FULL, rate:0, size:35
+2026-05-22 16:42:01, EXEC, v:1, k:es@editor, mode:FULL, rate:0, size:33
+2026-05-22 16:42:56, EXEC, v:1, k:es@editor, mode:FULL, rate:0

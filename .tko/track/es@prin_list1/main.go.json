@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-22_15-40-03",
+            "content": "@@ -23,16 +23,27 @@\n %0A%09%22fmt%22%0A\n+%09%22strings%22%0A\n )%0A%0A// mo\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-22_15-40-15",
+            "content": "@@ -134,190 +134,16 @@\n  %7B%0A%09\n-str := %22%22%0A%09for p := l.Front(); p != l.End(); p = p.Next() %7B%0A%09%09if p == sword %7B%0A%09%09%09str += fmt.Sprint(p) + %22%3E %22%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09str += fmt.Sprint(p) + %22 %22%0A%09%7D%0A%0A%09return %22%5B %22 + str + %22%5D\n+return %22\n %22%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-22_15-44-52",
+            "content": "@@ -226,30 +226,24 @@\n fmt.Sprint(p\n-.Value\n ) + %22%3E %22%0A%09%09%09\n@@ -281,14 +281,8 @@\n nt(p\n-.Value\n ) + \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-22_15-45-28",
+            "content": "@@ -426,127 +426,8 @@\n %5D %7B%0A\n-%09for p := l.Front(); p != l.End(); p = p.Next() %7B%0A%09%09if p == it %7B%0A%09%09%09p.next = p.Next().Next()%0A%09%09%09p.next.prev = p%0A%09%09%7D%0A%09%7D%0A\n %09ret\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-22_15-54-24",
+            "content": "@@ -494,21 +494,51 @@\n %0A%09%09%09\n-return p.next\n+p.next = p.Next().Next()%0A%09%09%09p.next.prev = p\n %0A%09%09%7D\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-22_15-55-52",
+            "content": "@@ -384,37 +384,34 @@\n (l *DList%5Bint%5D, \n-sword\n+it\n  *DNode%5Bint%5D) *D\n@@ -478,29 +478,26 @@\n %7B%0A%09%09if p == \n-sword\n+it\n  %7B%0A%09%09%09return\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-22_15-59-42",
+            "content": "@@ -505,22 +505,20 @@\n eturn p.\n-N\n+n\n ext\n-()\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-22_16-01-03",
+            "content": "@@ -497,85 +497,8 @@\n d %7B%0A\n-%09%09%09if p.Next() == l.End() %7B%0A%09%09%09%09p.next = l.Front()%0A%09%09%09%09return p.Next()%0A%09%09%09%7D%0A%0A\n %09%09%09r\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-22_16-03-29",
+            "content": "@@ -604,23 +604,19 @@\n %09return \n-l.End()\n+nil\n %0A%7D%0A%0Afunc\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-22_16-04-07",
+            "content": "@@ -521,16 +521,39 @@\n End() %7B%0A\n+%09%09%09%09p.next = l.Front()%0A\n %09%09%09%09retu\n@@ -563,23 +563,16 @@\n p.Next()\n-.Next()\n %0A%09%09%09%7D%0A%0A%09\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-22_16-05-37",
+            "content": "@@ -430,16 +430,82 @@\n  %7B%0A%09\n-if sword\n+for p := l.Front(); p != l.End(); p = p.Next() %7B%0A%09%09if p == sword %7B%0A%09%09%09if p\n .Nex\n@@ -521,16 +521,18 @@\n End() %7B%0A\n+%09%09\n %09%09return\n@@ -528,29 +528,25 @@\n %0A%09%09%09%09return \n-sword\n+p\n .Next().Next\n@@ -548,28 +548,32 @@\n .Next()%0A\n+%09%09\n %09%7D%0A%0A\n+%09%09\n %09return \n sword.Ne\n@@ -568,18 +568,37 @@\n urn \n-sword.Next\n+p.Next()%0A%09%09%7D%0A%09%7D%0A%09return l.End\n ()%0A%7D\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-22_16-07-39",
+            "content": "@@ -459,33 +459,8 @@\n ) %7B%0A\n-%09%09sword.next = l.Front()%0A\n %09%09re\n@@ -476,16 +476,23 @@\n d.Next()\n+.Next()\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-08-45",
+            "content": "@@ -461,21 +461,49 @@\n %7B%0A%09%09\n-return l.Fron\n+sword.next = l.Front()%0A%09%09return sword.Nex\n t()%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-22_16-09-31",
+            "content": "@@ -468,24 +468,14 @@\n urn \n-sword.Next().Nex\n+l.Fron\n t()%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-11-50",
+            "content": "@@ -464,22 +464,32 @@\n %09return \n-l.Fron\n+sword.Next().Nex\n t()%0A%09%7D%0A%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-12-23",
+            "content": "@@ -868,15 +868,8 @@\n ord)\n- + %22%5Cn%22\n )%0A%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-13-34",
+            "content": "@@ -864,12 +864,19 @@\n , sword)\n+ + %22%5Cn%22\n )%0A%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-14-00",
+            "content": "@@ -751,16 +751,47 @@\n d - 1 %7B%0A\n+%09%09fmt.Println(ToStr(l, sword))%0A\n %09%09l.Eras\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-22_16-14-20",
+            "content": "@@ -562,16 +562,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n@@ -755,39 +755,8 @@\n 1 %7B%0A\n-%09%09fmt.Println(ToStr(l, sword))%0A\n %09%09l.\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-05-22_16-14-50",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tstr := \"\"\n\tfor p := l.Front(); p != l.End(); p = p.Next() {\n\t\tif p == sword {\n\t\t\tstr += fmt.Sprint(p.Value) + \"> \"\n\t\t\tcontinue\n\t\t}\n\n\t\tstr += fmt.Sprint(p.Value) + \" \"\n\t}\n\n\treturn \"[ \" + str + \"]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], sword *DNode[int]) *DNode[int] {\n\tif sword.Next() == l.End() {\n\t\treturn l.Front()\n\t}\n\n\treturn sword.Next()\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "48"
+        }
+    ]
+}

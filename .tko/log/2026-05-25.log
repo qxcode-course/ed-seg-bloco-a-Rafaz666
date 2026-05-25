@@ -1,0 +1,4 @@
+2026-05-25 14:13:04, MOVE, v:1, k:es@prin_list1, mode:PICK
+2026-05-25 14:13:07, EXEC, v:1, k:es@prin_list1, mode:FULL, rate:100
+2026-05-25 14:13:11, MOVE, v:1, k:es@prin_list1, mode:BACK
+2026-05-25 14:15:39, MOVE, v:1, k:es@ilhas, mode:DOWN
