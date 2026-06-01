@@ -14,17 +14,7 @@ func inLimit(grid [][]rune, l, c int) bool {
 	return false
 }
 
-func dfs(grid [][]rune, l, c int) {
-	if inLimit(grid, l, c) {
-		grid[l][c] = '0'
-		dfs(grid, l+1, c)
-		dfs(grid, l-1, c)
-		dfs(grid, l, c+1)
-		dfs(grid, l+1, c-1)
-	} else {
-		return
-	}
-}
+\
 
 // Não modifique a assinatura da função numIslands
 // Ela é a função que será chamada no LeetCode para resolver o problema

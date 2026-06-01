@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-01_16-55-07",
+            "content": "@@ -45,406 +45,8 @@\n %0A)%0A%0A\n-func inLimit(grid %5B%5D%5B%5Drune, l, c int) bool %7B%0A%09if (l %3E= 0 && l %3C len(grid)) && (c %3E= 0 && c %3C len(grid%5Bl%5D) && grid%5Bl%5D%5Bc%5D == 'O' && (l != len(grid)-1 && c != len(grid%5Bc%5D)-1)) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc dfs(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09if inLimit(grid, l, c) %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 'X'%0A%09%09dfs(grid, l+1, c)%0A%09%09dfs(grid, l-1, c)%0A%09%09dfs(grid, l, c+1)%0A%09%09dfs(grid, l+1, c-1)%0A%09%7D else %7B%0A%09%09return%0A%09%7D%0A%7D%0A%0A\n // N\n@@ -105,19 +105,19 @@\n ard %5B%5D%5B%5D\n-run\n+byt\n e) %7B%0A%09_ \n@@ -311,19 +311,19 @@\n ake(%5B%5D%5B%5D\n-run\n+byt\n e, nrows\n@@ -390,11 +390,11 @@\n = %5B%5D\n-run\n+byt\n e(sc\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-01_17-06-36",
+            "content": "@@ -516,107 +516,17 @@\n  %7B%0A%09\n-for l := 0; l %3C len(board); l++ %7B%0A%09%09for c := 0; c %3C len(board%5Bl%5D); c++ %7B%0A%09%09%09dfs(board, l, c)%0A%09%09%7D%0A%09%7D\n+_ = board\n %0A%7D%0A%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-01_17-10-06",
+            "content": "@@ -174,17 +174,18 @@\n ' && (l \n-%3C\n+!=\n  len(gri\n@@ -190,25 +190,26 @@\n rid)-1 && c \n-%3C\n+!=\n  len(grid%5Bc%5D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-11-37",
+            "content": "@@ -536,18 +536,16 @@\n n(board)\n--1\n ; l++ %7B%0A\n@@ -575,18 +575,16 @@\n oard%5Bl%5D)\n--1\n ; c++ %7B%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-12-56",
+            "content": "@@ -167,16 +167,59 @@\n %5D == 'O'\n+ && (l %3C len(grid)-1 && c %3C len(grid%5Bc%5D)-1)\n ) %7B%0A%09%09re\n@@ -519,17 +519,17 @@\n or l := \n-1\n+0\n ; l %3C le\n@@ -557,17 +557,17 @@\n or c := \n-1\n+0\n ; c %3C le\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-22-39",
+            "content": "@@ -45,263 +45,8 @@\n %0A)%0A%0A\n-func conected(grid %5B%5D%5B%5Drune, l, c int) bool %7B%0A%09if (grid%5Bl+1%5D%5Bc%5D == 'O' && l+1 != len(grid)-1) %7C%7C (grid%5Bl-1%5D%5Bc%5D == 'O' && l-1 != 0) %7C%7C (grid%5Bl%5D%5Bc+1%5D == 'O' && c+1 != len(grid%5Bl%5D)-1) %7C%7C (grid%5Bl%5D%5Bc-1%5D == 'O' && c-1 != 0) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -86,16 +86,16 @@\n  bool %7B%0A\n+\n %09if (l %3E\n@@ -270,32 +270,8 @@\n  c) \n- && conected(grid, l, c)\n %7B%0A%09%09\n@@ -476,17 +476,17 @@\n or l := \n-0\n+1\n ; l %3C le\n@@ -514,17 +514,17 @@\n or c := \n-0\n+1\n ; c %3C le\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-25-45",
+            "content": "@@ -41,16 +41,270 @@\n %22os%22%0A)%0A%0A\n+func conected(grid %5B%5D%5B%5Drune, l, c int) bool %7B%0A%09if (grid%5Bl+1%5D%5Bc%5D == 'O' && l+1 != len(grid)-1) %7C%7C (grid%5Bl-1%5D%5Bc%5D == 'O' && l-1 != 0) %7C%7C (grid%5Bl%5D%5Bc+1%5D == 'O' && c+1 != len(grid%5Bl%5D)-1) %7C%7C (grid%5Bl%5D%5Bc-1%5D == 'O' && c-1 != 0) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A\n %0Afunc in\n@@ -521,16 +521,40 @@\n , l, c) \n+ && conected(grid, l, c)\n %7B%0A%09%09grid\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-01_17-27-51",
+            "content": "@@ -41,16 +41,17 @@\n %22os%22%0A)%0A%0A\n+%0A\n func inL\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-01_17-28-12",
+            "content": "@@ -92,25 +92,25 @@\n %7B%0A%09if (l %3E= \n-1\n+0\n  && l %3C len(\n@@ -114,18 +114,16 @@\n en(grid)\n--1\n ) && (c \n@@ -125,17 +125,17 @@\n & (c %3E= \n-1\n+0\n  && c %3C \n@@ -146,19 +146,16 @@\n grid%5Bl%5D)\n--1)\n  && grid\n@@ -167,16 +167,17 @@\n %5D == 'O'\n+)\n  %7B%0A%09%09ret\n@@ -269,14 +269,8 @@\n , c)\n- && ()\n  %7B%0A%09\n@@ -493,16 +493,18 @@\n n(board)\n+-1\n ; l++ %7B%0A\n@@ -534,16 +534,18 @@\n oard%5Bl%5D)\n+-1\n ; c++ %7B%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-31-54",
+            "content": "@@ -269,16 +269,22 @@\n d, l, c)\n+ && ()\n  %7B%0A%09%09gri\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-32-45",
+            "content": "@@ -46,20 +46,17 @@\n )%0A%0Afunc \n-allI\n+i\n nLimit(g\n@@ -83,23 +83,14 @@\n nt) \n-int %7B%0A%09qtd := 0\n+bool %7B\n %0A%09if\n@@ -156,353 +156,44 @@\n -1) \n-%7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l+1 %3E= 1 && l+1 %3C len(grid)-1) && (c %3E= 1 && c %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l-1 %3E= 1 && l-1 %3C len(grid)-1) && (c %3E= 1 && c %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l %3E= 1 && l %3C len(grid)-1) && (c+1 %3E= 1 && c+1 %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l %3E= 1 && l %3C len(grid)-1) && (c-1 %3E= 1 && c-1 %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++\n+&& grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09return true\n %0A%09%7D%0A\n@@ -205,11 +205,13 @@\n urn \n-qtd\n+false\n %0A%7D%0A%0A\n@@ -254,12 +254,9 @@\n %09if \n-allI\n+i\n nLim\n@@ -273,34 +273,8 @@\n , c)\n- == 5 && grid%5Bl%5D%5Bc%5D == 'O'\n  %7B%0A%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-44-13",
+            "content": "@@ -46,17 +46,20 @@\n )%0A%0Afunc \n-i\n+allI\n nLimit(g\n@@ -86,14 +86,23 @@\n nt) \n-bool %7B\n+int %7B%0A%09qtd := 0\n %0A%09if\n@@ -168,44 +168,353 @@\n -1) \n-&& grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09return true\n+%7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l+1 %3E= 1 && l+1 %3C len(grid)-1) && (c %3E= 1 && c %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l-1 %3E= 1 && l-1 %3C len(grid)-1) && (c %3E= 1 && c %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l %3E= 1 && l %3C len(grid)-1) && (c+1 %3E= 1 && c+1 %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++%0A%09%7D%0A%0A%09if (l %3E= 1 && l %3C len(grid)-1) && (c-1 %3E= 1 && c-1 %3C len(grid%5Bl%5D)-1) %7B%0A%09%09qtd++\n %0A%09%7D%0A\n@@ -526,13 +526,11 @@\n urn \n-false\n+qtd\n %0A%7D%0A%0A\n@@ -569,17 +569,20 @@\n ) %7B%0A%09if \n-i\n+allI\n nLimit(g\n@@ -591,16 +591,42 @@\n d, l, c)\n+ == 5 && grid%5Bl%5D%5Bc%5D == 'O'\n  %7B%0A%09%09gri\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-01_17-45-29",
+            "content": "@@ -364,16 +364,18 @@\n (grid, l\n++1\n , c-1)%0A%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_17-46-25",
+            "content": "@@ -45,128 +45,8 @@\n %0A)%0A%0A\n-type Pos struct %7B%0A%09linha  int%0A%09coluna int%0A%7D%0A%0Afunc newPos(l, c int) *Pos %7B%0A%09return &Pos%7B%0A%09%09linha:  l,%0A%09%09coluna: c,%0A%09%7D%0A%7D%0A%0A\n func\n@@ -248,364 +248,156 @@\n nt) \n-%5B%5D*Pos %7B%0A%09list := %5B%5D*Pos%7B%7D%0A%09if inLimit(grid, l, c) && inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%09list = append(list, newPos(l+\n+%7B%0A%09if inLimit(grid, l, c) %7B%0A%09%09grid%5Bl%5D%5Bc%5D = 'X'%0A%09%09dfs(grid, l+1, c)%0A%09%09dfs(grid, l-\n 1, c)\n-)\n %0A%09%09\n-list = append(list, newPos(l-1, c)\n+dfs(grid, l, c+1\n )%0A%09%09\n-list = append(list, newPos(l, c+1))%0A%09%09list = append(list, newPos(l, c-1))%0A%09%7D%0A\n+dfs(grid, l, c-1)%0A%09%7D else %7B%0A%09\n %09return\n- list\n+%0A%09%7D\n %0A%7D%0A%0A\n@@ -472,27 +472,8 @@\n ) %7B%0A\n-%09list := %5B%5D*Pos%7B%7D%0A%0A\n %09for\n@@ -549,133 +549,28 @@\n %0A%09%09%09\n-list = append(list, dfs(board, l, c)...)%0A%09%09%7D%0A%09%7D%0A%0A%09for i := range list %7B%0A%09%09pos := list%5Bi%5D%0A%09%09board%5Bpos.linha%5D%5Bpos.coluna%5D = 'X'\n+dfs(board, l, c)%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_18-04-24",
+            "content": "@@ -165,68 +165,8 @@\n %0A%7D%0A%0A\n-// Agora valida corretamente os limites totais do tabuleiro%0A\n func\n@@ -211,21 +211,18 @@\n  %7B%0A%09\n-return \n+if (\n l %3E= \n-0\n+1\n  && \n@@ -238,18 +238,22 @@\n rid)\n+-1)\n  && \n+(\n c %3E= \n-0\n+1\n  && \n@@ -272,100 +272,69 @@\n %5Bl%5D)\n-%0A%7D%0A%0A// DFS Real: Modifica o tabuleiro diretamente (in-place) e retorna as posi%C3%A7%C3%B5es alteradas\n+-1) && grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A\n %0Afun\n@@ -378,76 +378,29 @@\n  %7B%0A%09\n-// Se estiver fora do limite ou n%C3%A3o for 'O', para a explora%C3%A7%C3%A3o\n+list := %5B%5D*Pos%7B%7D\n %0A%09if \n-!\n inLi\n@@ -419,437 +419,258 @@\n  c) \n-%7C%7C grid%5Bl%5D%5Bc%5D != 'O' %7B%0A%09%09return nil%0A%09%7D%0A%0A%09// Altera temporariamente (ou usa uma matriz de 'visited') para n%C3%A3o entrar em loop infinito%0A%09// Usamos '*' temporariamente para indicar que j%C3%A1 passamos por aqui nesta busca%0A%09grid%5Bl%5D%5Bc%5D = '*' %0A%0A\n+&& inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) %7B%0A%09\n %09list \n-:\n = \n-%5B%5D*Pos%7BnewPos(l, c)%7D%0A%0A%09// Dire%C3%A7%C3%B5es: Baixo, Cima, Direita, Esquerda%0A%09dl := %5B%5Dint%7B1, -1, 0, 0%7D%0A%09dc := %5B%5Dint%7B0, 0, 1, -1%7D%0A%0A%09for i := 0; i %3C 4; i++ %7B%0A%09%09vizinhos := dfs(grid, l+dl%5Bi%5D, c+dc%5Bi%5D\n+append(list, newPos(l, c))%0A%09%09list = append(list, newPos(l+1, c))%0A%09%09list = append(list, newPos(l-1, c))%0A%09%09list = append(list, newPos(l, c+1)\n )%0A%09%09\n@@ -693,25 +693,27 @@\n st, \n-vizinhos...\n+newPos(l, c-1)\n )%0A%09%7D%0A\n-%0A\n %09ret\n@@ -801,779 +801,191 @@\n  %7B%0A%09\n-// Criamos uma c%C3%B3pia ou apenas usamos a DFS para coletar o formato que voc%C3%AA deseja.%0A%09// Nota: Se a inten%C3%A7%C3%A3o original era transformar APENAS as cruzes perfeitas,%0A%09// a l%C3%B3gica do %22solve%22 muda um pouco. Mas assumindo que voc%C3%AA quer pintar os grupos de 'O':%0A%09%0A%09finalList := %5B%5D*Pos%7B%7D%0A%0A%09for l := 0; l %3C len(board); l++ %7B%0A%09%09for c := 0; c %3C len(board%5Bl%5D); c++ %7B%0A%09%09%09// Se achou um 'O', dispara a DFS para pegar todo o grupo conectado%0A%09%09%09if board%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09%09%09// Opcional: Se voc%C3%AA s%C3%B3 queria pintar se formasse uma cruz isolada, %0A%09%09%09%09// teria que validar o formato antes de disparar.%0A%09%09%09%09grupo := dfs(board, l, c)%0A%09%09%09%09finalList = append(finalList, grupo\n+list := %5B%5D*Pos%7B%7D%0A%0A%09for l := 0; l %3C len(board); l++ %7B%0A%09%09for c := 0; c %3C len(board%5Bl%5D); c++ %7B%0A%09%09%09list = append(list, dfs(board, l, c)\n ...)%0A\n-%09\n %09%09%7D%0A%09\n-%09%7D%0A%09%7D%0A%0A%09// Agora mudamos todos os coletados para 'X' (limpando o '*' tempor%C3%A1rio)%0A%09for _, pos := range finalList %7B\n+%7D%0A%0A%09for i := range list %7B%0A%09%09pos := list%5Bi%5D\n %0A%09%09b\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-01_18-09-04",
+            "content": "@@ -157,24 +157,84 @@\n a: c,%0A%09%7D%0A%7D%0A%0A\n+// Agora valida corretamente os limites totais do tabuleiro%0A\n func inLimit\n@@ -271,16 +271,20 @@\n  %7B%0A%09\n-if (\n+return \n l %3E=\n+ \n 0 &&\n@@ -301,14 +301,12 @@\n rid)\n-)\n  && \n-(\n c %3E=\n@@ -331,67 +331,100 @@\n %5Bl%5D)\n-) && grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A\n+%0A%7D%0A%0A// DFS Real: Modifica o tabuleiro diretamente (in-place) e retorna as posi%C3%A7%C3%B5es alteradas\n %0Afun\n@@ -468,29 +468,76 @@\n  %7B%0A%09\n-list := %5B%5D*Pos%7B%7D\n+// Se estiver fora do limite ou n%C3%A3o for 'O', para a explora%C3%A7%C3%A3o\n %0A%09if \n+!\n inLi\n@@ -556,258 +556,437 @@\n  c) \n-&& inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) %7B%0A%09\n+%7C%7C grid%5Bl%5D%5Bc%5D != 'O' %7B%0A%09%09return nil%0A%09%7D%0A%0A%09// Altera temporariamente (ou usa uma matriz de 'visited') para n%C3%A3o entrar em loop infinito%0A%09// Usamos '*' temporariamente para indicar que j%C3%A1 passamos por aqui nesta busca%0A%09grid%5Bl%5D%5Bc%5D = '*' %0A%0A\n %09list \n+:\n = \n-append(list, newPos(l, c))%0A%09%09list = append(list, newPos(l+1, c))%0A%09%09list = append(list, newPos(l-1, c))%0A%09%09list = append(list, newPos(l, c+1)\n+%5B%5D*Pos%7BnewPos(l, c)%7D%0A%0A%09// Dire%C3%A7%C3%B5es: Baixo, Cima, Direita, Esquerda%0A%09dl := %5B%5Dint%7B1, -1, 0, 0%7D%0A%09dc := %5B%5Dint%7B0, 0, 1, -1%7D%0A%0A%09for i := 0; i %3C 4; i++ %7B%0A%09%09vizinhos := dfs(grid, l+dl%5Bi%5D, c+dc%5Bi%5D\n )%0A%09%09\n@@ -1009,22 +1009,19 @@\n st, \n-newPos(l, c-1)\n+vizinhos...\n )%0A%09%7D\n@@ -1115,144 +1115,665 @@\n  %7B%0A%09\n-list := %5B%5D*Pos%7B%7D%0A%0A%09for l := 0; l %3C len(board); l++ %7B%0A%09%09for c := 0; c %3C len(board%5Bl%5D); c++ %7B%0A%09%09%09list = append(list, dfs(board, l, c)\n+// Criamos uma c%C3%B3pia ou apenas usamos a DFS para coletar o formato que voc%C3%AA deseja.%0A%09// Nota: Se a inten%C3%A7%C3%A3o original era transformar APENAS as cruzes perfeitas,%0A%09// a l%C3%B3gica do %22solve%22 muda um pouco. Mas assumindo que voc%C3%AA quer pintar os grupos de 'O':%0A%09%0A%09finalList := %5B%5D*Pos%7B%7D%0A%0A%09for l := 0; l %3C len(board); l++ %7B%0A%09%09for c := 0; c %3C len(board%5Bl%5D); c++ %7B%0A%09%09%09// Se achou um 'O', dispara a DFS para pegar todo o grupo conectado%0A%09%09%09if board%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09%09%09// Opcional: Se voc%C3%AA s%C3%B3 queria pintar se formasse uma cruz isolada, %0A%09%09%09%09// teria que validar o formato antes de disparar.%0A%09%09%09%09grupo := dfs(board, l, c)%0A%09%09%09%09finalList = append(finalList, grupo\n ...)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A\n@@ -1781,46 +1781,113 @@\n %7D%0A%0A%09\n-for i := range list %7B%0A%09%09pos := list%5Bi%5D\n+// Agora mudamos todos os coletados para 'X' (limpando o '*' tempor%C3%A1rio)%0A%09for _, pos := range finalList %7B\n %0A%09%09b\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-06-01_18-10-58",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tlinha  int\n\tcoluna int\n}\n\nfunc newPos(l, c int) *Pos {\n\treturn &Pos{\n\t\tlinha:  l,\n\t\tcoluna: c,\n\t}\n}\n\nfunc inLimit(grid [][]rune, l, c int) bool {\n\tif (l >=0 && l < len(grid)) && (c >= 0 && c < len(grid[l])) && grid[l][c] == 'O' {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc dfs(grid [][]rune, l, c int) []*Pos {\n\tlist := []*Pos{}\n\tif inLimit(grid, l, c) && inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) {\n\t\tlist = append(list, newPos(l, c))\n\t\tlist = append(list, newPos(l+1, c))\n\t\tlist = append(list, newPos(l-1, c))\n\t\tlist = append(list, newPos(l, c+1))\n\t\tlist = append(list, newPos(l, c-1))\n\t}\n\n\treturn list\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]rune) {\n\tlist := []*Pos{}\n\n\tfor l := 0; l < len(board); l++ {\n\t\tfor c := 0; c < len(board[l]); c++ {\n\t\t\tlist = append(list, dfs(board, l, c)...)\n\t\t}\n\t}\n\n\tfor i := range list {\n\t\tpos := list[i]\n\t\tboard[pos.linha][pos.coluna] = 'X'\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]rune, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []rune(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "73"
+        }
+    ]
+}
