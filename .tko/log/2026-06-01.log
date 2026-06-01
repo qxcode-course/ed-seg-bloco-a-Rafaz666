@@ -1,0 +1,35 @@
+2026-06-01 11:52:21, MOVE, v:1, k:es@ilhas, mode:PICK
+2026-06-01 11:52:23, EXEC, v:1, k:es@ilhas, mode:FULL, rate:0, size:57
+2026-06-01 11:52:26, MOVE, v:1, k:es@ilhas, mode:BACK
+2026-06-01 11:55:11, MOVE, v:1, k:es@ilhas, mode:PICK
+2026-06-01 11:55:12, EXEC, v:1, k:es@ilhas, mode:FULL, rate:0, size:57
+2026-06-01 11:56:15, EXEC, v:1, k:es@ilhas, mode:FULL, rate:0, size:57
+2026-06-01 11:58:42, EXEC, v:1, k:es@ilhas, mode:FULL, rate:0, size:58
+2026-06-01 11:59:02, EXEC, v:1, k:es@ilhas, mode:FULL, rate:0, size:60
+2026-06-01 12:00:19, EXEC, v:1, k:es@ilhas, mode:FULL, rate:100, size:60
+2026-06-01 12:00:22, MOVE, v:1, k:es@ilhas, mode:BACK
+2026-06-01 12:00:44, MOVE, v:1, k:es@ilhas, mode:PICK
+2026-06-01 12:00:58, SELF, v:1, k:es@ilhas, self:1, rate:100, study:130
+2026-06-01 12:00:59, MOVE, v:1, k:es@ilhas, mode:BACK
+2026-06-01 12:01:27, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-06-01 12:01:42, MOVE, v:1, k:es@setbuild, mode:BACK
+2026-06-01 12:01:45, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-06-01 12:01:59, SELF, v:1, k:es@setbuild, self:1, rate:100, study:240
+2026-06-01 12:02:00, EXEC, v:1, k:es@setbuild, mode:FULL, rate:100, size:165
+2026-06-01 12:02:01, MOVE, v:1, k:es@setbuild, mode:BACK
+2026-06-01 12:02:05, MOVE, v:1, k:es@setbuild, mode:PICK
+2026-06-01 12:02:07, EXEC, v:1, k:es@setbuild, mode:FULL, rate:100
+2026-06-01 12:02:11, SELF, v:1, k:es@setbuild, self:1, rate:100, study:240
+2026-06-01 12:02:12, MOVE, v:1, k:es@setbuild, mode:BACK
+2026-06-01 12:03:15, MOVE, v:1, k:es@princesa, mode:PICK
+2026-06-01 12:03:21, MOVE, v:1, k:es@princesa, mode:BACK
+2026-06-01 12:03:22, MOVE, v:1, k:es@princesa, mode:PICK
+2026-06-01 12:03:26, MOVE, v:1, k:es@princesa, mode:BACK
+2026-06-01 12:03:27, MOVE, v:1, k:es@princesa, mode:PICK
+2026-06-01 12:03:35, SELF, v:1, k:es@princesa, self:1, rate:100, study:300, concept:1, problem:1
+2026-06-01 12:03:37, EXEC, v:1, k:es@princesa, mode:FULL, rate:100
+2026-06-01 12:03:38, MOVE, v:1, k:es@princesa, mode:BACK
+2026-06-01 12:16:54, MOVE, v:1, k:es@cercado, mode:DOWN
+2026-06-01 12:16:56, MOVE, v:1, k:es@pintura, mode:DOWN
+2026-06-01 12:16:57, MOVE, v:1, k:es@longest, mode:DOWN
+2026-06-01 12:16:58, MOVE, v:1, k:es@battleship, mode:DOWN
