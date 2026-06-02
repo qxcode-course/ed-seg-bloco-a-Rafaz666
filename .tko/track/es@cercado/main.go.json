@@ -82,8 +82,98 @@
         },
         {
             "label": "2026-06-01_18-10-58",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tlinha  int\n\tcoluna int\n}\n\nfunc newPos(l, c int) *Pos {\n\treturn &Pos{\n\t\tlinha:  l,\n\t\tcoluna: c,\n\t}\n}\n\nfunc inLimit(grid [][]rune, l, c int) bool {\n\tif (l >=0 && l < len(grid)) && (c >= 0 && c < len(grid[l])) && grid[l][c] == 'O' {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc dfs(grid [][]rune, l, c int) []*Pos {\n\tlist := []*Pos{}\n\tif inLimit(grid, l, c) && inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) {\n\t\tlist = append(list, newPos(l, c))\n\t\tlist = append(list, newPos(l+1, c))\n\t\tlist = append(list, newPos(l-1, c))\n\t\tlist = append(list, newPos(l, c+1))\n\t\tlist = append(list, newPos(l, c-1))\n\t}\n\n\treturn list\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]rune) {\n\tlist := []*Pos{}\n\n\tfor l := 0; l < len(board); l++ {\n\t\tfor c := 0; c < len(board[l]); c++ {\n\t\t\tlist = append(list, dfs(board, l, c)...)\n\t\t}\n\t}\n\n\tfor i := range list {\n\t\tpos := list[i]\n\t\tboard[pos.linha][pos.coluna] = 'X'\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]rune, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []rune(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "content": "@@ -215,17 +215,16 @@\n if (l %3E=\n- \n 0 && l %3C\n@@ -338,54 +338,377 @@\n dfs(\n+grid %5B%5D%5B%5Drune, l, c int) %5B%5D*Pos %7B%0A%09\n list\n+ :=\n  %5B%5D*Pos\n-, grid %5B%5D%5B%5Drune, l, c int) %5B%5D*Pos %7B\n+%7B%7D%0A%09if inLimit(grid, l, c) && inLimit(grid, l+1, c) && inLimit(grid, l-1, c) && inLimit(grid, l, c+1) && inLimit(grid, l, c-1) %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%09list = append(list, newPos(l+1, c))%0A%09%09list = append(list, newPos(l-1, c))%0A%09%09list = append(list, newPos(l, c+1))%0A%09%09list = append(list, newPos(l, c-1))%0A%09%7D%0A\n %0A%09re\n@@ -912,22 +912,16 @@\n st, dfs(\n-list, \n board, l\n",
             "lines": "73"
+        },
+        {
+            "label": "2026-06-01_18-36-57",
+            "content": "@@ -216,17 +216,21 @@\n f (l\n+ \n %3E=\n+ \n 0 && l\n-%3C\n+ %3C \n len(\n@@ -245,17 +245,21 @@\n & (c\n+ \n %3E=\n+ \n 0 && c\n-%3C\n+ %3C \n len(\n@@ -272,237 +272,31 @@\n %5D)) \n-%7B%0A%09%09return true%0A%09%7D%0A%09return false%0A%7D%0A%0Afunc compare(grid %5B%5D%5B%5Drune, pos *Pos) bool %7B%0A%09if grid %0A%7D%0A%0Afunc contains(l, c int, list %5B%5D*Pos) bool %7B%0A%09pos:=*Pos%0A%09for i:= range list %7B%0A%09%09pos = list%5Bi%5D%0A%09%09if l == pos.linha && c == pos.coluna\n+&& grid%5Bl%5D%5Bc%5D == 'O'\n  %7B%0A\n-%09\n %09%09re\n@@ -305,20 +305,16 @@\n rn true%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09ret\n@@ -387,279 +387,76 @@\n  %7B%0A%09\n-if grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%09grid%5Bl%5D%5Bc%5D = '%7C'%0A%09%09%0A%09%09if !inLimit(grid, l, c) %7B%0A%09%09%09return list%0A%09%09%7D%0A%09%09%0A%09%09dfs(list, grid, l+1, c)%0A%09%09dfs(list, grid, l-1, c)%0A%09%09dfs(list, grid, l, c+1)%0A%09%09dfs(list, grid, l, c-1)%0A%09%7D%0A%0A%09return %5B%5D*Pos%7B%7D%0A%7D%0A%0Afunc cloning\n+return list%0A%7D%0A%0A// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve\n (boa\n@@ -471,23 +471,16 @@\n une)\n- %5B%5D*Pos\n  %7B%0A%09list\n :=%5B%5D\n@@ -475,18 +475,20 @@\n  %7B%0A%09list\n+ \n :=\n+ \n %5B%5D*Pos%7B%7D\n@@ -492,41 +492,34 @@\n s%7B%7D%0A\n-%09grid:=board\n %0A%09for l\n+ \n :=\n+ \n 0; l\n-%3C\n+ %3C \n len(\n-gri\n+boar\n d); \n@@ -527,38 +527,43 @@\n ++ %7B%0A%09%09for c\n+ \n :=\n+ \n 0; c\n-%3C\n+ %3C \n len(\n-gri\n+boar\n d%5Bl%5D); c++ %7B\n@@ -567,47 +567,8 @@\n + %7B%0A\n-%09%09%09dfsList:= dfs(%5B%5D*Pos%7B%7D, grid, l, c)%0A\n %09%09%09l\n@@ -593,268 +593,116 @@\n  dfs\n-List...)%0A%09%09%7D%0A%09%7D%0A%0A%09return list%0A%7D%0A%0A// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve(grid %5B%5D%5B%5Drune, list %5B%5D*Pos) %7B%0A%09for l:=0; l%3Clen(grid); l++ %7B%0A%09%09for c:=0; c%3Clen(grid%5Bl%5D); c++ %7B%0A%09%09%09if !contains(l, c, list) && grid%5Bl%5D%5Bc%5D == 'O'%7B%0A%09%09%09%09grid%5Bl%5D%5Bc%5D = 'X'%0A%09%09%09%7D%0A%09%09%7D\n+(list, board, l, c)...)%0A%09%09%7D%0A%09%7D%0A%0A%09for i := range list %7B%0A%09%09pos := list%5Bi%5D%0A%09%09board%5Bpos.linha%5D%5Bpos.coluna%5D = 'X'\n %0A%09%7D%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-06-02_18-24-47",
+            "content": "@@ -216,21 +216,17 @@\n f (l\n- \n %3E=\n- \n 0 && l\n- %3C \n+%3C\n len(\n@@ -241,21 +241,17 @@\n & (c\n- \n %3E=\n- \n 0 && c\n- %3C \n+%3C\n len(\n@@ -292,24 +292,82 @@\n rn false%0A%7D%0A%0A\n+func compare(grid %5B%5D%5B%5Drune, pos *Pos) bool %7B%0A%09if grid %0A%7D%0A%0A\n func contain\n@@ -406,30 +406,21 @@\n %09pos\n- \n :=\n- &\n+*\n Pos\n-%7B0, 0%7D\n %0A%09for i\n- \n := r\n@@ -663,16 +663,18 @@\n %5D = '%7C'%0A\n+%09%09\n %0A%09%09if !i\n@@ -713,16 +713,18 @@\n ist%0A%09%09%7D%0A\n+%09%09\n %0A%09%09dfs(l\n@@ -887,20 +887,18 @@\n  %7B%0A%09list\n- \n :=\n- \n %5B%5D*Pos%7B%7D\n@@ -903,20 +903,18 @@\n %7B%7D%0A%09grid\n- \n :=\n- \n board%0A%09f\n@@ -913,35 +913,31 @@\n board%0A%09for l\n- \n :=\n- \n 0; l\n- %3C \n+%3C\n len(grid); l\n@@ -944,35 +944,31 @@\n ++ %7B%0A%09%09for c\n- \n :=\n- \n 0; c\n- %3C \n+%3C\n len(grid%5Bl%5D)\n@@ -985,17 +985,16 @@\n %09dfsList\n- \n := dfs(%5B\n@@ -1144,52 +1144,38 @@\n rune\n-) %7B%0A%09list := cloning(grid)\n+, list %5B%5D*Pos) %7B\n %0A%09for l\n- \n :=\n- \n 0; l\n- %3C \n+%3C\n len(\n@@ -1198,19 +1198,15 @@\n or c\n- \n :=\n- \n 0; c\n- %3C \n+%3C\n len(\n@@ -1265,25 +1265,24 @@\n l%5D%5Bc%5D == 'O'\n- \n %7B%0A%09%09%09%09grid%5Bl\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-06-02_18-31-29",
+            "content": "@@ -571,57 +571,8 @@\n ' %7B%0A\n-%0A%09%09if !inLimit(grid, l, c) %7B%0A%09%09%09return list%0A%09%09%7D%0A%0A\n %09%09li\n@@ -623,16 +623,64 @@\n  = '%7C'%0A%0A\n+%09%09if !inLimit(grid, l, c) %7B%0A%09%09%09return list%0A%09%09%7D%0A%0A\n %09%09dfs(li\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-02_18-33-22",
+            "content": "@@ -565,19 +565,25 @@\n  == 'O' \n-&& \n+%7B%0A%0A%09%09if !\n inLimit(\n@@ -593,17 +593,38 @@\n d, l, c)\n-%7B\n+ %7B%0A%09%09%09return list%0A%09%09%7D%0A\n %0A%09%09list \n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-02_18-35-43",
+            "content": "@@ -753,22 +753,8 @@\n -1)%0A\n-%09%09return list%0A\n %09%7D%0A%0A\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-06-02_18-36-28",
+            "content": "@@ -587,17 +587,16 @@\n d, l, c)\n- \n %7B%0A%09%09list\n@@ -974,32 +974,8 @@\n  c)%0A\n-%09%09%09if dfsList != nil %7B%0A%09\n %09%09%09l\n@@ -1005,21 +1005,16 @@\n ist...)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-06-02_18-37-53",
+            "content": "@@ -551,48 +551,48 @@\n %09if \n-inLimit(grid, l, c) && grid%5Bl%5D%5Bc%5D == 'O'\n+grid%5Bl%5D%5Bc%5D == 'O' && inLimit(grid, l, c)\n  %7B%0A%09\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-06-02_18-39-02",
+            "content": "@@ -857,128 +857,13 @@\n  := \n-make(%5B%5D%5B%5Drune, len(board))%0A%0A%09for i := range board %7B%0A%09%09grid%5Bi%5D = make(%5B%5Drune, len(board%5Bi%5D))%0A%09%09copy(grid%5Bi%5D, board%5Bi%5D)%0A%09%7D\n+board\n %0A%09fo\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-06-02_18-42-03",
+            "content": "@@ -770,78 +770,8 @@\n t%0A%09%7D\n- else if !inLimit(grid, l, c) %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-02_18-43-47",
+            "content": "@@ -795,37 +795,16 @@\n d, l, c)\n- && grid%5Bl%5D%5Bc%5D == 'O'\n  %7B%0A%09%09lis\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-06-02_18-44-42",
+            "content": "@@ -212,25 +212,25 @@\n %7B%0A%09if (l %3E= \n-1\n+0\n  && l %3C len(\n@@ -234,18 +234,16 @@\n en(grid)\n--1\n ) && (c \n@@ -245,17 +245,17 @@\n & (c %3E= \n-1\n+0\n  && c %3C \n@@ -266,18 +266,16 @@\n grid%5Bl%5D)\n--1\n ) %7B%0A%09%09re\n@@ -855,30 +855,16 @@\n (l, c))%0A\n-%09%09return list%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-06-02_18-45-50",
+            "content": "@@ -770,16 +770,121 @@\n  list%0A%09%7D\n+ else if !inLimit(grid, l, c) && grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%09return list%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-06-02_18-47-25",
+            "content": "@@ -212,25 +212,25 @@\n %7B%0A%09if (l %3E= \n-0\n+1\n  && l %3C len(\n@@ -234,16 +234,18 @@\n en(grid)\n+-1\n ) && (c \n@@ -247,17 +247,17 @@\n & (c %3E= \n-0\n+1\n  && c %3C \n@@ -268,16 +268,18 @@\n grid%5Bl%5D)\n+-1\n ) %7B%0A%09%09re\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-02_18-47-55",
+            "content": "@@ -212,25 +212,25 @@\n %7B%0A%09if (l %3E= \n-1\n+0\n  && l %3C len(\n@@ -234,18 +234,16 @@\n en(grid)\n--1\n ) && (c \n@@ -245,17 +245,17 @@\n & (c %3E= \n-1\n+0\n  && c %3C \n@@ -266,18 +266,16 @@\n grid%5Bl%5D)\n--1\n ) %7B%0A%09%09re\n@@ -547,17 +547,16 @@\n s %7B%0A%09if \n-(\n inLimit(\n@@ -570,33 +570,8 @@\n , c)\n- %7C%7C !inLimit(grid, l, c))\n  && \n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-02_18-49-29",
+            "content": "@@ -551,16 +551,17 @@\n s %7B%0A%09if \n+(\n inLimit(\n@@ -563,32 +563,57 @@\n imit(grid, l, c)\n+ %7C%7C !inLimit(grid, l, c))\n  && grid%5Bl%5D%5Bc%5D =\n@@ -800,113 +800,8 @@\n t%0A%09%7D\n- else if !inLimit(grid, l, c) && grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09%09list = append(list, newPos(l, c))%0A%09%09return list%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-02_18-49-51",
+            "content": "@@ -365,18 +365,22 @@\n := &Pos%7B\n+0, 0\n %7D%0A\n-\n %09for i :\n@@ -772,10 +772,8 @@\n ist%0A\n-%09%0A\n %09%7D e\n@@ -1279,24 +1279,67 @@\n urn list%0A%7D%0A%0A\n+// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0A\n func solve(g\n@@ -1532,24 +1532,45 @@\n %7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0A\n+// N%C3%83O ALTERE A MAIN%0A\n func main() \n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-06-02_19-03-18",
+            "content": "@@ -352,16 +352,31 @@\n  bool %7B%0A\n+%09pos := &Pos%7B%7D%0A\n %09for i :\n@@ -396,14 +396,12 @@\n %7B%0A%09%09\n-if l =\n+pos \n = li\n@@ -405,16 +405,30 @@\n  list%5Bi%5D\n+%0A%09%09if l == pos\n .linha &\n@@ -434,23 +434,19 @@\n && c == \n-list%5Bi%5D\n+pos\n .coluna \n@@ -465,24 +465,25 @@\n true%0A%09%09%7D%0A%09%7D%0A\n+%0A\n %09return fals\n@@ -501,17 +501,16 @@\n fs(list \n-*\n %5B%5D*Pos, \n@@ -538,82 +538,16 @@\n nt) \n-%7B%0A%09if l %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return%0A%09%7D%0A\n+%5B%5D*Pos %7B\n %0A%09if\n@@ -584,33 +584,32 @@\n %5D%5Bc%5D == 'O' %7B%0A%09%09\n-*\n list = append(*l\n@@ -598,33 +598,32 @@\n %09%09list = append(\n-*\n list, newPos(l, \n@@ -750,16 +750,31 @@\n l, c-1)%0A\n+%09%09return list%0A%09\n %0A%09%7D else\n@@ -823,17 +823,16 @@\n 'O' %7B%0A%09%09\n-*\n list = a\n@@ -837,17 +837,16 @@\n  append(\n-*\n list, ne\n@@ -863,26 +863,39 @@\n )%0A%09%09\n-grid%5Bl%5D%5Bc%5D = '%7C'%0A%09\n+return list%0A%09%7D%0A%0A%09return %5B%5D*Pos%7B\n %7D%0A%7D%0A\n@@ -1081,18 +1081,16 @@\n %5Bi%5D)%0A%09%7D%0A\n-%09%0A\n %09for l :\n@@ -1157,35 +1157,8 @@\n + %7B%0A\n-%09%09%09if grid%5Bl%5D%5Bc%5D == 'O' %7B%0A%09\n %09%09%09d\n@@ -1167,24 +1167,28 @@\n List := \n+dfs(\n %5B%5D*Pos%7B%7D\n %0A%09%09%09%09dfs\n@@ -1183,222 +1183,45 @@\n os%7B%7D\n-%0A%09%09%09%09dfs(&dfsList, grid, l, c)%0A%09%09%09%09bateuNaBorda := false%0A%09%09%09%09for _, pos := range dfsList %7B%0A%09%09%09%09%09if !inLimit(grid, pos.linha, pos.coluna) %7B%0A%09%09%09%09%09%09bateuNaBorda = true%0A%09%09%09%09%09%09break%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%0A%09%09%09%09if bateuNaBorda\n+, grid, l, c)%0A%09%09%09if dfsList != nil\n  %7B%0A\n-%09\n %09%09%09%09\n@@ -1256,14 +1256,8 @@\n ..)%0A\n-%09%09%09%09%7D%0A\n %09%09%09%7D\n@@ -1545,20 +1545,16 @@\n Stdin)%0A%09\n-if !\n scanner.\n@@ -1563,22 +1563,8 @@\n an()\n- %7B%0A%09%09return%0A%09%7D\n %0A%09va\n@@ -1635,18 +1635,16 @@\n &ncols)%0A\n-%09%0A\n %09board :\n@@ -1753,18 +1753,16 @@\n t())%0A%09%7D%0A\n-%09%0A\n %09solve(b\n@@ -1767,18 +1767,16 @@\n (board)%0A\n-%09%0A\n %09for _, \n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-06-02_21-51-43",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tlinha  int\n\tcoluna int\n}\n\nfunc newPos(l, c int) *Pos {\n\treturn &Pos{\n\t\tlinha:  l,\n\t\tcoluna: c,\n\t}\n}\n\nfunc inLimit(grid [][]rune, l, c int) bool {\n\tif (l >= 1 && l < len(grid)-1) && (c >= 1 && c < len(grid[l])-1) {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc contains(l, c int, list []*Pos) bool {\n\tfor i := range list {\n\t\tif l == list[i].linha && c == list[i].coluna {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc dfs(list *[]*Pos, grid [][]rune, l, c int) {\n\tif l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {\n\t\treturn\n\t}\n\n\tif inLimit(grid, l, c) && grid[l][c] == 'O' {\n\t\t*list = append(*list, newPos(l, c))\n\t\tgrid[l][c] = '|'\n\n\t\tdfs(list, grid, l+1, c)\n\t\tdfs(list, grid, l-1, c)\n\t\tdfs(list, grid, l, c+1)\n\t\tdfs(list, grid, l, c-1)\n\n\t} else if !inLimit(grid, l, c) && grid[l][c] == 'O' {\n\t\t*list = append(*list, newPos(l, c))\n\t\tgrid[l][c] = '|'\n\t}\n}\n\nfunc cloning(board [][]rune) []*Pos {\n\tlist := []*Pos{}\n\tgrid := make([][]rune, len(board))\n\n\tfor i := range board {\n\t\tgrid[i] = make([]rune, len(board[i]))\n\t\tcopy(grid[i], board[i])\n\t}\n\t\n\tfor l := 0; l < len(grid); l++ {\n\t\tfor c := 0; c < len(grid[l]); c++ {\n\t\t\tif grid[l][c] == 'O' {\n\t\t\t\tdfsList := []*Pos{}\n\t\t\t\tdfs(&dfsList, grid, l, c)\n\t\t\t\tbateuNaBorda := false\n\t\t\t\tfor _, pos := range dfsList {\n\t\t\t\t\tif !inLimit(grid, pos.linha, pos.coluna) {\n\t\t\t\t\t\tbateuNaBorda = true\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tif bateuNaBorda {\n\t\t\t\t\tlist = append(list, dfsList...)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn list\n}\n\nfunc solve(grid [][]rune) {\n\tlist := cloning(grid)\n\tfor l := 0; l < len(grid); l++ {\n\t\tfor c := 0; c < len(grid[l]); c++ {\n\t\t\tif !contains(l, c, list) && grid[l][c] == 'O' {\n\t\t\t\tgrid[l][c] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\t\n\tboard := make([][]rune, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []rune(scanner.Text())\n\t}\n\t\n\tsolve(board)\n\t\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "119"
         }
     ]
 }

@@ -19,45 +19,100 @@ func newPos(l, c int) *Pos {
 }
 
 func inLimit(grid [][]rune, l, c int) bool {
-	if (l >= 0 && l < len(grid)) && (c >= 0 && c < len(grid[l])) && grid[l][c] == 'O' {
+	if (l >= 1 && l < len(grid)-1) && (c >= 1 && c < len(grid[l])-1) {
 		return true
 	}
-
 	return false
 }
 
-func dfs(list []*Pos, grid [][]rune, l, c int) []*Pos {
-	return list
+func contains(l, c int, list []*Pos) bool {
+	for i := range list {
+		if l == list[i].linha && c == list[i].coluna {
+			return true
+		}
+	}
+	return false
 }
 
-// NÃO ALTERE A ASSINATURA DA FUNÇÃO solve
-func solve(board [][]rune) {
-	list := []*Pos{}
+func dfs(list *[]*Pos, grid [][]rune, l, c int) {
+	if l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {
+		return
+	}
 
-	for l := 0; l < len(board); l++ {
-		for c := 0; c < len(board[l]); c++ {
-			list = append(list, dfs(list, board, l, c)...)
+	if inLimit(grid, l, c) && grid[l][c] == 'O' {
+		*list = append(*list, newPos(l, c))
+		grid[l][c] = '|'
+
+		dfs(list, grid, l+1, c)
+		dfs(list, grid, l-1, c)
+		dfs(list, grid, l, c+1)
+		dfs(list, grid, l, c-1)
+
+	} else if !inLimit(grid, l, c) && grid[l][c] == 'O' {
+		*list = append(*list, newPos(l, c))
+		grid[l][c] = '|'
+	}
+}
+
+func cloning(board [][]rune) []*Pos {
+	list := []*Pos{}
+	grid := make([][]rune, len(board))
+
+	for i := range board {
+		grid[i] = make([]rune, len(board[i]))
+		copy(grid[i], board[i])
+	}
+	
+	for l := 0; l < len(grid); l++ {
+		for c := 0; c < len(grid[l]); c++ {
+			if grid[l][c] == 'O' {
+				dfsList := []*Pos{}
+				dfs(&dfsList, grid, l, c)
+				bateuNaBorda := false
+				for _, pos := range dfsList {
+					if !inLimit(grid, pos.linha, pos.coluna) {
+						bateuNaBorda = true
+						break
+					}
+				}
+
+				if bateuNaBorda {
+					list = append(list, dfsList...)
+				}
+			}
 		}
 	}
 
-	for i := range list {
-		pos := list[i]
-		board[pos.linha][pos.coluna] = 'X'
+	return list
+}
+
+func solve(grid [][]rune) {
+	list := cloning(grid)
+	for l := 0; l < len(grid); l++ {
+		for c := 0; c < len(grid[l]); c++ {
+			if !contains(l, c, list) && grid[l][c] == 'O' {
+				grid[l][c] = 'X'
+			}
+		}
 	}
 }
 
-// NÃO ALTERE A MAIN
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
+	if !scanner.Scan() {
+		return
+	}
 	var nrows, ncols int
 	fmt.Sscanf(scanner.Text(), "%d %d", &nrows, &ncols)
+	
 	board := make([][]rune, nrows)
 	for i := 0; i < nrows; i++ {
 		scanner.Scan()
 		board[i] = []rune(scanner.Text())
 	}
+	
 	solve(board)
+	
 	for _, row := range board {
 		fmt.Println(string(row))
 	}

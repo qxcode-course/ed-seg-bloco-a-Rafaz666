@@ -13,8 +13,8 @@ sources:
   writeable: false
   quests: null
 expanded:
-- es@dfs
 - es@bfs
+- es@dfs
 flags:
   inbox: all
   panel: skills
