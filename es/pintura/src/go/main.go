@@ -8,11 +8,12 @@ import (
 	"strings"
 )
 
+func dfs(image [][]int)
+
 // Não modifique a assinatura da função floodFill
-func floodFill(image [][]int, sr int, sc int, color int) [][]int {
-	//
-	_ := image
-	return 0
+func floodFill(image [][]int, l, c int, color int) [][]int {
+	//_ := image
+	return [][]int{}
 }
 
 // Não modifique a função main
