@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-05_09-39-05",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22reflect%22%0A\n %09%22st\n@@ -354,23 +354,16 @@\n %5BT any%5D(\n-value T\n ) *List%5B\n@@ -371,47 +371,8 @@\n %5D %7B%0A\n-%09if reflect.ValueOf(value).IsZero() %7B%0A%09\n %09roo\n@@ -387,17 +387,16 @@\n de%5BT%5D%7B%7D%0A\n-%09\n %09root.ne\n@@ -401,25 +401,24 @@\n next = root%0A\n-%09\n %09root.prev =\n@@ -423,17 +423,16 @@\n  = root%0A\n-%09\n %09root.ro\n@@ -441,17 +441,16 @@\n  = root%0A\n-%09\n %09return \n@@ -479,19 +479,16 @@\n ize: 0%7D%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-06-05_11-27-56",
+            "content": "@@ -23,16 +23,27 @@\n %0A%09%22fmt%22%0A\n+%09%22reflect%22%0A\n %09%22string\n@@ -365,16 +365,23 @@\n %5BT any%5D(\n+value T\n ) *List%5B\n@@ -385,16 +385,55 @@\n st%5BT%5D %7B%0A\n+%09if reflect.ValueOf(value).IsZero() %7B%0A%09\n %09root :=\n@@ -444,16 +444,17 @@\n de%5BT%5D%7B%7D%0A\n+%09\n %09root.ne\n@@ -459,24 +459,25 @@\n next = root%0A\n+%09\n %09root.prev =\n@@ -482,16 +482,17 @@\n  = root%0A\n+%09\n %09root.ro\n@@ -501,16 +501,17 @@\n  = root%0A\n+%09\n %09return \n@@ -540,16 +540,19 @@\n ize: 0%7D%0A\n+%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-06-05_11-52-27",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\ntype Node[T any] struct {\n\tValue T\n\tnext  *Node[T]\n\tprev  *Node[T]\n\troot  *Node[T]\n}\n\n// Retorna o pr\u00f3ximo n\u00f3\nfunc (n *Node[T]) Next() *Node[T] {\n\treturn n.next\n}\n\n// Retorna o n\u00f3 anterior\nfunc (n *Node[T]) Prev() *Node[T] {\n\treturn n.prev\n}\n\ntype List[T any] struct {\n\troot *Node[T]\n\tsize int\n}\n\nfunc NewList[T any]() *List[T] {\n\troot := &Node[T]{}\n\troot.next = root\n\troot.prev = root\n\troot.root = root\n\treturn &List[T]{root: root, size: 0}\n}\n\nfunc (l *List[T]) PushBack(value T) {\n\tl.Insert(l.root, value)\n}\n\nfunc (l *List[T]) Insert(it *Node[T], value T) *Node[T] {\n\tn := &Node[T]{Value: value, root: l.root}\n\tn.prev = it.prev\n\tn.next = it\n\tit.prev.next = n\n\tit.prev = n\n\tl.size++\n\treturn n\n}\n\nfunc (l *List[T]) Size() int {\n\treturn l.size\n}\n\nfunc (l *List[T]) Clear() {\n\tl.root.next = l.root\n\tl.root.prev = l.root\n\tl.size = 0\n}\n\nfunc (l *List[T]) End() *Node[T] {\n\treturn l.root\n}\n\nfunc (l *List[T]) Front() *Node[T] {\n\tif l.size == 0 {\n\t\treturn l.root\n\t}\n\treturn l.root.next\n}\n\nfunc (l *List[T]) Back() *Node[T] {\n\tif l.size == 0 {\n\t\treturn l.root\n\t}\n\treturn l.root.prev\n}\n\nfunc (l *List[T]) Erase(n *Node[T]) *Node[T] {\n\tif n == l.root {\n\t\treturn l.root\n\t}\n\tn.prev.next = n.next\n\tn.next.prev = n.prev\n\tl.size--\n\treturn n.next\n}\n\nfunc (l *List[T]) IndexOf(n *Node[T]) int {\n\tif n == l.root {\n\t\treturn l.size\n\t}\n\tif n.root != l.root {\n\t\treturn -1\n\t}\n\ti := 0\n\tfor it := l.root.next; it != n; it = it.next {\n\t\ti++\n\t\tif i >= l.size {\n\t\t\treturn -1\n\t\t}\n\t}\n\treturn i\n}\n\nfunc (l *List[T]) String() string {\n\tvalues := []string{}\n\tfor n := l.root.next; n != l.root; n = n.next {\n\t\tvalues = append(values, fmt.Sprint(n.Value))\n\t}\n\treturn \"[\" + strings.Join(values, \", \") + \"]\"\n}\n",
+            "lines": "113"
+        }
+    ]
+}

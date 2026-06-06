@@ -1,0 +1,259 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-05_09-39-05",
+            "content": "@@ -1125,38 +1125,24 @@\n tLine.Next()\n-              \n         // v\n@@ -1196,30 +1196,16 @@\n .Front()\n-              \n  // move\n@@ -1275,159 +1275,10 @@\n  %7B%0A%09\n-if e.itChar != e.itLine.Value.Back() %7B // Se o cursor n%C3%A3o est%C3%A1 no fim da linha%0A%09%09e.itChar = e.itChar.Next() // Move o cursor para a direita%0A%09%09return%0A%09%7D\n+e.\n %0A%7D%0A%0A\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-06-05_09-48-32",
+            "content": "@@ -1452,77 +1452,8 @@\n urn%0A\n-%09%7D else %7B%0A%09%09e.text.Insert(e.itLine.Next(), NewList%5Brune%5D())%0A%09%09return%0A\n %09%7D%0A%7D\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-06-05_09-51-49",
+            "content": "@@ -1454,105 +1454,64 @@\n n%0A%09%7D\n-%0A%0A%09if e.itLine != e.text.Back() %7B%0A%09%09e.itLine = e.itLine.Next()%0A%09%09e.itChar = e.itLine.Value.Front(\n+ else %7B%0A%09%09e.text.Insert(e.itLine.Next(), NewList%5Brune%5D()\n )%0A%09%09\n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-06-05_10-02-55",
+            "content": "@@ -1698,47 +1698,8 @@\n ) %7B%0A\n-%09e.itLine.Value.Erase(e.itChar.Prev())%0A\n %7D%0A%0Af\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-05_10-08-57",
+            "content": "@@ -1664,46 +1664,8 @@\n ) %7B%0A\n-%09e.itLine.Value.Insert(e.itChar, ' ')%0A\n %7D%0A%0Af\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-06-05_10-16-42",
+            "content": "@@ -1268,293 +1268,8 @@\n inha\n-%0A%0A%09if e.itChar != e.itLine.Value.Back() %7B%0A%09%09list := %5B%5D*Node%5Brune%5D%7B%7D%0A%09%09for i := e.itChar; i != e.itLine.Value.End(); i = e.itChar.Next() %7B%0A%09%09%09e.itLine.Value.Erase(i)%0A%09%09%09list = append(list, i)%0A%09%09%7D%0A%0A%09%09e.text.Insert(e.itLine.Next(), NewList%5Brune%5D())%0A%09%09e.itChar = e.itLine.Value.Front()%0A%0A%09%7D\n %0A%7D%0A%0A\n@@ -1487,105 +1487,37 @@\n () %7B\n- //Se nao esta na ultima linha%0A%09%09e.itLine = e.itLine.Next()        // Aponta para a proxima linha\n+%0A%09%09e.itLine = e.itLine.Next()\n %0A%09%09e\n@@ -1552,41 +1552,8 @@\n nt()\n- // O cursor aponta para o comeco\n %0A%09%09r\n@@ -1591,17 +1591,16 @@\n yUp() %7B%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-06-05_10-45-52",
+            "content": "@@ -1266,16 +1266,300 @@\n  linha%0A%0A\n+%09if e.itChar != e.itLine.Value.Back() %7B%0A%09%09list := %5B%5D*Node%5Brune%5D%7B%7D%0A%09%09for i := e.itChar; i != e.itLine.Value.End(); i = e.itChar.Next() %7B%0A%09%09%09e.itLine.Value.Erase(i)%0A%09%09%09list = append(list, i)%0A%09%09%7D%0A%0A%09%09e.text.Insert(e.itLine.Next(), NewList%5Brune%5D())%0A%09%09e.itChar = e.itLine.Value.Front()%0A%0A%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "173"
+        },
+        {
+            "label": "2026-06-05_11-27-56",
+            "content": "@@ -1106,260 +1106,49 @@\n nte%0A\n-%0A%09if e.itChar != e.itLine.Value.Back() %7B%0A%09%09for p :\n+%09e.itLine \n = e.it\n-Char\n+Line\n .Next()\n-; p != e.itLine.Value.End(); p = p.Next() %7B%0A%09%09%09next := e.itLine.Next().Value.Back()%0A%09%09%09e.itLine.Value.Insert(next, p.Value)%0A%09%09%09e.itLine.Value.Erase(p)%0A%09%09%7D%0A%09%7D%0A%09e.itLine = e.itLine.Next()\n+              \n     \n@@ -1206,24 +1206,38 @@\n alue.Front()\n+              \n  // move o c\n@@ -1265,16 +1265,17 @@\n a linha%0A\n+%0A\n %7D%0A%0Afunc \n@@ -1628,16 +1628,17 @@\n  O curso\n+r\n  aponta \n@@ -1644,21 +1644,21 @@\n  para o \n-inici\n+comec\n o%0A%09%09retu\n@@ -1689,24 +1689,25 @@\n ) KeyUp() %7B%0A\n+%0A\n %7D%0A%0Afunc (e *\n",
+            "lines": "162"
+        },
+        {
+            "label": "2026-06-05_11-52-27",
+            "content": "@@ -1212,24 +1212,32 @@\n Next() %7B%0A%09%09%09\n+next := \n e.itLine.Val\n@@ -1237,49 +1237,57 @@\n ine.\n-Value.Insert(e.itLine.Next().Value.Back()\n+Next().Value.Back()%0A%09%09%09e.itLine.Value.Insert(next\n , p.\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-06-05_11-58-45",
+            "content": "@@ -1130,27 +1130,28 @@\n tLine.Value.\n-End\n+Back\n () %7B%0A%09%09for p\n@@ -1260,19 +1260,20 @@\n ).Value.\n-End\n+Back\n (), p.Va\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-06-05_12-55-11",
+            "content": "@@ -1000,100 +1000,8 @@\n ) %7B%0A\n-%09// 1. Cria a nova linha e insere logo abaixo da linha corrente%0A%09newLine := NewList%5Brune%5D()%0A\n %09e.t\n@@ -1032,171 +1032,82 @@\n (), \n-n\n+N\n ewLi\n-ne)%0A%0A%09// CORRE%C3%87%C3%83O 1: Se o cursor N%C3%83O estiver no fim da linha (ou seja, %C3%A9 diferente de End)%0A%09// significa que h%C3%A1 texto ap%C3%B3s o cursor para ser cortado e movido.\n+st%5Brune%5D()) // cria uma nova linha e insere abaixo da linha corrente%0A\n %0A%09if\n@@ -1146,75 +1146,14 @@\n ) %7B%0A\n-%0A\n %09%09\n-// Come%C3%A7amos a mover a partir do caractere onde o cursor est%C3%A1%0A%09%09\n+for \n p :=\n@@ -1161,22 +1161,24 @@\n e.itChar\n-%0A%09%09for\n+.Next();\n  p != e.\n@@ -1199,240 +1199,36 @@\n nd()\n- %7B%0A%09%09%09proximo := p.Next() // Guarda a refer%C3%AAncia do pr%C3%B3ximo antes de apagar o atual%0A%0A%09%09%09// CORRE%C3%87%C3%83O 2: Para adicionar o texto no FIM da nova linha na ordem correta,%0A%09%09%09// n%C3%B3s inserimos ANTES do End() da nova linha.%0A%09%09%09e.text.Front()\n+; p = p.Next() %7B%0A%09%09%09e.itLine\n .Val\n@@ -1239,25 +1239,26 @@\n nsert(e.\n-text.Fron\n+itLine.Nex\n t().Valu\n@@ -1279,378 +1279,176 @@\n ue)%0A\n-%0A%09%09%09// Remove o caractere da linha antiga%0A%09%09%09e.itLine.Value.Erase(p)%0A%0A%09%09%09p = proximo // Avan%C3%A7a usando a refer%C3%AAncia salva%0A%09%09%7D%0A%09%7D%0A%0A%09// 3. Move o controle do editor para a nova linha criada%0A%09e.itLine = e.itLine.Next()%0A%0A%09// O cursor vai para o in%C3%ADcio da nova linha%0A%09// (Se ela estiver vazia, Front() retornar%C3%A1 o End() dela de forma segura)%0A%09e.itChar = e.itLine.Value.Front()\n+%09%09%09e.itLine.Value.Erase(p)%0A%09%09%7D%0A%09%7D%0A%09e.itLine = e.itLine.Next()        // vai pra pr%C3%B3xima linha%0A%09e.itChar = e.itLine.Value.Front() // move o cursor para o in%C3%ADcio da linha\n %0A%7D%0A%0A\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-06-05_13-01-37",
+            "content": "@@ -996,16 +996,108 @@\n ter() %7B%0A\n+%09// 1. Cria a nova linha e insere logo abaixo da linha corrente%0A%09newLine := NewList%5Brune%5D()%0A\n %09e.text.\n@@ -1124,82 +1124,171 @@\n (), \n-N\n+n\n ewLi\n-st%5Brune%5D()) // cria uma nova linha e insere abaixo da linha corrente%0A\n+ne)%0A%0A%09// CORRE%C3%87%C3%83O 1: Se o cursor N%C3%83O estiver no fim da linha (ou seja, %C3%A9 diferente de End)%0A%09// significa que h%C3%A1 texto ap%C3%B3s o cursor para ser cortado e movido.\n %0A%09if\n@@ -1327,200 +1327,352 @@\n ) %7B%0A\n+%0A\n %09%09\n-proximo := e.itChar.Next()%0A%09%09e.itLine = e.itLine.Next() // vai pra pr%C3%B3xima linha%0A%09%09e.itChar = e.itLine.Value.Front()%0A%09%09for p := proximo; p != e.itLine.Value.End(); p = p.Next() %7B%0A%09%09%09e.itLine\n+// Come%C3%A7amos a mover a partir do caractere onde o cursor est%C3%A1%0A%09%09p := e.itChar%0A%09%09for p != e.itLine.Value.End() %7B%0A%09%09%09proximo := p.Next() // Guarda a refer%C3%AAncia do pr%C3%B3ximo antes de apagar o atual%0A%0A%09%09%09// CORRE%C3%87%C3%83O 2: Para adicionar o texto no FIM da nova linha na ordem correta,%0A%09%09%09// n%C3%B3s inserimos ANTES do End() da nova linha.%0A%09%09%09e.text.Front()\n .Val\n@@ -1683,26 +1683,25 @@\n nsert(e.\n-itLine.Nex\n+text.Fron\n t().Valu\n@@ -1722,188 +1722,378 @@\n ue)%0A\n-%09%09%09e.itLine.Value.Erase(p)%0A%09%09%7D%0A%09%7D else %7B%0A%09%09e.itLine = e.itLine.Next()        // vai pra pr%C3%B3xima linha%0A%09%09e.itChar = e.itLine.Value.Front() // move o cursor para o in%C3%ADcio da linha%0A%09%7D\n+%0A%09%09%09// Remove o caractere da linha antiga%0A%09%09%09e.itLine.Value.Erase(p)%0A%0A%09%09%09p = proximo // Avan%C3%A7a usando a refer%C3%AAncia salva%0A%09%09%7D%0A%09%7D%0A%0A%09// 3. Move o controle do editor para a nova linha criada%0A%09e.itLine = e.itLine.Next()%0A%0A%09// O cursor vai para o in%C3%ADcio da nova linha%0A%09// (Se ela estiver vazia, Front() retornar%C3%A1 o End() dela de forma segura)%0A%09e.itChar = e.itLine.Value.Front()\n %0A%7D%0A%0A\n",
+            "lines": "187"
+        },
+        {
+            "label": "2026-06-05_13-08-06",
+            "content": "@@ -1142,16 +1142,45 @@\n End() %7B%0A\n+%09%09proximo := e.itChar.Next()%0A\n %09%09e.itLi\n@@ -1272,31 +1272,23 @@\n or p := \n-e.itChar.Next()\n+proximo\n ; p != e\n@@ -1419,17 +1419,25 @@\n )%0A%09%09%7D%0A%09%7D\n-%0A\n+ else %7B%0A%09\n %09e.itLin\n@@ -1488,16 +1488,17 @@\n a linha%0A\n+%09\n %09e.itCha\n@@ -1564,16 +1564,19 @@\n a linha%0A\n+%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-06-05_13-09-20",
+            "content": "@@ -1138,24 +1138,114 @@\n lue.End() %7B%0A\n+%09%09e.itLine = e.itLine.Next() // vai pra pr%C3%B3xima linha%0A%09%09e.itChar = e.itLine.Value.Front()%0A\n %09%09for p := e\n@@ -1302,16 +1302,79 @@\n ext() %7B%0A\n+%09%09%09e.itLine.Value.Insert(e.itLine.Next().Value.End(), p.Value)%0A\n %09%09%09e.itL\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-06-05_13-15-59",
+            "content": "@@ -1001,31 +1001,112 @@\n  %7B%0A%09\n-list := NewList%5Brune%5D()\n+e.text.Insert(e.itLine.Next(), NewList%5Brune%5D()) // cria uma nova linha e insere abaixo da linha corrente\n %0A%0A%09i\n@@ -1219,170 +1219,38 @@\n %0A%09%09%09\n-list.Insert(list.Back(), p.Value)%0A%09%09%09e.itLine.Value.Erase(p)%0A%09%09%7D%0A%09%7D%0A%09e.text.Insert(e.itLine.Next(), list) // cria uma nova linha e insere abaixo da linha corrente\n+e.itLine.Value.Erase(p)%0A%09%09%7D%0A%09%7D\n %0A%09e.\n@@ -1269,27 +1269,24 @@\n tLine.Next()\n-   \n         // v\n@@ -1340,19 +1340,16 @@\n .Front()\n-   \n  // move\n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-06-05_13-25-57",
+            "content": "@@ -1835,45 +1835,8 @@\n urn%0A\n-%09%7D else %7B%0A%09%09e.itChar = e.itChar.next%0A\n %09%7D%0A%7D\n@@ -2047,54 +2047,8 @@\n v())\n-%0A%0A%09if e.itChar == e.itLine.Value.Front() %7B%0A%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-06-05_13-30-50",
+            "content": "@@ -1863,22 +1863,20 @@\n .itChar.\n-N\n+n\n ext\n-()\n %0A%09%7D%0A%7D%0A%0Af\n@@ -1905,123 +1905,8 @@\n ) %7B%0A\n-%09if e.itLine.Value.IndexOf(e.itChar) %3E e.itLine.Prev().Value.Size() %7B%0A%09%09e.itChar = e.itLine.Prev().Value.Back()%0A%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "174"
+        },
+        {
+            "label": "2026-06-05_13-45-43",
+            "content": "@@ -2018,17 +2018,16 @@\n ck()%0A%09%7D%0A\n-%0A\n %7D%0A%0Afunc \n@@ -2054,123 +2054,8 @@\n ) %7B%0A\n-%09if e.itLine.Value.IndexOf(e.itChar) %3E e.itLine.Next().Value.Size() %7B%0A%09%09e.itChar = e.itLine.Next().Value.Back()%0A%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "177"
+        },
+        {
+            "label": "2026-06-05_14-08-12",
+            "content": "@@ -2015,25 +2015,16 @@\n .Back()%0A\n-%09%09return%0A\n %09%7D%0A%0A%7D%0A%0Af\n@@ -2163,25 +2163,16 @@\n .Back()%0A\n-%09%09return%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_12-09-30",
+            "content": "@@ -1843,18 +1843,26 @@\n lse %7B%0A%09%09\n-if\n+e.itChar =\n  e.itCha\n@@ -1869,19 +1869,53 @@\n r.Next()\n- ==\n+%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) KeyUp() %7B%0A%09if\n  e.itLin\n@@ -1926,62 +1926,113 @@\n lue.\n-End() %7B%0A%09%09%09return%0A%09%09%7D%0A%0A%09%09e.itChar = e.itChar.Next()%0A%09%7D\n+IndexOf(e.itChar) %3E e.itLine.Prev().Value.Size() %7B%0A%09%09e.itChar = e.itLine.Prev().Value.Back()%0A%09%09return%0A%09%7D%0A\n %0A%7D%0A%0A\n@@ -2055,48 +2055,140 @@\n  Key\n-Up\n+Down\n () %7B%0A\n-%0A%7D%0A%0Afunc (e *Editor) KeyDown() %7B%0A\n+%09if e.itLine.Value.IndexOf(e.itChar) %3E e.itLine.Next().Value.Size() %7B%0A%09%09e.itChar = e.itLine.Next().Value.Back()%0A%09%09return%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_12-12-00",
+            "content": "@@ -1841,16 +1841,78 @@\n  else %7B%0A\n+%09%09if e.itChar.Next() == e.itLine.Value.End() %7B%0A%09%09%09return%0A%09%09%7D%0A%0A\n %09%09e.itCh\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-06-06_12-15-17",
+            "content": "@@ -2085,16 +2085,17 @@\n Prev())%0A\n+%0A\n %09if e.it\n@@ -2131,49 +2131,8 @@\n ) %7B%0A\n-%09%09e.itChar = e.itLine.Prev().Value.Back()\n %0A%09%7D%0A\n",
+            "lines": "176"
+        },
+        {
+            "label": "2026-06-06_12-17-11",
+            "content": "@@ -2042,24 +2042,63 @@\n yDelete() %7B%0A\n+%09e.itLine.Value.Erase(e.itChar.Prev())%0A\n %09if e.itChar\n@@ -2175,47 +2175,8 @@\n %0A%09%7D%0A\n-%09e.itLine.Value.Erase(e.itChar.Prev())%0A\n %7D%0A%0Af\n",
+            "lines": "175"
+        },
+        {
+            "label": "2026-06-06_12-18-23",
+            "content": "@@ -1471,17 +1471,16 @@\n ght() %7B%0A\n-%0A\n %09if e.it\n@@ -1831,16 +1831,55 @@\n %09return%0A\n+%09%7D else %7B%0A%09%09e.itChar = e.itChar.Next()%0A\n %09%7D%0A%7D%0A%0Afu\n@@ -2050,47 +2050,8 @@\n ) %7B%0A\n-%09e.itLine.Value.Erase(e.itChar.Prev())%0A\n %09if \n@@ -2128,24 +2128,63 @@\n e.Back()%0A%09%7D%0A\n+%09e.itLine.Value.Erase(e.itChar.Prev())%0A\n %7D%0A%0Afunc main\n",
+            "lines": "175"
+        },
+        {
+            "label": "2026-06-06_12-21-46",
+            "content": "@@ -2047,17 +2047,16 @@\n Prev())%0A\n-%0A\n %09if e.it\n@@ -2076,15 +2076,8 @@\n ine.\n-Next().\n Valu\n@@ -2092,103 +2092,8 @@\n ) %7B%0A\n-%09%09return%0A%09%7D%0A%0A%09if e.itChar == e.itLine.Value.Front() %7B // Se o ponteiro esta no comeco da linha%0A\n %09%09e.\n@@ -2133,43 +2133,8 @@\n ck()\n- // Aponta para o final da anterior\n %0A%09%7D%0A\n",
+            "lines": "174"
+        },
+        {
+            "label": "2026-06-06_12-27-48",
+            "content": "@@ -2048,16 +2048,77 @@\n rev())%0A%0A\n+%09if e.itChar == e.itLine.Next().Value.Front() %7B%0A%09%09return%0A%09%7D%0A%0A\n %09if e.it\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_12-43-31",
+            "content": "@@ -1832,35 +1832,16 @@\n %09return%0A\n-%09%7D else %7B%0A%09%09return%0A\n %09%7D%0A%7D%0A%0Afu\n@@ -2012,42 +2012,8 @@\n ) %7B%0A\n-%09if e.itLine != e.text.Front() %7B%0A%09\n %09e.i\n@@ -2050,30 +2050,8 @@\n v())\n-%0A%09%7D else %7B%0A%09%09return%0A%09%7D\n %0A%0A%09i\n",
+            "lines": "175"
+        },
+        {
+            "label": "2026-06-06_12-51-29",
+            "content": "@@ -2023,24 +2023,58 @@\n yDelete() %7B%0A\n+%09if e.itLine != e.text.Front() %7B%0A%09\n %09e.itLine.Va\n@@ -2099,16 +2099,38 @@\n .Prev())\n+%0A%09%7D else %7B%0A%09%09return%0A%09%7D\n %0A%0A%09if e.\n@@ -2283,27 +2283,17 @@\n terior%0A%09\n-%09return%0A%09%7D%0A\n+%7D\n %0A%7D%0A%0Afunc\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_12-56-56",
+            "content": "@@ -2069,73 +2069,8 @@\n v())\n-%0A%09if e.itLine == e.text.Front() && e.text.size == 0 %7B%0A%09%09return%0A%09%7D\n %0A%0A%09i\n@@ -2226,16 +2226,25 @@\n nterior%0A\n+%09%09return%0A\n %09%7D%0A%0A%7D%0A%0Af\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_12-59-24",
+            "content": "@@ -2119,51 +2119,20 @@\n  == \n-1\n+0\n  %7B%0A%09%09\n-e.itLine.Value.Erase(e.itChar.Next())\n+return\n %0A%09%7D%0A\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-00-44",
+            "content": "@@ -2066,16 +2066,276 @@\n Prev())%0A\n+%09if e.itLine == e.text.Front() && e.text.size == 1 %7B%0A%09%09e.itLine.Value.Erase(e.itChar.Next())%0A%09%7D%0A%0A%09if e.itChar == e.itLine.Value.Front() %7B // Se o ponteiro esta no comeco da linha%0A%09%09e.itChar = e.itLine.Prev().Value.Back() // Aponta para o final da anterior%0A%09%7D%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-03-17",
+            "content": "@@ -1488,17 +1488,10 @@\n Char\n-.Next() =\n+ !\n = e.\n@@ -1507,74 +1507,12 @@\n lue.\n-Front() %7B%0A%09%09return%0A%09%7D%0A%0A%09if e.itChar.Next() != e.itLine.Value.Front\n+Back\n () %7B\n",
+            "lines": "173"
+        },
+        {
+            "label": "2026-06-06_13-07-27",
+            "content": "@@ -2100,55 +2100,8 @@\n ) %7B%0A\n-%09if e.itChar.Prev() != e.itLine.Value.End() %7B%0A%09\n %09e.i\n@@ -2139,22 +2139,8 @@\n ())%0A\n-%09%7D else %7B%0A%0A%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "177"
+        },
+        {
+            "label": "2026-06-06_13-11-11",
+            "content": "@@ -2188,75 +2188,16 @@\n )%0A%09%7D\n-%0A%0A%09if e.text.Size() %3E 1 %7B%0A%09%09e.itChar = e.itLine.Prev().Value.Back()\n+ else %7B%0A\n %0A%09%7D%0A\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-12-58",
+            "content": "@@ -2196,45 +2196,23 @@\n f e.\n-itChar.Prev() == e.itLine.Value.End()\n+text.Size() %3E 1\n  %7B%0A%09\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_13-16-38",
+            "content": "@@ -2188,41 +2188,51 @@\n )%0A%09%7D\n- else \n+%0A%0A%09\n if e.it\n-Line != e.text.Front\n+Char.Prev() == e.itLine.Value.End\n () %7B\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_13-29-38",
+            "content": "@@ -2203,34 +2203,33 @@\n itLine != e.\n-itLine.Nex\n+text.Fron\n t() %7B%0A%09%09e.it\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-30-44",
+            "content": "@@ -2182,16 +2182,99 @@\n Prev())%0A\n+%09%7D else if e.itLine != e.itLine.Next() %7B%0A%09%09e.itChar = e.itLine.Prev().Value.Back()%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-34-28",
+            "content": "@@ -2100,32 +2100,39 @@\n ) %7B%0A%09if e.itChar\n+.Prev()\n  != e.itLine.Val\n@@ -2186,90 +2186,8 @@\n ())%0A\n-%09%7D else if e.itLine != e.text.Front() %7B%0A%09%09e.itChar = e.itLine.Prev().Value.Back()%0A\n %09%7D%0A%7D\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_13-40-07",
+            "content": "@@ -2166,16 +2166,23 @@\n e.itChar\n+.Prev()\n )%0A%09%7D els\n@@ -2183,20 +2183,19 @@\n %09%7D else \n-%7B%0A%09%09\n+if \n e.itLine\n@@ -2199,28 +2199,41 @@\n ine \n+!\n = e.\n-itLine.Next()%0A%09%09\n+text.Front() %7B%0A%09%09e.itChar = \n e.it\n@@ -2237,20 +2237,20 @@\n .itLine.\n-Next\n+Prev\n ().Value\n@@ -2250,21 +2250,20 @@\n ).Value.\n-Clear\n+Back\n ()%0A%09%7D%0A%7D%0A\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-06-06_13-49-59",
+            "content": "@@ -2174,39 +2174,13 @@\n )%0A%09%7D\n-%0A%09if e.itLine.Value.Size() == 0\n+ else\n  %7B%0A%09\n",
+            "lines": "182"
+        },
+        {
+            "label": "2026-06-06_13-52-39",
+            "content": "@@ -2170,22 +2170,18 @@\n Char)%0A%09%7D\n- else \n+%0A%09\n if e.itL\n@@ -2204,9 +2204,9 @@\n  == \n-1\n+0\n  %7B%0A%09\n@@ -2226,20 +2226,20 @@\n .itLine.\n-Prev\n+Next\n ()%0A%09%09e.i\n@@ -2269,43 +2269,8 @@\n r()%0A\n-%09%09e.itChar = e.itLine.Value.Back()%0A\n %09%7D%0A%7D\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_14-10-06",
+            "content": "@@ -2166,23 +2166,16 @@\n e.itChar\n-.Prev()\n )%0A%09%7D els\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_14-10-31",
+            "content": "@@ -1472,16 +1472,77 @@\n ht() %7B%0A%0A\n+%09if e.itChar.Next() == e.itLine.Value.Front() %7B%0A%09%09return%0A%09%7D%0A%0A\n %09if e.it\n@@ -2108,23 +2108,16 @@\n e.itChar\n-.Prev()\n  != e.it\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-06-06_14-13-30",
+            "content": "@@ -2250,19 +2250,20 @@\n e.Value.\n-End\n+Back\n ()%0A%09%7D%0A%7D%0A\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_14-14-31",
+            "content": "@@ -2157,17 +2157,17 @@\n ze() == \n-0\n+1\n  %7B%0A%09%09e.i\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_14-15-06",
+            "content": "@@ -2200,33 +2200,31 @@\n e.it\n-Char = e.itLine\n+Line.Next()\n .Value.\n-End\n+Clear\n ()%0A%09\n@@ -2228,39 +2228,41 @@\n )%0A%09%09e.it\n-Line.Next()\n+Char = e.itLine\n .Value.\n-Clear\n+End\n ()%0A%09%7D%0A%7D%0A\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_14-17-23",
+            "content": "@@ -2224,16 +2224,48 @@\n e.End()%0A\n+%09%09e.itLine.Next().Value.Clear()%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_14-28-03",
+            "content": "@@ -2228,40 +2228,8 @@\n d()%0A\n-%09%09e.itLine.Next().Value.Clear()%0A\n %09%7D%0A%7D\n",
+            "lines": "178"
+        },
+        {
+            "label": "2026-06-06_14-36-59",
+            "content": "@@ -2165,53 +2165,8 @@\n 0 %7B%0A\n-%09%09e.itLine.Value.Erase(e.itLine.Value.End())%0A\n %09%09e.\n@@ -2224,16 +2224,48 @@\n e.End()%0A\n+%09%09e.itLine.Next().Value.Clear()%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-06-06_14-39-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\n\t\"github.com/gdamore/tcell/v2\"\n)\n\ntype Editor struct {\n\ttext   *List[*List[rune]] // a lista de linhas\n\titLine *Node[*List[rune]] // iterador para a linha corrente\n\titChar *Node[rune]        // iterador para o caracter do cursor\n\tscreen tcell.Screen\n\tstyle  tcell.Style\n}\n\nfunc (e *Editor) InsertChar(r rune) {\n\te.itChar = e.itLine.Value.Insert(e.itChar, r) // insere antes do elemento apontado pelo cursor\n\te.itChar = e.itChar.Next()                    // move o cursor para pr\u00f3xima posi\u00e7\u00e3o\n}\n\nfunc (e *Editor) KeyLeft() {\n\tif e.itChar != e.itLine.Value.Front() { // Se o cursor n\u00e3o est\u00e1 no in\u00edcio da linha\n\t\te.itChar = e.itChar.Prev() // Move o cursor para a esquerda\n\t\treturn\n\t}\n\t// Estamos no in\u00edcio da linha\n\tif e.itLine != e.text.Front() { // Se n\u00e3o est\u00e1 na primeira linha\n\t\te.itLine = e.itLine.Prev()      // Atualiza iterador de linha para linha anterior\n\t\te.itChar = e.itLine.Value.End() // Move o cursor para o final da linha\n\t}\n}\n\nfunc (e *Editor) KeyEnter() {\n\tlist := NewList[rune]()\n\n\tif e.itChar != e.itLine.Value.End() {\n\t\tfor p := e.itChar.Next(); p != e.itLine.Value.End(); p = p.Next() {\n\t\t\tlist.Insert(list.Back(), p.Value)\n\t\t\te.itLine.Value.Erase(p)\n\t\t}\n\t}\n\te.text.Insert(e.itLine.Next(), list) // cria uma nova linha e insere abaixo da linha corrente\n\te.itLine = e.itLine.Next()           // vai pra pr\u00f3xima linha\n\te.itChar = e.itLine.Value.Front()    // move o cursor para o in\u00edcio da linha\n}\n\nfunc (e *Editor) KeyRight() {\n\n\tif e.itChar.Next() != e.itLine.Value.Front() { // Se o cursor n\u00e3o est\u00e1 no fim da linha\n\t\te.itChar = e.itChar.Next() // Move o cursor para a direita\n\t\treturn\n\t}\n\n\tif e.itLine != e.text.Back() { //Se nao esta na ultima linha\n\t\te.itLine = e.itLine.Next()        // Aponta para a proxima linha\n\t\te.itChar = e.itLine.Value.Front() // O curso aponta para o inicio\n\t\treturn\n\t} else {\n\t\treturn\n\t}\n}\n\nfunc (e *Editor) KeyUp() {\n\n}\n\nfunc (e *Editor) KeyDown() {\n\n}\n\nfunc (e *Editor) KeyBackspace() {\n\te.itLine.Value.Insert(e.itChar, ' ')\n}\n\nfunc (e *Editor) KeyDelete() {\n\tif e.itChar.Prev() != e.itLine.Value.End() {\n\t\te.itLine.Value.Erase(e.itChar.Prev())\n\t} else if e.itLine.Value.Size() == 0 {\n\t\te.itLine.Value.Erase(e.itLine.Value.End())\n\t\te.itLine = e.itLine.Prev()\n\t\te.itChar = e.itLine.Value.End()\n\t}\n}\n\nfunc main() { // Texto inicial e posi\u00e7\u00e3o do cursor\n\teditor := NewEditor()\n\teditor.Draw()\n\teditor.MainLoop()\n\tdefer editor.screen.Fini() // Encerra a tela ao sair\n}\n\nfunc (e *Editor) MainLoop() {\n\tfor {\n\t\tev := e.screen.PollEvent()\n\t\tswitch ev := ev.(type) {\n\t\tcase *tcell.EventKey:\n\t\t\tswitch ev.Key() {\n\t\t\tcase tcell.KeyEsc, tcell.KeyCtrlC:\n\t\t\t\treturn\n\t\t\tcase tcell.KeyEnter:\n\t\t\t\te.KeyEnter()\n\t\t\tcase tcell.KeyLeft:\n\t\t\t\te.KeyLeft()\n\t\t\tcase tcell.KeyRight:\n\t\t\t\te.KeyRight()\n\t\t\tcase tcell.KeyUp:\n\t\t\t\te.KeyUp()\n\t\t\tcase tcell.KeyDown:\n\t\t\t\te.KeyDown()\n\t\t\tcase tcell.KeyBackspace, tcell.KeyBackspace2:\n\t\t\t\te.KeyBackspace()\n\t\t\tcase tcell.KeyDelete:\n\t\t\t\te.KeyDelete()\n\t\t\tdefault:\n\t\t\t\tif ev.Rune() != 0 {\n\t\t\t\t\te.InsertChar(ev.Rune())\n\t\t\t\t}\n\t\t\t}\n\t\t\te.Draw()\n\t\tcase *tcell.EventResize:\n\t\t\te.screen.Sync()\n\t\t\te.Draw()\n\t\t}\n\t}\n}\n\nfunc NewEditor() *Editor {\n\te := &Editor{}\n\t// Inicializa a tela\n\tscreen, err := tcell.NewScreen()\n\tif err != nil {\n\t\tfmt.Printf(\"erro ao criar a tela: %v\", err)\n\t}\n\tif err := screen.Init(); err != nil {\n\t\tfmt.Printf(\"erro ao iniciar a tela: %v\", err)\n\t}\n\te.screen = screen\n\te.text = NewList[*List[rune]]()\n\te.text.PushBack(NewList[rune]())\n\te.itLine = e.text.Front()\n\te.itChar = e.itLine.Value.Back()\n\t// Define o estilo do texto (branco com fundo preto)\n\te.style = tcell.StyleDefault.Foreground(tcell.ColorWhite).Background(tcell.ColorBlack)\n\n\t// Limpa a tela e define o estilo base\n\te.screen.SetStyle(e.style)\n\te.screen.Clear()\n\treturn e\n}\n\nfunc (e *Editor) Draw() {\n\te.screen.Clear()\n\tx := 0\n\ty := 0\n\tfor line := e.text.Front(); line != e.text.End(); line = line.Next() {\n\t\tfor char := line.Value.Front(); ; char = char.Next() {\n\t\t\tdata := char.Value\n\t\t\tif char == line.Value.End() {\n\t\t\t\tdata = '\u21b2'\n\t\t\t}\n\t\t\tif data == ' ' {\n\t\t\t\tdata = '\u00b7'\n\t\t\t}\n\t\t\tif char == e.itChar {\n\t\t\t\te.screen.SetContent(x, y, data, nil, e.style.Reverse(true))\n\t\t\t} else {\n\t\t\t\te.screen.SetContent(x, y, data, nil, e.style)\n\t\t\t}\n\t\t\tx++\n\t\t\tif char == line.Value.End() {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\ty++\n\t\tx = 0\n\t}\n\te.screen.Show()\n}\n",
+            "lines": "179"
+        }
+    ]
+}

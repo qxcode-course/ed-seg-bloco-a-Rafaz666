@@ -1,0 +1,7 @@
+2026-06-04 22:50:56, MOVE, v:1, k:es@longest, mode:PICK
+2026-06-04 22:50:58, EXEC, v:1, k:es@longest, mode:FULL, fail:COMP
+2026-06-04 22:50:59, MOVE, v:1, k:es@longest, mode:BACK
+2026-06-04 22:51:04, MOVE, v:1, k:es@battleship, mode:PICK
+2026-06-04 22:51:05, EXEC, v:1, k:es@battleship, mode:FULL, rate:100
+2026-06-04 22:51:27, SELF, v:1, k:es@battleship, self:1, rate:100, study:150, concept:1
+2026-06-04 22:51:29, MOVE, v:1, k:es@battleship, mode:BACK
