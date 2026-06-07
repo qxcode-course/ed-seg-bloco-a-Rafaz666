@@ -61,12 +61,49 @@ func (e *Editor) KeyRight() {
 	}
 }
 
-func (e *Editor) KeyUp() {
+func (e *Editor) KeyUp() { // Aponta o cursor para a linha de cima
+	if e.itLine.Prev() == e.text.End() {
+		return
+	}
 
+	pos := e.itLine.Value.IndexOf(e.itChar)
+	e.itLine = e.itLine.Prev()
+
+	if pos > e.itLine.Value.Size() {
+		e.itChar = e.itLine.Value.End()
+	} else {
+		cont := 0
+		e.itChar = e.itLine.Value.Front()
+		for e.itChar != e.itLine.Value.End() {
+			if cont == pos {
+				return
+			}
+			e.itChar = e.itChar.Next()
+			cont++
+		}
+	}
 }
 
 func (e *Editor) KeyDown() {
+	if e.itLine.Next() == e.text.End() {
+		return
+	}
+	pos := e.itLine.Value.IndexOf(e.itChar)
+	e.itLine = e.itLine.Next()
 
+	if pos > e.itLine.Value.Size() {
+		e.itChar = e.itLine.Value.Front()
+	} else {
+		cont := 0
+		e.itChar = e.itLine.Value.Front()
+		for e.itChar != e.itLine.Value.End() {
+			if cont == pos {
+				return
+			}
+			e.itChar = e.itChar.Next()
+			cont++
+		}
+	}
 }
 
 func (e *Editor) KeyBackspace() {

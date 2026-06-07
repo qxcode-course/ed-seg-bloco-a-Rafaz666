@@ -7,8 +7,13 @@
         },
         {
             "label": "2026-05-22_16-42-01",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc InputFormat(str string) [][]rune {\n\treturn [][]rune{}\n}\n\nfunc InString(rune []rune) string {\n\tstr := string(rune)\n\treturn str\n}\n\nfunc main() {\n\n\tf := make([][]rune, 30)\n\n\tfor i := range f {\n\t\tf[i] = make([]rune, 30)\n\t}\n\n\tvar input string\n\tfmt.Scan(input)\n\ttxt := InputFormat(input)\n\n\tfor j := range len(txt) {\n\t\tfor i := range len(txt[j]) {\n\t\t\tfmt.Println(InString(txt[i]))\n\t\t}\n\t}\n}\n",
+            "content": "@@ -31,25 +31,27 @@\n )%0A%0Afunc \n-CalcLinha\n+InputFormat\n (str str\n@@ -59,103 +59,97 @@\n ng) \n-int %7B%0A%09linhas := 1%0A%09r := %5B%5Drune(str)%0A%09for i := range r %7B%0A%09%09if r%5Bi%5D == 'R' %7B%0A%09%09%09linhas++%0A%09%09%7D%0A%09%7D%0A\n+%5B%5D%5B%5Drune %7B%0A%09return %5B%5D%5B%5Drune%7B%7D%0A%7D%0A%0Afunc InString(rune %5B%5Drune) string %7B%0A%09str := string(rune)\n %0A%09re\n@@ -157,14 +157,11 @@\n urn \n-linhas\n+str\n %0A%7D%0A%0A\n@@ -169,48 +169,20 @@\n unc \n-InputFormat(s string) %5B%5D%5B%5Dstring\n+main()\n  %7B%0A%0A%09\n-str\n+f\n  := \n@@ -194,29 +194,18 @@\n %5B%5D%5B%5D\n-string, CalcLinha(s))\n+rune, 30)%0A\n %0A%09fo\n@@ -221,24 +221,15 @@\n nge \n-len(str)\n+f\n  %7B%0A%09%09\n-str\n+f\n %5Bi%5D \n@@ -241,22 +241,20 @@\n e(%5B%5D\n-string\n+rune\n , 30)%0A%09%7D\n %0A%09re\n@@ -253,104 +253,8 @@\n )%0A%09%7D\n-%0A%09return %5B%5D%5B%5Dstring%7B%7D%0A%7D%0A%0Afunc InString(str %5B%5D%5B%5Dstring) %5B%5D%5B%5Dstring %7B%0A%09return str%0A%7D%0A%0Afunc main() %7B\n %0A%0A%09v\n",
             "lines": "33"
+        },
+        {
+            "label": "2026-06-06_16-37-24",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc CalcLinha(str string) int {\n\tlinhas := 1\n\tr := []rune(str)\n\tfor i := range r {\n\t\tif r[i] == 'R' {\n\t\t\tlinhas++\n\t\t}\n\t}\n\n\treturn linhas\n}\n\nfunc InputFormat(s string) [][]string {\n\n\tstr := make([][]string, CalcLinha(s))\n\tfor i := range len(str) {\n\t\tstr[i] = make([]string, 30)\n\t}\n\treturn [][]string{}\n}\n\nfunc InString(str [][]string) [][]string {\n\treturn str\n}\n\nfunc main() {\n\n\tvar input string\n\tfmt.Scan(input)\n\ttxt := InputFormat(input)\n\n\tfor j := range len(txt) {\n\t\tfor i := range len(txt[j]) {\n\t\t\tfmt.Println(InString(txt[i]))\n\t\t}\n\t}\n}\n",
+            "lines": "43"
         }
     ]
 }
