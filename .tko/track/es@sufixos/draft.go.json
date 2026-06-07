@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_10-56-23",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,446 +23,53 @@\n mt%22%0A\n-%0A\n func \n-print(cont int, caracter %5B%5Drune) %7B%0A%0A%09if cont == -1 %7B%0A%09%09return%0A%09%7D%0A%0A%09out := %5B%5Drune%7B%7D%0A%0A%09if cont == len(caracter)-1 %7B%0A%09%09fmt.Println(caracter%5Blen(caracter)-1%5D)%0A%09%7D else %7B%0A%09%09for i := len(caracter) - 1; i %3E= cont; i-- %7B%0A%09%09%09out%5Bi%5D = caracter%5Bi%5D%0A%09%09%7D%0A%09%7D%0A%0A%09outFinal := string(out)%0A%09fmt.Println(outFinal)%0A%09cont--%0A%09print(cont, caracter)%0A%7D%0A%0Afunc main() %7B%0A%09var line string%0A%09fmt.Scan(&line)%0A%09caracter := %5B%5Drune(line)%0A%09print(len(caracter)-1, caracter\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-07_11-12-44",
+            "content": "@@ -92,16 +92,34 @@\n urn%0A%09%7D%0A%0A\n+%09out := %5B%5Drune%7B%7D%0A%0A\n %09if cont\n@@ -241,28 +241,25 @@\n -- %7B%0A%09%09%09\n-fmt.Println(\n+out%5Bi%5D = \n caracter\n@@ -261,17 +261,16 @@\n acter%5Bi%5D\n-)\n %0A%09%09%7D%0A%09%7D%0A\n@@ -270,16 +270,64 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09outFinal := string(out)%0A%09fmt.Println(outFinal)%0A\n %09cont--%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-07_11-13-41",
+            "content": "@@ -239,15 +239,8 @@\n tln(\n-string(\n cara\n@@ -247,17 +247,16 @@\n cter%5Bi%5D)\n-)\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-07_11-15-44",
+            "content": "@@ -96,45 +96,8 @@\n %09%7D%0A%0A\n-%09out := make(%5B%5Drune, len(caracter))%0A%0A\n %09if \n@@ -227,61 +227,48 @@\n %0A%09%09%09\n-out%5Bi%5D = caracter%5Bi%5D%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(string(out))\n+fmt.Println(string(caracter%5Bi%5D))%0A%09%09%7D%0A%09%7D%0A\n %0A%09co\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-07_11-18-04",
+            "content": "@@ -97,42 +97,226 @@\n %7D%0A%0A%09\n-fmt.Println(string(caracter%5Bcont:%5D\n+out := make(%5B%5Drune, len(caracter))%0A%0A%09if cont == len(caracter)-1 %7B%0A%09%09fmt.Println(caracter%5Blen(caracter)-1%5D)%0A%09%7D else %7B%0A%09%09for i := len(caracter) - 1; i %3E= cont; i-- %7B%0A%09%09%09out%5Bi%5D = caracter%5Bi%5D%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(string(out\n ))%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-07_11-20-34",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc print(cont int, caracter []rune) {\n\n\tif cont == -1 {\n\t\treturn\n\t}\n\n\tfmt.Println(string(caracter[cont:]))\n\tcont--\n\tprint(cont, caracter)\n}\n\nfunc main() {\n\tvar line string\n\tfmt.Scan(&line)\n\tcaracter := []rune(line)\n\tprint(len(caracter)-1, caracter)\n}\n",
+            "lines": "21"
+        }
+    ]
+}

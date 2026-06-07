@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_10-38-58",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,310 +23,53 @@\n mt%22%0A\n-%0A\n func \n-print(cont int, caracter %5B%5Drune) %7B%0A%09if cont == len(caracter) %7B%0A%09%09return%0A%09%7D%0A%0A%09str := %22%22%0A%09for range cont %7B%0A%09%09str += %22 %22%0A%09%7D%0A%0A%09str += string(caracter%5Bcont%5D)%0A%09fmt.Println(str)%0A%09cont++%0A%09print(cont, caracter)%0A%7D%0A%0Afunc main() %7B%0A%09var line string%0A%09fmt.Scan(line)%0A%09caracter := %5B%5Drune(line)%0A%09print(0, caracter\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-07_10-51-02",
+            "content": "@@ -276,9 +276,8 @@\n can(\n-&\n line\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-07_10-52-29",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc print(cont int, caracter []rune) {\n\tif cont == len(caracter) {\n\t\treturn\n\t}\n\n\tstr := \"\"\n\tfor range cont {\n\t\tstr += \" \"\n\t}\n\n\tstr += string(caracter[cont])\n\tfmt.Println(str)\n\tcont++\n\tprint(cont, caracter)\n}\n\nfunc main() {\n\tvar line string\n\tfmt.Scan(&line)\n\tcaracter := []rune(line)\n\tprint(0, caracter)\n}\n",
+            "lines": "26"
+        }
+    ]
+}
