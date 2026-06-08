@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_11-25-45",
+            "content": "@@ -84,86 +84,45 @@\n l %7B%0A\n-%0A%09if soma == alvo %7B%0A%09%09return true%0A%09%7D%0A%0A%09if\n+%09_, _, _, _ = vet, index,\n  soma\n- %3E\n+,\n  alvo\n- %7C%7C index == len(vet) %7B%0A%09\n+%0A\n %09ret\n@@ -131,19 +131,16 @@\n n false%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-07_11-44-20",
+            "content": "@@ -178,23 +178,8 @@\n e%0A%09%7D\n-%0A%0A%09return false\n %0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-07_11-44-57",
+            "content": "@@ -178,83 +178,8 @@\n e%0A%09%7D\n- else if backtracking(vet, index, soma+vet%5Bindex%5D, alvo) %7B%0A%09%09return true%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-07_11-51-53",
+            "content": "@@ -174,16 +174,91 @@\n false%0A%09%7D\n+ else if backtracking(vet, index, soma+vet%5Bindex%5D, alvo) %7B%0A%09%09return true%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-07_11-53-08",
+            "content": "@@ -323,98 +323,24 @@\n %0A%09%7D%0A\n-%0A%09if backtracking(vet, 0, 0, soma) %7B%0A%09%09fmt.Println(true)%0A%09%7D else %7B%0A%09%09fmt.Println(false)%0A%09%7D%0A\n+%09fmt.Println(vet)\n %0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-07_11-54-31",
+            "content": "@@ -181,127 +181,20 @@\n %7D%0A%0A%09\n-if backtracking(vet, index+1, soma+vet%5Bindex%5D, alvo) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return backtracking(vet, index+1, soma, alvo)\n+return false\n %0A%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-07_12-50-13",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc backtracking(vet []int, index, soma, alvo int) bool {\n\n\tif soma == alvo {\n\t\treturn true\n\t}\n\n\tif soma > alvo || index == len(vet) {\n\t\treturn false\n\t}\n\n\tif backtracking(vet, index+1, soma+vet[index], alvo) {\n\t\treturn true\n\t}\n\n\treturn backtracking(vet, index+1, soma, alvo)\n}\n\nfunc main() {\n\tvar qtd, soma int\n\tfmt.Scan(&qtd, &soma)\n\tvet := make([]int, qtd)\n\tfor i := range qtd {\n\t\tfmt.Scan(&vet[i])\n\t}\n\n\tif backtracking(vet, 0, 0, soma) {\n\t\tfmt.Println(true)\n\t} else {\n\t\tfmt.Println(false)\n\t}\n\n}\n",
+            "lines": "36"
+        }
+    ]
+}
