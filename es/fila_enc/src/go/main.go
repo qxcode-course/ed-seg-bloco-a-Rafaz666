@@ -4,16 +4,47 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
-// func (q *Queue[T]) Enqueue(value T)
-// func (q *Queue[T]) Dequeue() (T, bool)
-// func (q *Queue[T]) Peek() (T, bool)
+func (q *Queue[T]) Enqueue(value T) {
+	node := &Node[T]{Value: value}
+
+	if q.size == 0 {
+		q.head = node
+		q.tail = node
+	} else {
+		q.tail.next = node
+		q.tail = node
+	}
+
+	q.size++
+}
+
+func (q *Queue[T]) Dequeue() bool {
+
+	if q.size == 0 {
+		return false
+	}
+
+	q.head = q.head.next
+	q.size--
+
+	return true
+}
+
+func (q *Queue[T]) Peek() bool {
+	if q.size == 0 {
+		return false
+	}
+
+	return true
+}
+
 // func (q *Queue[T]) Size() int
 // func (q *Queue[T]) IsEmpty() bool
 // func (q *Queue[T]) Clear()
-
 
 type Node[T any] struct {
 	Value T
@@ -61,20 +92,20 @@ func main() {
 		case "show":
 			fmt.Println(queue)
 		case "push":
-			// for _, arg := range args[1:] {
-			// 	value, _ := strconv.Atoi(arg)
-			// 	queue.Enqueue(value)
-			// }
+			for _, arg := range args[1:] {
+				value, _ := strconv.Atoi(arg)
+				queue.Enqueue(value)
+			}
 		case "pop":
-			// if _, ok := queue.Dequeue(); !ok {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if ok := queue.Dequeue(); !ok {
+				fmt.Println("falha: fila vazia")
+			}
 		case "peek":
-			// if value, ok := queue.Peek(); ok {
-			// 	fmt.Println(value)
-			// } else {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if queue.Peek() {
+				fmt.Println(queue.head.Value)
+			} else {
+				fmt.Println("falha: fila vazia")
+			}
 		default:
 			fmt.Println("Unknown command:", args[0])
 		}

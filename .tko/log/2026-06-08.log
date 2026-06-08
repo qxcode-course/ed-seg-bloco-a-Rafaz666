@@ -53,3 +53,14 @@
 2026-06-08 18:58:03, MOVE, v:1, k:es@distancia, mode:PICK
 2026-06-08 18:58:10, SELF, v:1, k:es@distancia, self:1, rate:100, concept:1, refactor:1
 2026-06-08 18:58:10, MOVE, v:1, k:es@distancia, mode:BACK
+2026-06-08 18:59:48, MOVE, v:1, k:es@fila_enc, mode:PICK
+2026-06-08 18:59:50, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:0, size:82
+2026-06-08 18:59:51, MOVE, v:1, k:es@fila_enc, mode:BACK
+2026-06-08 19:27:52, MOVE, v:1, k:es@fila_enc, mode:PICK
+2026-06-08 19:27:54, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:0, size:109
+2026-06-08 19:30:48, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:0, size:112
+2026-06-08 19:31:02, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:66, size:111
+2026-06-08 19:34:14, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:66, size:117
+2026-06-08 19:46:16, EXEC, v:1, k:es@fila_enc, mode:FULL, rate:100, size:113
+2026-06-08 19:46:25, SELF, v:1, k:es@fila_enc, self:1, rate:100, study:35
+2026-06-08 19:46:26, MOVE, v:1, k:es@fila_enc, mode:BACK

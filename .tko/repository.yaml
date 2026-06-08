@@ -12,13 +12,14 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded: []
+expanded:
+- es@linear
 flags:
   inbox: all
   panel: skills
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: es@backtrack
-selected_index: 6
+selected: es@fila_enc
+selected_index: 7
