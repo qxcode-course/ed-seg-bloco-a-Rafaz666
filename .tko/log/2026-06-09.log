@@ -1,0 +1,12 @@
+2026-06-09 12:22:57, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-06-09 12:23:43, EXEC, v:1, k:es@labirinto, mode:FULL, rate:0
+2026-06-09 12:32:53, EXEC, v:1, k:es@labirinto, mode:FULL, rate:0, size:70
+2026-06-09 12:33:52, EXEC, v:1, k:es@labirinto, mode:FULL, rate:16, size:74
+2026-06-09 12:35:33, EXEC, v:1, k:es@labirinto, mode:FULL, rate:100, size:74
+2026-06-09 12:35:38, MOVE, v:1, k:es@labirinto, mode:BACK
+2026-06-09 12:35:44, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-06-09 12:35:48, MOVE, v:1, k:es@labirinto, mode:BACK
+2026-06-09 12:35:50, MOVE, v:1, k:es@labirinto, mode:PICK
+2026-06-09 12:36:05, SELF, v:1, k:es@labirinto, self:1, rate:100, study:90
+2026-06-09 12:36:06, EXEC, v:1, k:es@labirinto, mode:FULL, rate:100
+2026-06-09 12:36:06, MOVE, v:1, k:es@labirinto, mode:BACK

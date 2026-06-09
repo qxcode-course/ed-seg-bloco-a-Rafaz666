@@ -14,41 +14,25 @@ func search(grid [][]rune, startPos, endPos Pos) bool {
 
 	l := startPos.l
 	c := startPos.c
-	lf := endPos.l
-	cf := endPos.c
 
-	if l == lf && c == cf {
+	if l < 0 || l >= len(grid) || c < 0 || c >= len(grid[l]) || grid[l][c] != ' ' {
+		return false
+	}
+
+	grid[l][c] = '.'
+
+	if l == endPos.l && c == endPos.c {
 		return true
 	}
 
-	if grid[l][c] == ' ' {
-		grid[l][c] = '.'
+	if search(grid, Pos{l + 1, c}, endPos) ||
+		search(grid, Pos{l - 1, c}, endPos) ||
+		search(grid, Pos{l, c + 1}, endPos) ||
+		search(grid, Pos{l, c - 1}, endPos) {
+		return true
 	}
 
-	if grid[l+1][c] == ' ' {
-		newPos := startPos
-		newPos = Pos{l + 1, c}
-		return search(grid, newPos, endPos)
-	}
-
-	if grid[l-1][c] == ' ' {
-		newPos := startPos
-		newPos = Pos{l - 1, c}
-		return search(grid, newPos, endPos)
-	}
-
-	if grid[l][c+1] == ' ' {
-		newPos := startPos
-		newPos = Pos{l, c + 1}
-		return search(grid, newPos, endPos)
-	}
-
-	if grid[l][c-1] == ' ' {
-		newPos := startPos
-		newPos = Pos{l, c - 1}
-		return search(grid, newPos, endPos)
-	}
-
+	grid[l][c] = ' '
 	return false
 }
 
