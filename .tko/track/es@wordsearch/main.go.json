@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_18-25-44",
+            "content": "@@ -277,36 +277,11 @@\n , c)\n- %7C%7C grid%5Bl%5D%5Bc%5D != word%5B0%5D\n  %7B%0A\n+\n %09%09re\n@@ -338,16 +338,42 @@\n %09%7D%0A%0A%09if \n+grid%5Bl%5D%5Bc%5D == word%5B0%5D %7B%0A%09%09\n backTrac\n@@ -392,35 +392,32 @@\n +1, c, word%5B1:%5D)\n- %7C%7C\n %0A%09%09backTracking(\n@@ -431,35 +431,32 @@\n -1, c, word%5B1:%5D)\n- %7C%7C\n %0A%09%09backTracking(\n@@ -482,11 +482,8 @@\n 1:%5D)\n- %7C%7C\n %0A%09%09b\n@@ -521,29 +521,8 @@\n 1:%5D)\n- %7B%0A%09%09grid%5Bl%5D%5Bc%5D = ' '\n %0A%09%7D%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-09_18-36-12",
+            "content": "@@ -547,30 +547,16 @@\n %5D = ' '%0A\n-%09%09return true%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-09_18-37-19",
+            "content": "@@ -363,27 +363,8 @@\n %09%7D%0A%0A\n-%09grid%5Bl%5D%5Bc%5D = ' '%0A%0A\n %09if \n@@ -524,24 +524,43 @@\n word%5B1:%5D) %7B%0A\n+%09%09grid%5Bl%5D%5Bc%5D = ' '%0A\n %09%09return tru\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-09_18-43-07",
+            "content": "@@ -569,30 +569,8 @@\n %09%7D%0A%0A\n-%09grid%5Bl%5D%5Bc%5D = word%5B0%5D%0A\n %09ret\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-09_18-44-22",
+            "content": "@@ -337,17 +337,17 @@\n ord) == \n-1\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-09_18-46-19",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc inLimit(grid [][]rune, l, c int) bool {\n\tif (l >= 0 && l < len(grid)) && (c >= 0 && c < len(grid[l])) {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc backTracking(grid [][]rune, l, c int, word []rune) bool {\n\n\tif !inLimit(grid, l, c) || grid[l][c] != word[0] {\n\t\treturn false\n\t}\n\n\tif len(word) == 1 {\n\t\treturn true\n\t}\n\n\tgrid[l][c] = ' '\n\n\tif backTracking(grid, l+1, c, word[1:]) ||\n\t\tbackTracking(grid, l-1, c, word[1:]) ||\n\t\tbackTracking(grid, l, c+1, word[1:]) ||\n\t\tbackTracking(grid, l, c-1, word[1:]) {\n\t\treturn true\n\t}\n\n\tgrid[l][c] = word[0]\n\treturn false\n}\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]rune, word string) bool {\n\n\truneWord := []rune(word)\n\n\tfor l := 0; l < len(grid); l++ {\n\t\tfor c := 0; c < len(grid[l]); c++ {\n\t\t\tif grid[l][c] == runeWord[0] && backTracking(grid, l, c, runeWord) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]rune, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []rune(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "69"
+        }
+    ]
+}

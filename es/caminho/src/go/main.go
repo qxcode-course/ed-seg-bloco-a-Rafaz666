@@ -20,8 +20,13 @@ func inside(grid [][]rune, pos Pos) bool {
 	return pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols
 }
 
-func match(grid [][]rune, pos Pos, char rune) bool {
-	return inside(grid, pos) && grid[pos.l][pos.c] == char
+func match(grid [][]rune, parent []rune, pos Pos) bool {
+
+	if inside(grid, pos) && grid[pos.l][pos.c] == ' ' {
+		parent
+	}
+
+	return false
 }
 
 func search(grid [][]rune, startPos Pos, endPos Pos) {

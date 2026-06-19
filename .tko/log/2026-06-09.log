@@ -10,3 +10,23 @@
 2026-06-09 12:36:05, SELF, v:1, k:es@labirinto, self:1, rate:100, study:90
 2026-06-09 12:36:06, EXEC, v:1, k:es@labirinto, mode:FULL, rate:100
 2026-06-09 12:36:06, MOVE, v:1, k:es@labirinto, mode:BACK
+2026-06-09 12:48:34, MOVE, v:1, k:es@caminho, mode:PICK
+2026-06-09 12:48:36, EXEC, v:1, k:es@caminho, mode:FULL, size:111, fail:COMP
+2026-06-09 17:58:16, MOVE, v:1, k:es@wordsearch, mode:PICK
+2026-06-09 17:58:18, MOVE, v:1, k:es@wordsearch, mode:BACK
+2026-06-09 17:59:08, MOVE, v:1, k:es@wordsearch, mode:PICK
+2026-06-09 18:25:44, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:25, size:66
+2026-06-09 18:36:12, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:0, size:66
+2026-06-09 18:37:19, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:0, size:67
+2026-06-09 18:37:21, MOVE, v:1, k:es@wordsearch, mode:BACK
+2026-06-09 18:43:06, MOVE, v:1, k:es@wordsearch, mode:PICK
+2026-06-09 18:43:07, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:0, size:68
+2026-06-09 18:43:09, MOVE, v:1, k:es@wordsearch, mode:BACK
+2026-06-09 18:44:22, MOVE, v:1, k:es@wordsearch, mode:PICK
+2026-06-09 18:44:22, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:0, size:69
+2026-06-09 18:46:19, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:100, size:69
+2026-06-09 18:47:06, EXEC, v:1, k:es@wordsearch, mode:FULL, rate:100
+2026-06-09 18:47:14, MOVE, v:1, k:es@wordsearch, mode:BACK
+2026-06-09 18:49:19, MOVE, v:1, k:es@wordsearch, mode:PICK
+2026-06-09 18:49:30, SELF, v:1, k:es@wordsearch, self:1, rate:100, study:60
+2026-06-09 18:49:30, MOVE, v:1, k:es@wordsearch, mode:BACK
