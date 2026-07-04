@@ -32,8 +32,23 @@
         },
         {
             "label": "2026-06-03_21-03-23",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc inLimit(grid [][]rune, l, c int) bool {\n\tif (l >= 0 && l < len(grid)) && (c >= 0 && c < len(grid[l]) && grid[l][c] == '1') {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\n\\\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\n\nfunc numIslands(grid [][]rune) int {\n\tnum := 0\n\tfor l := 0; l < len(grid); l++ {\n\t\tfor c := 0; c < len(grid[l]); c++ {\n\t\t\tif grid[l][c] == '1' {\n\t\t\t\tdfs(grid, l, c)\n\t\t\t\tnum++\n\t\t\t}\n\t\t}\n\t}\n\treturn num\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\n\tgrid := make([][]rune, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "content": "@@ -46,19 +46,23 @@\n )%0A%0Afunc \n-dfs\n+inLimit\n (grid %5B%5D\n@@ -82,158 +82,137 @@\n int)\n+ bool\n  %7B%0A%09if \n-grid%5Bl%5D%5Bc%5D == '1' %7B%0A%09%09grid%5Bl%5D%5Bc%5D = '0' // Marca como visitado%0A%09%7D%0A%0A%09dfs(grid, l-1, c)%0A%09dfs(grid, l+1, c)%0A%09dfs(grid, l, c-1)%0A%09dfs(grid, l, c+1)%0A%7D\n+(l %3E= 0 && l %3C len(grid)) && (c %3E= 0 && c %3C len(grid%5Bl%5D) && grid%5Bl%5D%5Bc%5D == '1') %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A%5C\n %0A%0A//\n",
             "lines": "50"
+        },
+        {
+            "label": "2026-07-02_22-31-21",
+            "content": "@@ -45,148 +45,8 @@\n %0A)%0A%0A\n-func inLimits(grid %5B%5D%5B%5Drune, l, c int) bool %7B%0A%09if l %3E= 0 && l %3C len(grid) && c %3E= 0 && c %3C len(grid%5Bl%5D) %7B%0A%09%09return true%0A%09%7D%0A%09return false%0A%7D%0A%0A\n func\n@@ -84,32 +84,8 @@\n %0A%09if\n- inLimits(grid, l, c) &&\n  gri\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-02_22-32-02",
+            "content": "@@ -308,16 +308,19 @@\n sitado%0A%09\n+%7D%0A%0A\n %09dfs(gri\n@@ -326,25 +326,24 @@\n id, l-1, c)%0A\n-%09\n %09dfs(grid, l\n@@ -349,17 +349,16 @@\n l+1, c)%0A\n-%09\n %09dfs(gri\n@@ -368,17 +368,16 @@\n l, c-1)%0A\n-%09\n %09dfs(gri\n@@ -387,19 +387,16 @@\n l, c+1)%0A\n-%09%7D%0A\n %7D%0A%0A// N%C3%A3\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-02_22-33-23",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc inLimits(grid [][]rune, l, c int) bool {\n\tif l >= 0 && l < len(grid) && c >= 0 && c < len(grid[l]) {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc dfs(grid [][]rune, l, c int) {\n\tif inLimits(grid, l, c) && grid[l][c] == '1' {\n\t\tgrid[l][c] = '0' // Marca como visitado\n\t\tdfs(grid, l-1, c)\n\t\tdfs(grid, l+1, c)\n\t\tdfs(grid, l, c-1)\n\t\tdfs(grid, l, c+1)\n\t}\n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\n\nfunc numIslands(grid [][]rune) int {\n\tnum := 0\n\tfor l := 0; l < len(grid); l++ {\n\t\tfor c := 0; c < len(grid[l]); c++ {\n\t\t\tif grid[l][c] == '1' {\n\t\t\t\tdfs(grid, l, c)\n\t\t\t\tnum++\n\t\t\t}\n\t\t}\n\t}\n\treturn num\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\n\tgrid := make([][]rune, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "57"
         }
     ]
 }

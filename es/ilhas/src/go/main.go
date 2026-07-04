@@ -6,15 +6,22 @@ import (
 	"os"
 )
 
-func inLimit(grid [][]rune, l, c int) bool {
-	if (l >= 0 && l < len(grid)) && (c >= 0 && c < len(grid[l]) && grid[l][c] == '1') {
+func inLimits(grid [][]rune, l, c int) bool {
+	if l >= 0 && l < len(grid) && c >= 0 && c < len(grid[l]) {
 		return true
 	}
-
 	return false
 }
 
-\
+func dfs(grid [][]rune, l, c int) {
+	if inLimits(grid, l, c) && grid[l][c] == '1' {
+		grid[l][c] = '0' // Marca como visitado
+		dfs(grid, l-1, c)
+		dfs(grid, l+1, c)
+		dfs(grid, l, c-1)
+		dfs(grid, l, c+1)
+	}
+}
 
 // Não modifique a assinatura da função numIslands
 // Ela é a função que será chamada no LeetCode para resolver o problema

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_22-14-16",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,143 +23,53 @@\n mt%22%0A\n-%0A\n func \n-calc(x int) int %7B%0A%09if x %3C= 0 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09return 20 + (x * 8)%0A%7D%0A%0Afunc main() %7B%0A%09var x int%0A%09fmt.Scan(&x)%0A%09fmt.Println(calc(x)\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-02_22-17-27",
+            "content": "@@ -92,12 +92,10 @@\n  (x \n-- 1\n *\n+ \n 8)%0A%7D\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-07-02_22-18-08",
+            "content": "@@ -91,13 +91,15 @@\n + (x\n--1)\n+ - 1\n *8\n+)\n %0A%7D%0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-07-02_22-19-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc calc(x int) int {\n\tif x <= 0 {\n\t\treturn 0\n\t}\n\n\treturn 20 + (x-1)*8\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\tfmt.Println(calc(x))\n}\n",
+            "lines": "17"
+        }
+    ]
+}
