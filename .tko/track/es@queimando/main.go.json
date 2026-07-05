@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_12-08-56",
+            "content": "@@ -140,16 +140,18 @@\n %5BPos%5D()%0A\n+%09%0A\n %09for i :\n@@ -278,21 +278,16 @@\n %0A%09%09%09%09if \n-grid%5B\n stack.To\n@@ -287,36 +287,16 @@\n tack.Top\n-().l%5D%5Bstack.Top().c%5D\n  == '#' \n@@ -302,21 +302,16 @@\n  %7B%0A%09%09%09%09%09\n-grid%5B\n stack.To\n@@ -317,26 +317,8 @@\n op()\n-.l%5D%5Bstack.Top().c%5D\n  = '\n@@ -365,19 +365,17 @@\n Pos%7Bl: i\n- + \n++\n 1, c: j%7D\n@@ -399,19 +399,17 @@\n Pos%7Bl: i\n- - \n+-\n 1, c: j%7D\n@@ -443,11 +443,9 @@\n c: j\n- + \n++\n 1%7D)%0A\n@@ -477,11 +477,9 @@\n c: j\n- - \n+-\n 1%7D)%0A\n@@ -488,17 +488,341 @@\n %09%7D%0A%09%09%7D%0A%09\n-%7D\n+// Essa fun%C3%A7%C3%A3o deve usar uma list como pilha%0A%09// e marcar as %C3%A1rvores na matriz como queimados%0A%09// Uma sugest%C3%A3o de como fazer isso %C3%A9:%0A%09// - adicionar a primeira posi%C3%A7%C3%A3o na pilha%0A%09// - enquanto a pilha n%C3%A3o estiver vazia:%0A%09//   - retirar o elemento do topo%0A%09//   - se puder ser queimado, queime e adicione seus vizinhos %C3%A0 pilha%0A\n %0A%7D%0A%0Afunc\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-04_12-16-29",
+            "content": "@@ -140,16 +140,90 @@\n %5BPos%5D()%0A\n+%09for i := 0; i %3C len(grid); i++ %7B%0A%09%09for j := 0; j %3C len(grid%5Bi%5D); j++ %7B%0A%09%09\n %09stack.P\n@@ -235,14 +235,22 @@\n os%7Bl\n-, c\n+: i, c: j\n %7D)%0A\n+%09%09\n %09for\n@@ -275,15 +275,18 @@\n %7B%0A%09%09\n-top := \n+%09%09if grid%5B\n stac\n@@ -296,43 +296,23 @@\n op()\n-%0A%09%09\n+.l%5D%5B\n stack.\n-P\n+T\n op()\n-%0A%09%09if grid%5Btop.l%5D%5Btop\n .c%5D \n@@ -327,244 +327,185 @@\n %0A%09%09%09\n+%09%09\n grid%5B\n-top.l%5D%5Btop.c%5D = 'o'%0A%09%09%09list := %5B%5DPos%7B%7Btop.l - 1, top.c%7D, %7Btop.l + 1, top.c%7D, %7Btop.l, top.c - 1%7D, %7Btop.l, top.c + 1%7D%7D%0A%09%09%09for _, pos := range list %7B%0A%09%09%09%09if pos.l %3E= 0 && pos.l %3C len(grid) && pos.c %3E= 0 && pos.c %3C len(grid%5B0%5D) %7B\n+stack.Top().l%5D%5Bstack.Top().c%5D = 'o'%0A%09%09%09%09%7D%0A%09%09%09%09stack.Pop()%0A%09%09%09%09stack.Push(Pos%7Bl: i + 1, c: j%7D)%0A%09%09%09%09stack.Push(Pos%7Bl: i - 1, c: j%7D)%0A%09%09%09%09stack.Push(Pos%7Bl: i, c: j + 1%7D)\n %0A%09%09%09%09\n-%09\n stac\n@@ -515,18 +515,28 @@\n ush(\n-pos)%0A%09%09%09%09%7D\n+Pos%7Bl: i, c: j - 1%7D)\n %0A%09%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-04_15-57-11",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l, c})\n\tfor !stack.IsEmpty() {\n\t\ttop := stack.Top()\n\t\tstack.Pop()\n\t\tif grid[top.l][top.c] == '#' {\n\t\t\tgrid[top.l][top.c] = 'o'\n\t\t\tlist := []Pos{{top.l - 1, top.c}, {top.l + 1, top.c}, {top.l, top.c - 1}, {top.l, top.c + 1}}\n\t\t\tfor _, pos := range list {\n\t\t\t\tif pos.l >= 0 && pos.l < len(grid) && pos.c >= 0 && pos.c < len(grid[0]) {\n\t\t\t\t\tstack.Push(pos)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "52"
+        }
+    ]
+}

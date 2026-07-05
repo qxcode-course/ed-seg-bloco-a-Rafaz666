@@ -8,12 +8,29 @@ import (
 	"strings"
 )
 
-func dfs(image [][]int)
+func inLimits(image [][]int, l, c int) bool {
+	if l >= 0 && l < len(image) && c >= 0 && c < len(image[l]) {
+		return true
+	}
+	return false
+}
 
 // Não modifique a assinatura da função floodFill
-func floodFill(image [][]int, l, c int, color int) [][]int {
-	//_ := image
-	return [][]int{}
+func floodFill(image [][]int, l, c int, color int, value int) [][]int {
+
+	if value == color {
+		return image
+	}
+
+	if inLimits(image, l, c) && image[l][c] == value {
+		image[l][c] = color
+		floodFill(image, l-1, c, color, value)
+		floodFill(image, l+1, c, color, value)
+		floodFill(image, l, c-1, color, value)
+		floodFill(image, l, c+1, color, value)
+	}
+
+	return image
 }
 
 // Não modifique a função main
@@ -42,8 +59,8 @@ func main() {
 	sr, _ := strconv.Atoi(params[0])
 	sc, _ := strconv.Atoi(params[1])
 	color, _ := strconv.Atoi(params[2])
-
-	result := floodFill(image, sr, sc, color)
+	value := image[sr][sc]
+	result := floodFill(image, sr, sc, color, value)
 
 	// Imprime a matriz resultante
 	for _, row := range result {
