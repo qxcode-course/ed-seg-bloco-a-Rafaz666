@@ -1,0 +1,21 @@
+2026-07-10 17:53:12, MOVE, v:1, k:es@soma, mode:PICK
+2026-07-10 17:53:13, EXEC, v:1, k:es@soma, mode:FULL, rate:14, size:86
+2026-07-10 17:53:13, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 17:55:37, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:07:48, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:10:03, EXEC, v:1, k:es@soma, mode:FULL, rate:14, size:105
+2026-07-10 18:12:53, EXEC, v:1, k:es@soma, mode:FULL, rate:28, size:108
+2026-07-10 18:12:43, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:12:53, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:15:05, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:20:18, EXEC, v:1, k:es@soma, mode:FULL, rate:28, size:112
+2026-07-10 18:21:41, EXEC, v:1, k:es@soma, mode:FULL, rate:85, size:112
+2026-07-10 18:22:06, EXEC, v:1, k:es@soma, mode:FULL, rate:28, size:112
+2026-07-10 18:22:33, EXEC, v:1, k:es@soma, mode:FULL, rate:100, size:112
+2026-07-10 18:22:58, SELF, v:1, k:es@soma, self:1, rate:100, study:45
+2026-07-10 18:23:09, MOVE, v:1, k:es@soma, mode:BACK
+2026-07-10 18:22:30, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:22:33, MOVE, v:1, k:es@soma, mode:EDIT
+2026-07-10 18:23:33, MOVE, v:1, k:es@altura, mode:DOWN
+2026-07-10 18:23:35, MOVE, v:1, k:es@compare, mode:DOWN
+2026-07-10 18:23:38, MOVE, v:1, k:es@arvore-path, mode:DOWN

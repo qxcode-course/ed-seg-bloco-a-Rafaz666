@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_12-07-07",
+            "content": "@@ -137,32 +137,6 @@\n &m)%0A\n-%09fmt.Println(solve(n, m))%0A\n %7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-07-05_12-07-45",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc solve(n, m int) int {\n\treturn (m * ((n-2)*(m-1) + 2)) / 2\n}\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n, &m)\n\tfmt.Println(solve(n, m))\n}\n",
+            "lines": "13"
+        }
+    ]
+}

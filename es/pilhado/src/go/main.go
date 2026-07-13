@@ -5,20 +5,54 @@ import (
 )
 
 type Pos struct {
-	l int
-	c int
+	l     int
+	c     int
+	value rune
 }
 
-func valid(grid [][]rune, l, c int) bool {
-	if (l >= 0 && l < len(grid)) && c >= 0 && c < len(grid[l]) {
+func NewPos(grid [][]rune, l, c int) Pos {
+	return Pos{l: l, c: c, value: grid[l][c]}
+}
+
+func valid(grid [][]rune, pos Pos) bool {
+	if (pos.l >= 0 && pos.l < len(grid)) && pos.c >= 0 && pos.c < len(grid[0]) {
 		return true
 	}
 	return false
 }
 
+func searchInit(grid [][]rune) Pos {
+	for li := range len(grid) {
+		for co := range len(grid[li]) {
+			if grid[li][co] == 'I' {
+				return Pos{l: li, c: co, value: 'I'}
+			}
+		}
+	}
+
+	return Pos{}
+}
+
 func searchExit(grid [][]rune) {
-	//caminho := NewStack[Pos]()
-	//beco := NewStack[Pos]()
+	caminho := NewStack[Pos]()
+	caminho.Push(searchInit(grid))
+
+	for !caminho.IsEmpty() {
+		top := caminho.Top()
+
+		if top.value == 'F' {
+			grid[top.l][top.c] = '.'
+			return
+		}
+
+		if top.value == 'I' || top.value == ' ' {
+			grid[top.l][top.c] = '.'
+
+			//vizinhos := []Pos{NewPos(grid, top.l+1, top.c), NewPos(grid, top.l-1, top.c), NewPos(grid, top.l, top.c+1), NewPos(grid, top.l, top.c-1)}
+			//path := false
+
+		}
+	}
 }
 
 func main() {
@@ -38,6 +72,7 @@ func main() {
 		}
 	}
 
+	searchExit(labirinto)
 	printGrid(labirinto)
 }
 

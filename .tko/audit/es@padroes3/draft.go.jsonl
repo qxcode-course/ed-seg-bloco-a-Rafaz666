@@ -1,0 +1,3 @@
+{"ts":1783263734,"hash":"9548e0a83e99e4c943dfce7d37d81c97306b03bf2a7711f6f561ce56dd7d76cd","mode":"full","content":"H4sIAAAAAAAC/ytITM5OTE9VyE3MzOPiyswtyC8qUVBKyy1R4uJKK81LVijOzylL1dCE8kDKNDQVqrk4yxKLFPJ0FHIVMvNKuDiBGvSCkxPzNNSAYmq5mly1XABh5wRQWgAAAA=="}
+{"ts":1783264009,"hash":"883fd336700455cbf7ccbcad7975b08fe24eebaae950fbd417fd1882d7e3b2eb","mode":"diff","ops":[{"tag":"replace","a1":4,"a2":5,"text":"func solve(n, m int) int {\n\treturn m * ((n-2)*(m-1) + 2) / 2\n}\n"}]}
+{"ts":1783264062,"hash":"aa241c4be783f4c2778301bb5115b964aacac957e583cbb6149a37c5f949b23c","mode":"diff","ops":[{"tag":"replace","a1":5,"a2":6,"text":"\treturn (m * ((n-2)*(m-1) + 2)) / 2\n"},{"tag":"insert","a1":11,"a2":11,"text":"\tfmt.Println(solve(n, m))\n"}]}
